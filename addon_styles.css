@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+tbody {
+    background: #112d38;
+    background: #112338;
+}
+
+td.small {
+    color: white;
+    font-weight: lighter;
+}
+
+td.small a {
+    border-radius: 3px;
+    background: #00b894;
+    background: #88dbdc;
+
+    display: flex;
+    margin: 1em;
+    padding: 0.7em 0;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+    font-weight: lighter;
+}
