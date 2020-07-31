@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Merriweather:wght@300;400&family=Nunito:wght@700&display=swap');
 
 $sky: #00B8F2;
 $navy: #145196;
+$dark: #272727;
 
+/* --- START Universal theme definitions --- */
 * {
   margin: 0;
   padding: 0;
@@ -27,21 +29,190 @@ a {
   color: inherit;
 }
 
-body {
-  background: rgb(99, 99, 99);
+.cta-btn {
+  display: inline-block;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-family: Cabin, sans-serif;
+  font-weight: bold;
+  color: white;
+  padding: 10px 25px;
 }
 
+.cta-link {
+}
+
+h1 {
+  font-family: Cabin, sans-serif;
+  font-size: 32px;
+}
+
+h2 {
+  font-family: Cabin, sans-serif;
+  font-weight: lighter;
+  font-size: 32px;
+}
+
+p {
+  font-family: Merriweather, serif;
+  font-weight: lighter;
+  font-size: 16px;
+  line-height: 150%;
+}
+/* --- END Universal theme definitions --- */
+
+/* Page header and navigation */
 header {
+  position: relative;
   width: 100%;
-  height: 11%;
+  max-width: 100%;
+  padding: 10px 0;
   background: white;
   display: flex;
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
   align-items: center;
-  #login {
-    padding: 0.75rem 1.5rem;
-    background: $sky;
-  }
+  justify-content: space-around;
   img {
-    width: 60%;
+    width: 80%;
+    max-width: 90%;
+    max-height: 90%;
+    min-width: 100px;
+    margin: 0 20px;
   }
+  #login {
+    background: $navy;
+    width: 100%;
+    font-size: 100%;
+    margin: 0 20px;
+    margin: auto;
+  }
+  #burger {
+    width: 25px;
+    max-width: 30px;
+    min-width: 25px;
+    margin-right: 20px;
+    margin: auto;
+    div {
+      background: black;
+      width: 100%;
+      height: 3px;
+    }
+    div:nth-child(2) {
+      margin: 5px 0;
+    }
+  }
+}
+
+main {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  section#home {
+    padding: 50px 10px;
+    background: $dark;
+    #home-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #cta {
+      display: flex;
+      flex-direction: column;
+      width: 70%;
+      margin-top: 30px;
+      background: url("res/leaves.svg");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      h1 {
+        color: white;
+        margin-bottom: 40px;
+      }
+      p {
+        color: white;
+        margin-bottom: 50px;
+      }
+      & > div {
+        margin-bottom: 100px;
+        #enroll-1 {
+          background: $sky;
+          color: white;
+        }
+        #explore-courses {
+          display: inline-block;
+          margin-left: 20px;
+          color: $sky;
+          font-family: Cabin, sans-serif;
+          font-weight: bold;
+        }
+      }
+    }
+    img {
+      width: 80%;
+    }
+  }
+  section#stories {
+    padding: 50px 10px;
+    #stories-content {
+      display: flex;
+      flex-direction: column;
+    }
+    h2,p {
+      text-align: center;
+    }
+    #school-grid {
+      margin-top: 50px;
+      display: grid;
+      grid-template-rows: 4;
+      grid-template-columns: 1;
+      width: 100%;
+      height: 800px;
+      justify-items: center;
+      align-items: center;
+      .school {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 90%;
+        height: 90%;
+        .front,.back {
+          margin: auto;
+          width: 90%;
+          height: 90%;
+        }
+        .front {
+          transform: translate(5px, 5px);
+        }
+        .back {
+          position: absolute;
+          transform: translate(-5px, -5px);
+        }
+        &:nth-child(1) {
+          .front { background: #8BB3DA; }
+          .back { border: 2px solid #8BB3DA; }
+        }
+        &:nth-child(2) {
+          .front { background: #00356B; }
+          .back { border: 2px solid #00356B; }
+        }
+        &:nth-child(3) {
+          .front { background: #A51C30; }
+          .back {  border: 2px solid #A51C30; }
+        }
+      }
+      #acceptances {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $dark;
+        box-sizing: border-box;
+        max-height: 45px;
+      }
+    }
+  }
+
+
 }

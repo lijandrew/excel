@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Merriweather&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Merriweather:wght@300;400&family=Nunito:wght@700&display=swap");
+/* --- START Universal theme definitions --- */
 * {
   margin: 0;
   padding: 0;
@@ -23,23 +24,193 @@ a {
   color: inherit;
 }
 
-body {
-  background: #636363;
+.cta-btn {
+  display: inline-block;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-family: Cabin, sans-serif;
+  font-weight: bold;
+  color: white;
+  padding: 10px 25px;
 }
 
+h1 {
+  font-family: Cabin, sans-serif;
+  font-size: 32px;
+}
+
+h2 {
+  font-family: Cabin, sans-serif;
+  font-weight: lighter;
+  font-size: 32px;
+}
+
+p {
+  font-family: Merriweather, serif;
+  font-weight: lighter;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+/* --- END Universal theme definitions --- */
+/* Page header and navigation */
 header {
+  position: relative;
   width: 100%;
-  height: 11%;
+  max-width: 100%;
+  padding: 10px 0;
   background: white;
   display: flex;
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
   align-items: center;
-}
-header #login {
-  padding: 0.75rem 1.5rem;
-  background: #00B8F2;
+  justify-content: space-around;
 }
 header img {
-  width: 60%;
+  width: 80%;
+  max-width: 90%;
+  max-height: 90%;
+  min-width: 100px;
+  margin: 0 20px;
+}
+header #login {
+  background: #145196;
+  width: 100%;
+  font-size: 100%;
+  margin: 0 20px;
+  margin: auto;
+}
+header #burger {
+  width: 25px;
+  max-width: 30px;
+  min-width: 25px;
+  margin-right: 20px;
+  margin: auto;
+}
+header #burger div {
+  background: black;
+  width: 100%;
+  height: 3px;
+}
+header #burger div:nth-child(2) {
+  margin: 5px 0;
+}
+
+main {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+}
+main section#home {
+  padding: 50px 10px;
+  background: #272727;
+}
+main section#home #home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main section#home #cta {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin-top: 30px;
+  background: url("res/leaves.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+main section#home #cta h1 {
+  color: white;
+  margin-bottom: 40px;
+}
+main section#home #cta p {
+  color: white;
+  margin-bottom: 50px;
+}
+main section#home #cta > div {
+  margin-bottom: 100px;
+}
+main section#home #cta > div #enroll-1 {
+  background: #00B8F2;
+  color: white;
+}
+main section#home #cta > div #explore-courses {
+  display: inline-block;
+  margin-left: 20px;
+  color: #00B8F2;
+  font-family: Cabin, sans-serif;
+  font-weight: bold;
+}
+main section#home img {
+  width: 80%;
+}
+main section#stories {
+  padding: 50px 10px;
+}
+main section#stories #stories-content {
+  display: flex;
+  flex-direction: column;
+}
+main section#stories h2, main section#stories p {
+  text-align: center;
+}
+main section#stories #school-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-rows: 4;
+  grid-template-columns: 1;
+  width: 100%;
+  height: 800px;
+  justify-items: center;
+  align-items: center;
+}
+main section#stories #school-grid .school {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 90%;
+  height: 90%;
+}
+main section#stories #school-grid .school .front, main section#stories #school-grid .school .back {
+  margin: auto;
+  width: 90%;
+  height: 90%;
+}
+main section#stories #school-grid .school .front {
+  transform: translate(5px, 5px);
+}
+main section#stories #school-grid .school .back {
+  position: absolute;
+  transform: translate(-5px, -5px);
+}
+main section#stories #school-grid .school:nth-child(1) .front {
+  background: #8BB3DA;
+}
+main section#stories #school-grid .school:nth-child(1) .back {
+  border: 2px solid #8BB3DA;
+}
+main section#stories #school-grid .school:nth-child(2) .front {
+  background: #00356B;
+}
+main section#stories #school-grid .school:nth-child(2) .back {
+  border: 2px solid #00356B;
+}
+main section#stories #school-grid .school:nth-child(3) .front {
+  background: #A51C30;
+}
+main section#stories #school-grid .school:nth-child(3) .back {
+  border: 2px solid #A51C30;
+}
+main section#stories #school-grid #acceptances {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #272727;
+  box-sizing: border-box;
+  max-height: 45px;
 }
 
 /*# sourceMappingURL=index.css.map */
