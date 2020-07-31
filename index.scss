@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Merriweather&display=swap');
+
+$sky: #00B8F2;
+$navy: #145196;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,body {
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.content-wrapper {
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  background: rgb(99, 99, 99);
+}
+
+header {
+  width: 100%;
+  height: 11%;
+  background: white;
+  display: flex;
+  align-items: center;
+  #login {
+    padding: 0.75rem 1.5rem;
+    background: $sky;
+  }
+  img {
+    width: 60%;
+  }
+}
