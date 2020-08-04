@@ -37,10 +37,12 @@ a {
   font-family: Cabin, sans-serif;
   font-weight: bold;
   color: white;
-  padding: 10px 25px;
+  padding: 15px 25px;
 }
 
 .cta-link {
+  font-family: Cabin, sans-serif;
+  font-weight: bold;
 }
 
 h1 {
@@ -109,13 +111,15 @@ main {
   width: 100%;
   min-width: 100%;
   max-width: 100%;
+  section {
+    padding: 60px 10px;
+  }
   section#home {
-    padding: 50px 10px;
     background: $dark;
     #home-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      justify-items: center;
     }
     #cta {
       display: flex;
@@ -136,11 +140,11 @@ main {
       }
       & > div {
         margin-bottom: 100px;
-        #enroll-1 {
+        #cta-enroll {
           background: $sky;
           color: white;
         }
-        #explore-courses {
+        #cta-explore {
           display: inline-block;
           margin-left: 20px;
           color: $sky;
@@ -154,10 +158,11 @@ main {
     }
   }
   section#stories {
-    padding: 50px 10px;
     #stories-content {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-rows: 1fr 8fr;
+      justify-items: center;
+      align-items: center;
     }
     h2,p {
       text-align: center;
@@ -168,6 +173,7 @@ main {
       grid-template-rows: 4;
       grid-template-columns: 1;
       width: 100%;
+      max-width: 400px;
       height: 800px;
       justify-items: center;
       align-items: center;
@@ -203,16 +209,53 @@ main {
           .back {  border: 2px solid #A51C30; }
         }
       }
-      #acceptances {
+      #cta-acceptances {
         display: flex;
         justify-content: center;
         align-items: center;
         background: $dark;
-        box-sizing: border-box;
-        max-height: 45px;
       }
     }
   }
-
-
+  section#testimonials {
+    background: $dark;
+    #testimonials-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .testimonials {
+      display: flex;
+      flex-direction: column;
+      p {
+        color: white;
+        text-align: center;
+        margin: 30px 0;
+      }
+    }
+    #cta-testimonials {
+      margin-top: 50px;
+      color: black;
+      background: white;
+    }
+  }
+  section#ready {
+    #ready-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      & > div {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        #cta-enroll-bottom {
+          background: $sky;
+        }
+        #cta-explore-bottom {
+          margin-top: 20px;
+          color: $sky;
+        }
+      }
+    }
+  }
 }
