@@ -10,6 +10,7 @@ html, body {
   height: 100%;
   min-width: 100%;
   min-height: 100%;
+  scroll-behavior: smooth;
 }
 
 .content-wrapper {
@@ -61,7 +62,8 @@ p {
 /* --- END Universal theme definitions --- */
 /* Page header and navigation */
 header {
-  position: relative;
+  z-index: 99;
+  position: fixed;
   width: 100%;
   max-width: 100%;
   padding: 10px 0;
@@ -80,10 +82,14 @@ header img {
   margin: 0 20px;
 }
 header #login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #145196;
   width: 100%;
   font-size: 100%;
   margin: 0 20px;
+  height: 80%;
   margin: auto;
 }
 header #burger {
@@ -111,7 +117,8 @@ main section {
   padding-top: 80px;
 }
 main section#home {
-  background: #272727;
+  background: #192839;
+  padding-top: 150px;
 }
 main section#home #home-content {
   display: grid;
@@ -220,7 +227,7 @@ main section#acceptances #school-grid #cta-acceptances {
   background: #272727;
 }
 main section#testimonials {
-  background: #272727;
+  background: #145196;
   padding-bottom: 80px;
 }
 main section#testimonials #testimonials-content {
@@ -228,17 +235,35 @@ main section#testimonials #testimonials-content {
   flex-direction: column;
   align-items: center;
 }
-main section#testimonials .testimonials {
+main section#testimonials #testimonials-content #testimonials-title {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+main section#testimonials #testimonials-content .testimonials {
   display: flex;
   flex-direction: column;
 }
-main section#testimonials .testimonials p {
-  color: white;
-  text-align: center;
-  margin: 30px 0;
+main section#testimonials #testimonials-content .testimonials .testimonial-box {
+  padding: 30px;
+  border-radius: 3px;
+  margin-top: 30px;
 }
-main section#testimonials #cta-testimonials {
-  margin-top: 50px;
+main section#testimonials #testimonials-content .testimonials .testimonial-box:nth-child(odd) {
+  background: #272727;
+  color: white;
+}
+main section#testimonials #testimonials-content .testimonials .testimonial-box:nth-child(even) {
+  color: black;
+  background: white;
+}
+main section#testimonials #testimonials-content .testimonials p {
+  text-align: center;
+}
+main section#testimonials #testimonials-content #cta-testimonials {
+  margin-top: 70px;
   color: black;
   background: white;
 }
@@ -312,7 +337,9 @@ footer section#contact #contact-content > div p span {
   color: #fff;
   font-weight: bolder;
 }
-footer section#contact #contact-content img {
+footer section#contact #contact-content a {
+  display: flex;
+  justify-content: center;
   margin-top: 50px;
 }
 

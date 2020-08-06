@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Merriweather:wght@300;400&family=Nunito:wght@700&display=swap');
-
 $sky: #00B8F2;
 $navy: #145196;
 $dark: #272727;
+
 
 /* --- START Universal theme definitions --- */
 * {
@@ -15,6 +15,7 @@ html,body {
   height: 100%;
   min-width: 100%;
   min-height: 100%;
+  scroll-behavior: smooth;
 }
 
 .content-wrapper {
@@ -64,9 +65,12 @@ p {
 }
 /* --- END Universal theme definitions --- */
 
+
 /* Page header and navigation */
 header {
-  position: relative;
+  // position: relative;
+  z-index: 99;
+  position: fixed;
   width: 100%;
   max-width: 100%;
   padding: 10px 0;
@@ -84,10 +88,14 @@ header {
     margin: 0 20px;
   }
   #login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: $navy;
     width: 100%;
     font-size: 100%;
     margin: 0 20px;
+    height: 80%;
     margin: auto;
   }
   #burger {
@@ -107,6 +115,7 @@ header {
   }
 }
 
+
 main {
   width: 100%;
   min-width: 100%;
@@ -115,7 +124,8 @@ main {
     padding-top: 80px;
   }
   section#home {
-    background: $dark;
+    background: #192839;
+    padding-top: 150px;
     #home-content {
       display: grid;
       grid-template-rows: 1fr 1fr;
@@ -220,26 +230,44 @@ main {
     }
   }
   section#testimonials {
-    background: $dark;
+    background: $navy;
     padding-bottom: 80px;
     #testimonials-content {
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
-    .testimonials {
-      display: flex;
-      flex-direction: column;
-      p {
+      #testimonials-title {
         color: white;
-        text-align: center;
-        margin: 30px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
       }
-    }
-    #cta-testimonials {
-      margin-top: 50px;
-      color: black;
-      background: white;
+      .testimonials {
+        display: flex;
+        flex-direction: column;
+        .testimonial-box {
+          padding: 30px;
+          border-radius: 3px;
+          margin-top: 30px;
+        }
+        .testimonial-box:nth-child(odd) {
+          background: $dark;
+          color: white;
+        }
+        .testimonial-box:nth-child(even) {
+          color: black;
+          background: white;
+        }
+        p {
+          text-align: center;
+        }
+      }
+      #cta-testimonials {
+        margin-top: 70px;
+        color: black;
+        background: white;
+      }
     }
   }
   section#ready {
@@ -265,6 +293,8 @@ main {
   }
 }
 
+
+// TODO: left-align footer text while keeping div centered
 footer {
   section#footer-links {
     background: #073062;
@@ -312,7 +342,9 @@ footer {
           }
         }
       }
-      img {
+      a {
+        display: flex;
+        justify-content: center;
         margin-top: 50px;
       }
     }
