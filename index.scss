@@ -112,7 +112,7 @@ main {
   min-width: 100%;
   max-width: 100%;
   section {
-    padding: 60px 10px;
+    padding-top: 80px;
   }
   section#home {
     background: $dark;
@@ -154,11 +154,13 @@ main {
       }
     }
     img {
+      position: relative;
+      top: 10%;
       width: 80%;
     }
   }
-  section#stories {
-    #stories-content {
+  section#acceptances {
+    #acceptances-content {
       display: grid;
       grid-template-rows: 1fr 8fr;
       justify-items: center;
@@ -219,6 +221,7 @@ main {
   }
   section#testimonials {
     background: $dark;
+    padding-bottom: 80px;
     #testimonials-content {
       display: flex;
       flex-direction: column;
@@ -240,6 +243,8 @@ main {
     }
   }
   section#ready {
+    background: #fff;
+    padding-bottom: 80px;
     #ready-content {
       display: flex;
       flex-direction: column;
@@ -255,6 +260,60 @@ main {
           margin-top: 20px;
           color: $sky;
         }
+      }
+    }
+  }
+}
+
+footer {
+  section#footer-links {
+    background: #073062;
+    display: flex;
+    padding: 40px 0;
+    justify-content: center;
+    #footer-links-content {
+      width: 70%;
+      display: grid;
+      justify-items: center;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-auto-flow: column;
+      a {
+        font-size: 16px;
+        margin: 10px 10px;
+        color: white;
+        font-family: Cabin, sans-serif;
+        font-weight: lighter;
+      }
+    }
+  }
+  section#contact {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+    background: #032246;
+    #contact-content {
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      & > div {
+        margin: 30px 0;
+        p {
+          text-align: center;
+          font-family: Cabin, sans-serif;
+          color: rgb(182, 182, 182);
+          &:nth-child(2) {
+            margin: 10px 0;
+          }
+          span {
+            color: #fff;
+            font-weight: bolder;
+          }
+        }
+      }
+      img {
+        margin-top: 50px;
       }
     }
   }

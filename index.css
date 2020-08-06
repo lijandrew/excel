@@ -108,7 +108,7 @@ main {
   max-width: 100%;
 }
 main section {
-  padding: 60px 10px;
+  padding-top: 80px;
 }
 main section#home {
   background: #272727;
@@ -151,18 +151,20 @@ main section#home #cta > div #cta-explore {
   font-weight: bold;
 }
 main section#home img {
+  position: relative;
+  top: 10%;
   width: 80%;
 }
-main section#stories #stories-content {
+main section#acceptances #acceptances-content {
   display: grid;
   grid-template-rows: 1fr 8fr;
   justify-items: center;
   align-items: center;
 }
-main section#stories h2, main section#stories p {
+main section#acceptances h2, main section#acceptances p {
   text-align: center;
 }
-main section#stories #school-grid {
+main section#acceptances #school-grid {
   margin-top: 50px;
   display: grid;
   grid-template-rows: 4;
@@ -173,7 +175,7 @@ main section#stories #school-grid {
   justify-items: center;
   align-items: center;
 }
-main section#stories #school-grid .school {
+main section#acceptances #school-grid .school {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -181,37 +183,37 @@ main section#stories #school-grid .school {
   width: 90%;
   height: 90%;
 }
-main section#stories #school-grid .school .front, main section#stories #school-grid .school .back {
+main section#acceptances #school-grid .school .front, main section#acceptances #school-grid .school .back {
   margin: auto;
   width: 90%;
   height: 90%;
 }
-main section#stories #school-grid .school .front {
+main section#acceptances #school-grid .school .front {
   transform: translate(5px, 5px);
 }
-main section#stories #school-grid .school .back {
+main section#acceptances #school-grid .school .back {
   position: absolute;
   transform: translate(-5px, -5px);
 }
-main section#stories #school-grid .school:nth-child(1) .front {
+main section#acceptances #school-grid .school:nth-child(1) .front {
   background: #8BB3DA;
 }
-main section#stories #school-grid .school:nth-child(1) .back {
+main section#acceptances #school-grid .school:nth-child(1) .back {
   border: 2px solid #8BB3DA;
 }
-main section#stories #school-grid .school:nth-child(2) .front {
+main section#acceptances #school-grid .school:nth-child(2) .front {
   background: #00356B;
 }
-main section#stories #school-grid .school:nth-child(2) .back {
+main section#acceptances #school-grid .school:nth-child(2) .back {
   border: 2px solid #00356B;
 }
-main section#stories #school-grid .school:nth-child(3) .front {
+main section#acceptances #school-grid .school:nth-child(3) .front {
   background: #A51C30;
 }
-main section#stories #school-grid .school:nth-child(3) .back {
+main section#acceptances #school-grid .school:nth-child(3) .back {
   border: 2px solid #A51C30;
 }
-main section#stories #school-grid #cta-acceptances {
+main section#acceptances #school-grid #cta-acceptances {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -219,6 +221,7 @@ main section#stories #school-grid #cta-acceptances {
 }
 main section#testimonials {
   background: #272727;
+  padding-bottom: 80px;
 }
 main section#testimonials #testimonials-content {
   display: flex;
@@ -239,6 +242,10 @@ main section#testimonials #cta-testimonials {
   color: black;
   background: white;
 }
+main section#ready {
+  background: #fff;
+  padding-bottom: 80px;
+}
 main section#ready #ready-content {
   display: flex;
   flex-direction: column;
@@ -255,6 +262,58 @@ main section#ready #ready-content > div #cta-enroll-bottom {
 main section#ready #ready-content > div #cta-explore-bottom {
   margin-top: 20px;
   color: #00B8F2;
+}
+
+footer section#footer-links {
+  background: #073062;
+  display: flex;
+  padding: 40px 0;
+  justify-content: center;
+}
+footer section#footer-links #footer-links-content {
+  width: 70%;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-auto-flow: column;
+}
+footer section#footer-links #footer-links-content a {
+  font-size: 16px;
+  margin: 10px 10px;
+  color: white;
+  font-family: Cabin, sans-serif;
+  font-weight: lighter;
+}
+footer section#contact {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  background: #032246;
+}
+footer section#contact #contact-content {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+footer section#contact #contact-content > div {
+  margin: 30px 0;
+}
+footer section#contact #contact-content > div p {
+  text-align: center;
+  font-family: Cabin, sans-serif;
+  color: #b6b6b6;
+}
+footer section#contact #contact-content > div p:nth-child(2) {
+  margin: 10px 0;
+}
+footer section#contact #contact-content > div p span {
+  color: #fff;
+  font-weight: bolder;
+}
+footer section#contact #contact-content img {
+  margin-top: 50px;
 }
 
 /*# sourceMappingURL=index.css.map */
