@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="index.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js" defer></script>
   <script src="index.js" defer></script>
   <title>Excel Academy of New York</title>
 </head>
@@ -13,16 +14,34 @@
   <div class="content-wrapper">
 
     <header>
+      <nav id="mobile-nav">
+        <div id="mobile-nav-bg"></div>
+        <div id="mobile-nav-links">
+          <a href="#"><span>Enroll</span></a>
+          <a href="#"><span>Courses<span></a>
+          <a href="#acceptances"><span>Acceptances<span></a>
+          <a href="#testimonials"><span>Testimonials<span></a>
+          <a href="#"><span>Calendar<span></a>
+          <a href="#"><span>About<span></a>
+          <a href="#contact"><span>Contact<span></a>
+        </div>
+      </nav>
       <a href="#"><img src="res/logo.svg" alt="Excel Academy logo"></a>
+      <nav id="desktop-nav">
+        <a href="#">Enroll</a>
+        <a href="#">Courses</a>
+        <a href="#acceptances">Acceptances</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#">Calendar</a>
+        <a href="#">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
       <a href="#" id="login" class="cta-btn">Login</a>
       <div id="burger">
         <div id="bar1"></div>
         <div id="bar2"></div>
         <div id="bar3"></div>
       </div>
-      <nav>
-        <!-- todo -->
-      </nav>
     </header>
     <main>
       <section id="home">
@@ -60,7 +79,11 @@
               <div class="back"></div>
               <div class="front"></div>
             </div>
-            <a href="#acceptances" id="cta-acceptances" class="cta-btn">All Acceptances</a>
+            <a href="#acceptances" id="cta-acceptances" class="cta-btn">
+              <img src="res/cap.svg" alt="graduation cap" id="cap">
+              <img src="res/diploma.svg" alt="diploma" id="diploma">
+              <span>All Acceptances</span>
+            </a>
           </div>
         </div>
       </section>
@@ -87,7 +110,11 @@
                  in your learning experience.</p>
             </div>
           </div>
-          <a href="#testimonials" id="cta-testimonials" class="cta-btn">All Testimonials</a>
+          <a href="#testimonials" id="cta-testimonials" class="cta-btn">
+            <img src="res/branch.svg" alt="branch with blue leaves" id="branch">
+            <img src="res/paper.svg" alt="paper with blue check mark" id="paper">
+            <span>All Testimonials</span>
+          </a>
         </div>
       </section>
       <section id="ready">
@@ -103,11 +130,10 @@
     <footer>
       <section id="footer-links">
         <div id="footer-links-content">
-          <a href="#">Enroll</a>
           <a href="#">Courses</a>
-          <a href="#">Calendar</a>
           <a href="#testimonials">Testimonials</a>
           <a href="#acceptances">Acceptances</a>
+          <a href="#">Calendar</a>
           <a href="#">About</a>
           <a href="#contact">Contact</a>
         </div>
@@ -135,6 +161,7 @@
         </div>
       </section>
     </footer>
+
   </div>
 </body>
 

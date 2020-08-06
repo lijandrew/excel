@@ -62,13 +62,12 @@ p {
 /* --- END Universal theme definitions --- */
 /* Page header and navigation */
 header {
-  z-index: 99;
   position: fixed;
+  z-index: 99;
   width: 100%;
   max-width: 100%;
-  padding: 10px 0;
   background: white;
-  display: flex;
+  padding: 10px 0;
   display: grid;
   grid-template-columns: 3fr 1fr 1fr;
   align-items: center;
@@ -80,6 +79,9 @@ header img {
   max-height: 90%;
   min-width: 100px;
   margin: 0 20px;
+}
+header nav#desktop-nav {
+  display: none;
 }
 header #login {
   display: flex;
@@ -93,6 +95,7 @@ header #login {
   margin: auto;
 }
 header #burger {
+  z-index: 1;
   width: 25px;
   max-width: 30px;
   min-width: 25px;
@@ -100,12 +103,57 @@ header #burger {
   margin: auto;
 }
 header #burger div {
+  position: absolute;
   background: black;
-  width: 100%;
+  width: 25px;
   height: 3px;
 }
-header #burger div:nth-child(2) {
-  margin: 5px 0;
+header #burger div:nth-child(1) {
+  transform: translate(0, -200%);
+}
+header #burger div:nth-child(3) {
+  transform: translate(0, 200%);
+}
+header nav#mobile-nav {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}
+header nav#mobile-nav #mobile-nav-bg {
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  background: #272727;
+}
+header nav#mobile-nav #mobile-nav-links {
+  width: min-content;
+  margin: auto;
+  height: 60%;
+  margin-top: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+header nav#mobile-nav a {
+  overflow: hidden;
+  color: white;
+  font-size: 50px;
+  font-family: Cabin, sans-serif;
+  font-weight: lighter;
+}
+header nav#mobile-nav a span {
+  position: relative;
+  top: 100%;
 }
 
 main {
@@ -221,10 +269,26 @@ main section#acceptances #school-grid .school:nth-child(3) .back {
   border: 2px solid #A51C30;
 }
 main section#acceptances #school-grid #cta-acceptances {
+  position: relative;
   display: flex;
+  padding: 20px 30px;
   justify-content: center;
   align-items: center;
   background: #272727;
+}
+main section#acceptances #school-grid #cta-acceptances #cap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(55%, -45%);
+  width: 45%;
+}
+main section#acceptances #school-grid #cta-acceptances #diploma {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(-35%, 30%);
+  width: 50%;
 }
 main section#testimonials {
   background: #145196;
@@ -263,9 +327,25 @@ main section#testimonials #testimonials-content .testimonials p {
   text-align: center;
 }
 main section#testimonials #testimonials-content #cta-testimonials {
+  position: relative;
+  padding: 20px 30px;
   margin-top: 70px;
   color: black;
   background: white;
+}
+main section#testimonials #testimonials-content #cta-testimonials #branch {
+  position: absolute;
+  width: 30%;
+  top: 0;
+  left: 0;
+  transform: translate(-60%, 0);
+}
+main section#testimonials #testimonials-content #cta-testimonials #paper {
+  position: absolute;
+  width: 30%;
+  bottom: 0;
+  right: 0;
+  transform: translate(55%, 40%);
 }
 main section#ready {
   background: #fff;
@@ -282,28 +362,26 @@ main section#ready #ready-content > div {
   flex-direction: column;
 }
 main section#ready #ready-content > div #cta-enroll-bottom {
-  background: #00B8F2;
+  background: #145196;
 }
 main section#ready #ready-content > div #cta-explore-bottom {
   margin-top: 20px;
-  color: #00B8F2;
+  color: #145196;
 }
 
 footer section#footer-links {
   background: #073062;
   display: flex;
-  padding: 40px 0;
+  padding: 20px 0;
   justify-content: center;
 }
 footer section#footer-links #footer-links-content {
-  width: 70%;
+  width: 80%;
   display: grid;
-  justify-items: center;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-auto-flow: column;
+  grid-template-columns: repeat(3, 1fr);
 }
 footer section#footer-links #footer-links-content a {
+  width: fit-content;
   font-size: 16px;
   margin: 10px 10px;
   color: white;
@@ -319,10 +397,14 @@ footer section#contact {
 footer section#contact #contact-content {
   width: 80%;
   display: flex;
-  justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
 footer section#contact #contact-content > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
   margin: 30px 0;
 }
 footer section#contact #contact-content > div p {
