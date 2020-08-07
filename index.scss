@@ -177,6 +177,7 @@ main {
   }
   .content {
     padding: 80px 0;
+    width: 80%;
   }
   section#home {
     background: #192839;
@@ -220,10 +221,34 @@ main {
         }
       }
     }
-    img {
-      width: 100%;
+    #home-svg {
+      margin: 0 !important;
+      position: relative;
+      align-self: center;
+      min-width: 250px;
       max-width: 350px;
-      margin: auto;
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      #phone-svg {
+        z-index: 0;
+        width: 50%;
+        max-width: 125px;
+        min-width: 45px;
+        position: absolute;
+        left: 30px;
+        transform: translate(-40%, -10%);
+        opacity: 0;
+      }
+      #reading-svg {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 250px;
+        min-width: 75px;
+        transform: translate(40%, 0);
+        opacity: 0;
+      }
     }
   }
   section#acceptances {
@@ -521,7 +546,7 @@ footer {
             margin-bottom: 0;
           }
         }
-        img {
+        #home-svg {
           margin: 0 !important;
           position: static;
           transform: translate(0, 10px);
@@ -530,6 +555,19 @@ footer {
           max-width: 450px;
           width: 100%;
           grid-column: 8 / -1;
+          border: 1px solid white;
+          #phone-svg {
+            width: 50%;
+            max-width: 175px;
+            min-width: 100px;
+            z-index: -1;
+            position: absolute;
+          }
+          #reading-svg {
+            width: 100%;
+            max-width: 350px;
+            min-width: 200px;
+          }
         }
       }
     }
