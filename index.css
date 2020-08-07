@@ -23,6 +23,7 @@ html, body {
 a {
   text-decoration: none;
   color: inherit;
+  white-space: nowrap;
 }
 
 .cta-btn {
@@ -147,6 +148,7 @@ header nav#mobile-nav a {
   font-size: 50px;
   font-family: Cabin, sans-serif;
   font-weight: lighter;
+  height: 100%;
 }
 header nav#mobile-nav a span {
   position: relative;
@@ -401,11 +403,12 @@ footer section#contact #contact-content > div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: fit-content;
   margin: 30px 0;
+  width: 100%;
 }
 footer section#contact #contact-content > div p {
   text-align: center;
+  white-space: nowrap;
   font-family: Cabin, sans-serif;
   color: #b6b6b6;
 }
@@ -415,6 +418,7 @@ footer section#contact #contact-content > div p:nth-child(2) {
 footer section#contact #contact-content > div p span {
   color: #fff;
   font-weight: bolder;
+  white-space: nowrap;
 }
 footer section#contact #contact-content a {
   display: flex;
