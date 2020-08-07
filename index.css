@@ -65,7 +65,16 @@ p {
 .content {
   width: 80%;
   margin: auto;
-  padding: 80px 0;
+  padding: 80px 8;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 14px;
+  opacity: 0.8;
 }
 
 header {
@@ -165,11 +174,11 @@ main section {
 }
 main section#home {
   background: #192839;
-  padding-top: 50px;
 }
 main section#home #home-content {
   display: flex;
   flex-direction: column;
+  padding-top: 70px;
   padding-bottom: 80px;
 }
 main section#home #cta {
@@ -223,8 +232,8 @@ main section#acceptances h2, main section#acceptances p {
 main section#acceptances #school-grid {
   margin-top: 50px;
   display: grid;
-  grid-template-rows: 4;
-  grid-template-columns: 1;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: 1fr;
   width: 100%;
   max-width: 350px;
   height: 800px;
@@ -251,22 +260,16 @@ main section#acceptances #school-grid .school .back {
   position: absolute;
   transform: translate(-5px, -5px);
 }
-main section#acceptances #school-grid .school:nth-child(1) .front {
-  background: #8BB3DA;
-}
-main section#acceptances #school-grid .school:nth-child(1) .back {
-  border: 2px solid #8BB3DA;
-}
-main section#acceptances #school-grid .school:nth-child(2) .front {
+main section#acceptances #school-grid .school:nth-child(odd) .front {
   background: #00356B;
 }
-main section#acceptances #school-grid .school:nth-child(2) .back {
+main section#acceptances #school-grid .school:nth-child(odd) .back {
   border: 2px solid #00356B;
 }
-main section#acceptances #school-grid .school:nth-child(3) .front {
+main section#acceptances #school-grid .school:nth-child(even) .front {
   background: #A51C30;
 }
-main section#acceptances #school-grid .school:nth-child(3) .back {
+main section#acceptances #school-grid .school:nth-child(even) .back {
   border: 2px solid #A51C30;
 }
 main section#acceptances #school-grid #cta-acceptances {
@@ -428,7 +431,7 @@ footer section#contact #contact-content a {
 
 @media only screen and (min-width: 992px) {
   p {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   h1 {
@@ -499,7 +502,7 @@ footer section#contact #contact-content a {
     padding-bottom: 100px;
   }
   main section#home #home-content #cta {
-    grid-column: 1/6;
+    grid-column: 1/7;
   }
   main section#home #home-content #cta > div {
     margin-bottom: 0;
@@ -507,11 +510,17 @@ footer section#contact #contact-content a {
   main section#home #home-content img {
     margin: 0 !important;
     position: static;
+    transform: translate(0, 10px);
     align-self: center;
     min-width: 350px;
     max-width: 450px;
     width: 100%;
     grid-column: 8/-1;
+  }
+  main section#acceptances #school-grid {
+    max-width: 1000px;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
