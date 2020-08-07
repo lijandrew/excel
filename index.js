@@ -15,13 +15,13 @@ let openMobileNavTl = gsap.timeline();
 openMobileNavTl.pause();
 openMobileNavTl.set(mobileNav, {display: "block"})
                .to("#mobile-nav-bg", {opacity: 1, duration: 0.3}, "mnavIn")
-               .to("#mobile-nav a span", {top: 0, duration: 0.3, stagger: {amount: 0.3}}, "mnavIn");
+               .to("#mobile-nav a span", {opacity: 1, transform: "translate(0, 0)", duration: 0.3, stagger: {amount: 0.3}}, "mnavIn");
 
 
 let closeMobileNavTl = gsap.timeline();
 closeMobileNavTl.pause();
 closeMobileNavTl.to("#mobile-nav-bg", {opacity: 0, duration: 0.2}, "mnavOut")
-                .to("#mobile-nav a span", {top: "100%", duration: 0.2}, "mnavOut")
+                .to("#mobile-nav a span", {opacity: 0, transform: "translate(0, 100%)", duration: 0.2}, "mnavOut")
                 .set(mobileNav, {display: "none"});
 
 burger.addEventListener("click", () => {
