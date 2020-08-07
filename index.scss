@@ -18,7 +18,7 @@ html,body {
   scroll-behavior: smooth;
 }
 
-.content-wrapper {
+.page-wrapper {
   width: 100%;
   height: 100%;
   min-width: 100%;
@@ -65,56 +65,52 @@ p {
 }
 /* --- END Universal theme definitions --- */
 
-/* Page header and navigation */
+/* Mobile */
+.content {
+  width: 80%;
+  margin: auto;
+  padding: 80px 0;
+}
 header {
   position: fixed;
   z-index: 99;
   width: 100%;
   max-width: 100%;
   background: white;
-  padding: 10px 0;
-  display: grid;
-  grid-template-columns: 3fr 1fr 1fr;
-  align-items: center;
-  justify-content: space-around;
-  img {
-    width: 80%;
-    max-width: 90%;
-    max-height: 90%;
-    min-width: 100px;
-    margin: 0 20px;
+  #header-content {
+    padding: 15px 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 3fr 1fr;
+    align-items: center;
+  }
+  #logo {
+    justify-self: flex-start;
+    img {
+      width: 100%;
+    }
   }
   nav#desktop-nav {
     display: none;
   }
   #login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: $navy;
-    width: 100%;
-    font-size: 100%;
-    margin: 0 20px;
-    height: 80%;
-    margin: auto;
+    display: none;
   }
   #burger {
     z-index: 1;
     width: 25px;
     max-width: 30px;
     min-width: 25px;
-    margin-right: 20px;
-    margin: auto;
+    justify-self: flex-end;
+    cursor: pointer;
     div {
-      position: absolute;
+      position: relative;
       background: black;
       width: 25px;
       height: 3px;
-      &:nth-child(1) {
-        transform: translate(0, -200%);
-      }
-      &:nth-child(3) {
-        transform: translate(0, 200%);
+      transform-origin: center;
+      &:nth-child(2) {
+        margin: 5px 0;
       }
     }
   }
@@ -171,21 +167,24 @@ main {
   }
   section#home {
     background: #192839;
-    padding-top: 150px;
+    padding-top: 50px;
     #home-content {
-      display: grid;
-      grid-template-rows: 1fr 1fr;
-      justify-items: center;
+      display: flex;
+      flex-direction: column;
+      // border: 1px solid white;
+      padding-bottom: 80px;
     }
     #cta {
       display: flex;
       flex-direction: column;
-      width: 70%;
+      width: 100%;
+      margin: auto;
       margin-top: 30px;
       background: url("res/leaves.svg");
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
+      max-width: 500px;
       h1 {
         color: white;
         margin-bottom: 40px;
@@ -210,9 +209,9 @@ main {
       }
     }
     img {
-      position: relative;
-      top: 10%;
-      width: 80%;
+      width: 100%;
+      max-width: 350px;
+      margin: auto;
     }
   }
   section#acceptances {
@@ -221,6 +220,7 @@ main {
       grid-template-rows: 1fr 8fr;
       justify-items: center;
       align-items: center;
+      // border: 1px solid black;
     }
     h2,p {
       text-align: center;
@@ -231,7 +231,7 @@ main {
       grid-template-rows: 4;
       grid-template-columns: 1;
       width: 100%;
-      max-width: 400px;
+      max-width: 350px;
       height: 800px;
       justify-items: center;
       align-items: center;
@@ -298,6 +298,7 @@ main {
       display: flex;
       flex-direction: column;
       align-items: center;
+      // border: 1px solid white;
       #testimonials-title {
         color: white;
         display: flex;
@@ -328,7 +329,7 @@ main {
       #cta-testimonials {
         position: relative;
         padding: 20px 30px;
-        margin-top: 70px;
+        margin-top: 80px;
         color: black;
         background: white;
         #branch {
@@ -355,6 +356,7 @@ main {
       display: flex;
       flex-direction: column;
       align-items: center;
+      // border: 1px solid black;
       & > div {
         margin-top: 50px;
         display: flex;
@@ -379,7 +381,6 @@ footer {
     padding: 20px 0;
     justify-content: center;
     #footer-links-content {
-      width: 80%;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       a {
@@ -398,13 +399,10 @@ footer {
     padding: 40px 0;
     background: #032246;
     #contact-content {
-      // border: 1px solid white;
-      width: 80%;
       display: flex;
       align-items: center;
       flex-direction: column;
       & > div {
-        // border: 1px solid white;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -427,6 +425,99 @@ footer {
         display: flex;
         justify-content: center;
         margin-top: 50px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  p {
+    font-size: 18px;
+  }
+  h1 {
+    white-space: nowrap;
+    font-size: 40px;
+  }
+  .content {
+    width: 70%;
+  }
+  header {
+    #mobile-nav,#burger { display: none; }
+    #header-content {
+      grid-template-columns: 2fr 4fr 1fr;
+      max-width: 1200px;
+    }
+    #logo {
+      // border: 1px solid black;
+      img {
+        // border: 1px solid black;
+        width: 100%;
+        min-width: 200px;
+      }
+    }
+    nav#desktop-nav {
+      justify-self: center;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin-left: 70px;
+      // border: 1px solid black;
+      width: 70%;
+      a {
+        // border: 1px solid blue;
+        font-size: 18px;
+        font-family: Cabin, sans-serif;
+        color: black;
+        font-weight: bolder;
+      }
+    }
+    #login {
+      display: flex;
+      justify-content: center;
+      justify-self: flex-end;
+      align-items: center;
+      background: $navy;
+      color: white;
+      width: 100%;
+      max-width: 125px;
+      font-size: 100%;
+      height: 80%;
+      max-height: 55px;
+      font-size: 20px;
+    }
+  }
+  main {
+    section#home {
+      background: url("res/filler.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 800px;
+      display: flex;
+      align-items: center;
+      #home-content {
+        max-width: 1200px;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 12px;
+        align-content: center;
+        padding-bottom: 100px;
+        #cta {
+          grid-column: 1 / 6;
+          & > div {
+            margin-bottom: 0;
+          }
+        }
+        img {
+          margin: 0 !important;
+          position: static;
+          align-self: center;
+          min-width: 350px;
+          max-width: 450px;
+          width: 100%;
+          grid-column: 8 / -1;
+        }
       }
     }
   }

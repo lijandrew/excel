@@ -5,11 +5,11 @@ let mobileNav = document.querySelector("nav#mobile-nav");
 let burgerTl = gsap.timeline();
 burgerTl.pause();
 burgerTl.to(burgerBars, {background: "white", duration: 0.1}, "b1")
-        .to(burgerBars[0], {transform: "translate(0, 0)", duration: 0.1}, "b1")
-        .to(burgerBars[1], {opacity: 0, duration: 0.1}, "b1")
-        .to(burgerBars[2], {transform: "translate(0, 0)", duration: 0.1}, "b1")
-        .to(burgerBars[0], {transform: "rotate(45deg)", duration: 0.1}, "b2")
-        .to(burgerBars[2], {transform: "rotate(-45deg)", duration: 0.1}, "b2");
+        .to(burgerBars[0], {transform: "translate(0, 100%)", duration: 0.1}, "b1")
+        .to(burgerBars[1], {margin: 0, opacity: 0, duration: 0.1}, "b1")
+        .to(burgerBars[2], {transform: "translate(0, -100%)", duration: 0.1}, "b1")
+        .to(burgerBars[0], {transform: "translate(0, 100%) rotate(45deg)", duration: 0.1}, "b2")
+        .to(burgerBars[2], {transform: "translate(0, -100%) rotate(-45deg)", duration: 0.1}, "b2");
 
 let openMobileNavTl = gsap.timeline();
 openMobileNavTl.pause();
@@ -36,3 +36,13 @@ burger.addEventListener("click", () => {
     closeMobileNavTl.restart();
   }
 });
+
+let mobileNavLinks = document.querySelectorAll("#mobile-nav-links > a");
+for (let link of Array.from(mobileNavLinks)) {
+  link.addEventListener("click", () => {
+    mobileNav.classList.remove("open");
+    burgerTl.reverse();
+    openMobileNavTl.pause();
+    closeMobileNavTl.restart();
+  });
+}
