@@ -134,7 +134,7 @@ header nav#mobile-nav #mobile-nav-bg {
 }
 header nav#mobile-nav #mobile-nav-links {
   position: absolute;
-  left: 30%;
+  left: 25%;
   top: 20%;
   height: 60%;
   display: flex;
