@@ -169,8 +169,8 @@ main {
   min-width: 100%;
   max-width: 100%;
 }
-main section {
-  padding-top: 80px;
+main .content {
+  padding: 80px 0;
 }
 main section#home {
   background: #192839;
@@ -178,8 +178,7 @@ main section#home {
 main section#home #home-content {
   display: flex;
   flex-direction: column;
-  padding-top: 70px;
-  padding-bottom: 80px;
+  padding-top: 150px;
 }
 main section#home #cta {
   display: flex;
@@ -242,22 +241,19 @@ main section#acceptances #school-grid {
 }
 main section#acceptances #school-grid .school {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 80%;
+  height: 80%;
   position: relative;
-  width: 90%;
-  height: 90%;
 }
 main section#acceptances #school-grid .school .front, main section#acceptances #school-grid .school .back {
-  margin: auto;
-  width: 90%;
-  height: 90%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 main section#acceptances #school-grid .school .front {
   transform: translate(5px, 5px);
 }
 main section#acceptances #school-grid .school .back {
-  position: absolute;
   transform: translate(-5px, -5px);
 }
 main section#acceptances #school-grid .school:nth-child(odd) .front {
@@ -271,6 +267,9 @@ main section#acceptances #school-grid .school:nth-child(even) .front {
 }
 main section#acceptances #school-grid .school:nth-child(even) .back {
   border: 2px solid #A51C30;
+}
+main section#acceptances #school-grid .school:nth-child(n+4):nth-child(-n+8) {
+  display: none;
 }
 main section#acceptances #school-grid #cta-acceptances {
   position: relative;
@@ -398,30 +397,29 @@ footer section#contact {
   background: #032246;
 }
 footer section#contact #contact-content {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(1, 4fr);
+  justify-items: center;
+  grid-gap: 20px;
 }
 footer section#contact #contact-content > div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 30px 0;
-  width: 100%;
+  width: fit-content;
 }
 footer section#contact #contact-content > div p {
   text-align: center;
-  white-space: nowrap;
   font-family: Cabin, sans-serif;
   color: #b6b6b6;
-}
-footer section#contact #contact-content > div p:nth-child(2) {
-  margin: 10px 0;
 }
 footer section#contact #contact-content > div p span {
   color: #fff;
   font-weight: bolder;
-  white-space: nowrap;
+}
+footer section#contact #contact-content .number {
+  margin-bottom: 50px;
 }
 footer section#contact #contact-content a {
   display: flex;
@@ -517,10 +515,84 @@ footer section#contact #contact-content a {
     width: 100%;
     grid-column: 8/-1;
   }
+  main section#acceptances #acceptances-content {
+    padding-bottom: 80px;
+  }
   main section#acceptances #school-grid {
     max-width: 1000px;
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(3, 1fr);
+  }
+  main section#acceptances #school-grid .school:nth-child(n+4):nth-child(-n+8) {
+    display: block;
+  }
+  main section#ready #ready-content > div {
+    flex-direction: row;
+    align-items: center;
+  }
+  main section#ready #ready-content > div #cta-explore-bottom {
+    margin-top: 0;
+    margin-left: 10px;
+  }
+  main section#ready #ready-content > div #cta-enroll-bottom {
+    margin-right: 10px;
+  }
+
+  footer section#footer-links #footer-links-content {
+    max-width: 1000px;
+    grid-template-rows: 1fr;
+    grid-template-columns: auto;
+    grid-auto-flow: column;
+    justify-items: center;
+  }
+  footer section#contact #contact-content {
+    max-width: 1000px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 50px;
+    grid-template-areas: "maddr saddr logo" "mnum  snum  email";
+  }
+  footer section#contact #contact-content p {
+    text-align: left !important;
+  }
+  footer section#contact #contact-content .address, footer section#contact #contact-content .number {
+    justify-self: flex-start;
+  }
+  footer section#contact #contact-content .address {
+    align-self: flex-start;
+  }
+  footer section#contact #contact-content .number {
+    margin-bottom: 0;
+    align-self: flex-end;
+  }
+  footer section#contact #contact-content .manhasset.address {
+    grid-area: maddr;
+  }
+  footer section#contact #contact-content .manhasset.number {
+    grid-area: mnum;
+  }
+  footer section#contact #contact-content .syosset.address {
+    grid-area: saddr;
+  }
+  footer section#contact #contact-content .syosset.number {
+    grid-area: snum;
+  }
+  footer section#contact #contact-content .email {
+    grid-area: email;
+    align-items: flex-end;
+    align-self: flex-end;
+    justify-self: flex-end;
+  }
+  footer section#contact #contact-content .email p:nth-child(2) {
+    margin: 0;
+  }
+  footer section#contact #contact-content #footer-logo-wrapper {
+    position: relative;
+    grid-area: logo;
+  }
+  footer section#contact #contact-content #footer-logo-wrapper img {
+    position: absolute;
+    top: 0;
   }
 }
 
