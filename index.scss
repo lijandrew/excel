@@ -4,7 +4,6 @@ $navy: #145196;
 $dark: #272727;
 
 
-/* --- START Universal theme definitions --- */
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +17,7 @@ html,body {
   scroll-behavior: smooth;
 }
 
-.page-wrapper {
+#page-wrapper {
   width: 100%;
   height: 100%;
   min-width: 100%;
@@ -64,21 +63,22 @@ p {
   font-size: 16px;
   line-height: 150%;
 }
-/* --- END Universal theme definitions --- */
 
-/* Mobile */
 .content {
   width: 80%;
   margin: auto;
   padding: 80px 8;
 }
+
 .title {
   font-weight: bold;
 }
+
 .subtitle {
   font-size: 14px;
   opacity: 0.8;
 }
+
 header {
   position: fixed;
   z-index: 99;
@@ -112,13 +112,15 @@ header {
     justify-self: flex-end;
     cursor: pointer;
     div {
-      position: relative;
+      display: block;
       background: black;
       width: 25px;
       height: 3px;
-      transform-origin: center;
-      &:nth-child(2) {
-        margin: 5px 0;
+      &:nth-child(1) {
+        transform: translate(0, -100%);
+      }
+      &:nth-child(3) {
+        transform: translate(0, 100%);
       }
     }
   }
@@ -146,35 +148,33 @@ header {
       left: 25%;
       top: 20%;
       height: 60%;
+      min-height: 350px;
+      overflow: scroll;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       align-items: flex-start;
-    }
-    a {
-      color: white;
-      font-size: 50px;
-      font-family: Cabin, sans-serif;
-      font-weight: lighter;
-      // border: 1px solid white;
-      height: 100%;
-      span {
-        // border: 1px solid white;
-        position: absolute;
-        opacity: 0;
-        transform: translate(0, 100%);
+      a {
+        position: relative;
+        color: white;
+        font-size: 50px;
+        font-family: Cabin, sans-serif;
+        font-weight: lighter;
+        overflow: hidden;
+        height: max-content;
+        div {
+          will-change: transform;
+          transform: translate(0, 100%);
+        }
       }
     }
   }
 }
 
-
 main {
   width: 100%;
   min-width: 100%;
   max-width: 100%;
-  section {
-  }
   .content {
     padding: 80px 0;
     width: 80%;
@@ -185,6 +185,7 @@ main {
       display: flex;
       flex-direction: column;
       padding-top: 150px; // adjust for fixed navbar
+      padding-bottom: 120px;
       // border: 1px solid white;
     }
     #cta {
@@ -222,6 +223,7 @@ main {
       }
     }
     #home-svg {
+      display: none;
       margin: 0 !important;
       position: relative;
       align-self: center;
@@ -231,6 +233,7 @@ main {
       display: flex;
       justify-content: center;
       #phone-svg {
+        display: none;
         z-index: 0;
         width: 50%;
         max-width: 125px;
@@ -241,6 +244,7 @@ main {
         opacity: 0;
       }
       #reading-svg {
+        display: none;
         position: relative;
         z-index: 2;
         width: 100%;
@@ -253,10 +257,10 @@ main {
   }
   section#acceptances {
     #acceptances-content {
-      display: grid;
-      grid-template-rows: 1fr 8fr;
-      justify-items: center;
+      display: flex;
+      flex-direction: column;
       align-items: center;
+      padding-bottom: 10px;
       // border: 1px solid black;
     }
     h2,p {
@@ -326,7 +330,7 @@ main {
   }
   section#testimonials {
     background: $navy;
-    padding-bottom: 80px;
+    // padding-bottom: 80px;
     #testimonials-content {
       display: flex;
       flex-direction: column;
@@ -384,7 +388,6 @@ main {
   }
   section#ready {
     background: #fff;
-    padding-bottom: 80px;
     #ready-content {
       display: flex;
       flex-direction: column;
@@ -416,10 +419,11 @@ footer {
     #footer-links-content {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
       a {
         width: fit-content;
         font-size: 16px;
-        margin: 10px 10px;
+        margin: 2% auto;
         color: white;
         font-family: Cabin, sans-serif;
         font-weight: lighter;
@@ -547,6 +551,7 @@ footer {
           }
         }
         #home-svg {
+          display: block;
           margin: 0 !important;
           position: static;
           transform: translate(0, 10px);
@@ -555,18 +560,25 @@ footer {
           max-width: 450px;
           width: 100%;
           grid-column: 8 / -1;
-          border: 1px solid white;
           #phone-svg {
+            display: block;
+            opacity: 0;
             width: 50%;
             max-width: 175px;
             min-width: 100px;
             z-index: -1;
             position: absolute;
+            transform: translate(-40%, -10%);
+            animation: phoneIn 800ms 300ms ease-out forwards;
           }
           #reading-svg {
+            display: block;
+            opacity: 0;
+            transform: translate(40%, 0);
             width: 100%;
             max-width: 350px;
             min-width: 200px;
+            animation: readingIn 800ms 300ms ease-out forwards;
           }
         }
       }
@@ -585,9 +597,6 @@ footer {
           }
         }
       }
-    }
-    section#testimonials {
-
     }
     section#ready {
       #ready-content {
@@ -609,14 +618,16 @@ footer {
     section#footer-links {
       #footer-links-content {
         max-width: 1000px;
-        grid-template-rows: 1fr;
-        grid-template-columns: auto;
-        grid-auto-flow: column;
-        justify-items: center;
+        display: flex;
+        justify-content: space-between;
+        a {
+          margin: 0;
+        }
       }
     }
     section#contact {
       #contact-content {
+        padding-top: 20px;
         max-width: 1000px;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(2, 1fr);
@@ -661,12 +672,36 @@ footer {
         #footer-logo-wrapper {
           position: relative;
           grid-area: logo;
+          width: 100%;
+          height: 100%;
           img {
             position: absolute;
             top: 0;
+            right: 0;
           }
         }
       }
     }
+  }
+}
+
+@keyframes phoneIn {
+  0% {
+    opacity: 0;
+    transform: translate(-40%, -10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-20%, -10%);
+  }
+}
+@keyframes readingIn {
+  0% {
+    opacity: 0;
+    transform: translate(40%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(20%, 0);
   }
 }

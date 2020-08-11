@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Merriweather:wght@300;400&family=Nunito:wght@700&display=swap");
-/* --- START Universal theme definitions --- */
 * {
   margin: 0;
   padding: 0;
@@ -60,8 +59,6 @@ p {
   line-height: 150%;
 }
 
-/* --- END Universal theme definitions --- */
-/* Mobile */
 .content {
   width: 80%;
   margin: auto;
@@ -112,14 +109,16 @@ header #burger {
   cursor: pointer;
 }
 header #burger div {
-  position: relative;
+  display: block;
   background: black;
   width: 25px;
   height: 3px;
-  transform-origin: center;
 }
-header #burger div:nth-child(2) {
-  margin: 5px 0;
+header #burger div:nth-child(1) {
+  transform: translate(0, -100%);
+}
+header #burger div:nth-child(3) {
+  transform: translate(0, 100%);
 }
 header nav#mobile-nav {
   display: none;
@@ -146,21 +145,24 @@ header nav#mobile-nav #mobile-nav-links {
   left: 25%;
   top: 20%;
   height: 60%;
+  min-height: 350px;
+  overflow: scroll;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
 }
-header nav#mobile-nav a {
+header nav#mobile-nav #mobile-nav-links a {
+  position: relative;
   color: white;
   font-size: 50px;
   font-family: Cabin, sans-serif;
   font-weight: lighter;
-  height: 100%;
+  overflow: hidden;
+  height: max-content;
 }
-header nav#mobile-nav a span {
-  position: absolute;
-  opacity: 0;
+header nav#mobile-nav #mobile-nav-links a div {
+  will-change: transform;
   transform: translate(0, 100%);
 }
 
@@ -180,6 +182,7 @@ main section#home #home-content {
   display: flex;
   flex-direction: column;
   padding-top: 150px;
+  padding-bottom: 120px;
 }
 main section#home #cta {
   display: flex;
@@ -216,6 +219,7 @@ main section#home #cta > div #cta-explore {
   font-weight: bold;
 }
 main section#home #home-svg {
+  display: none;
   margin: 0 !important;
   position: relative;
   align-self: center;
@@ -226,6 +230,7 @@ main section#home #home-svg {
   justify-content: center;
 }
 main section#home #home-svg #phone-svg {
+  display: none;
   z-index: 0;
   width: 50%;
   max-width: 125px;
@@ -236,6 +241,7 @@ main section#home #home-svg #phone-svg {
   opacity: 0;
 }
 main section#home #home-svg #reading-svg {
+  display: none;
   position: relative;
   z-index: 2;
   width: 100%;
@@ -245,10 +251,10 @@ main section#home #home-svg #reading-svg {
   opacity: 0;
 }
 main section#acceptances #acceptances-content {
-  display: grid;
-  grid-template-rows: 1fr 8fr;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  padding-bottom: 10px;
 }
 main section#acceptances h2, main section#acceptances p {
   text-align: center;
@@ -320,7 +326,6 @@ main section#acceptances #school-grid #cta-acceptances #diploma {
 }
 main section#testimonials {
   background: #145196;
-  padding-bottom: 80px;
 }
 main section#testimonials #testimonials-content {
   display: flex;
@@ -377,7 +382,6 @@ main section#testimonials #testimonials-content #cta-testimonials #paper {
 }
 main section#ready {
   background: #fff;
-  padding-bottom: 80px;
 }
 main section#ready #ready-content {
   display: flex;
@@ -406,11 +410,12 @@ footer section#footer-links {
 footer section#footer-links #footer-links-content {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
 }
 footer section#footer-links #footer-links-content a {
   width: fit-content;
   font-size: 16px;
-  margin: 10px 10px;
+  margin: 2% auto;
   color: white;
   font-family: Cabin, sans-serif;
   font-weight: lighter;
@@ -531,6 +536,7 @@ footer section#contact #contact-content a {
     margin-bottom: 0;
   }
   main section#home #home-content #home-svg {
+    display: block;
     margin: 0 !important;
     position: static;
     transform: translate(0, 10px);
@@ -539,19 +545,26 @@ footer section#contact #contact-content a {
     max-width: 450px;
     width: 100%;
     grid-column: 8/-1;
-    border: 1px solid white;
   }
   main section#home #home-content #home-svg #phone-svg {
+    display: block;
+    opacity: 0;
     width: 50%;
     max-width: 175px;
     min-width: 100px;
     z-index: -1;
     position: absolute;
+    transform: translate(-40%, -10%);
+    animation: phoneIn 800ms 300ms ease-out forwards;
   }
   main section#home #home-content #home-svg #reading-svg {
+    display: block;
+    opacity: 0;
+    transform: translate(40%, 0);
     width: 100%;
     max-width: 350px;
     min-width: 200px;
+    animation: readingIn 800ms 300ms ease-out forwards;
   }
   main section#acceptances #acceptances-content {
     padding-bottom: 80px;
@@ -578,12 +591,14 @@ footer section#contact #contact-content a {
 
   footer section#footer-links #footer-links-content {
     max-width: 1000px;
-    grid-template-rows: 1fr;
-    grid-template-columns: auto;
-    grid-auto-flow: column;
-    justify-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  footer section#footer-links #footer-links-content a {
+    margin: 0;
   }
   footer section#contact #contact-content {
+    padding-top: 20px;
     max-width: 1000px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -627,10 +642,33 @@ footer section#contact #contact-content a {
   footer section#contact #contact-content #footer-logo-wrapper {
     position: relative;
     grid-area: logo;
+    width: 100%;
+    height: 100%;
   }
   footer section#contact #contact-content #footer-logo-wrapper img {
     position: absolute;
     top: 0;
+    right: 0;
+  }
+}
+@keyframes phoneIn {
+  0% {
+    opacity: 0;
+    transform: translate(-40%, -10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-20%, -10%);
+  }
+}
+@keyframes readingIn {
+  0% {
+    opacity: 0;
+    transform: translate(40%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(20%, 0);
   }
 }
 
