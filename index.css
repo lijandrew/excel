@@ -2,6 +2,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html, body {
@@ -12,11 +13,8 @@ html, body {
   scroll-behavior: smooth;
 }
 
-#page-wrapper {
-  width: 100%;
-  height: 100%;
-  min-width: 100%;
-  min-height: 100%;
+body.nav-open {
+  overflow: hidden;
 }
 
 a {
@@ -75,7 +73,6 @@ p {
 }
 
 header {
-  position: fixed;
   z-index: 99;
   width: 100%;
   max-width: 100%;
@@ -101,7 +98,7 @@ header #login {
   display: none;
 }
 header #burger {
-  z-index: 1;
+  z-index: 100;
   width: 25px;
   max-width: 30px;
   min-width: 25px;
@@ -126,6 +123,7 @@ header nav#mobile-nav {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 99;
   width: 100%;
   height: 100%;
   min-width: 100%;
@@ -184,16 +182,25 @@ main .leaves {
 }
 main section#home {
   position: relative;
-  background-color: #192839;
 }
-main section#home video {
-  display: none;
+main section#home #video-wrapper {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+main section#home #video-wrapper video {
+  position: relative;
+  min-height: 100%;
+  min-width: 100%;
+  transform: translate(-40%, 0);
 }
 main section#home #home-content {
   display: flex;
   flex-direction: column;
-  padding-top: 150px;
-  padding-bottom: 120px;
 }
 main section#home #cta {
   display: flex;
@@ -220,7 +227,7 @@ main section#home #cta > div #cta-enroll {
 }
 main section#home #cta > div #cta-explore {
   display: inline-block;
-  margin-left: 20px;
+  margin-left: 30px;
   color: #00B8F2;
   font-family: Cabin, sans-serif;
   font-weight: bold;
@@ -361,23 +368,35 @@ main section#testimonials #testimonials-content .testimonials .testimonial-box {
   padding: 30px;
   border-radius: 3px;
   margin-top: 30px;
+  max-width: 375px;
 }
 main section#testimonials #testimonials-content .testimonials .testimonial-box .pfp {
   display: none;
 }
 main section#testimonials #testimonials-content .testimonials .testimonial-box .pfp-name {
   margin-bottom: 20px;
-  font-size: 18px;
+  font-size: 22px;
   text-align: center;
   font-family: Cabin, sans-serif;
+}
+main section#testimonials #testimonials-content .testimonials .testimonial-box p {
+  text-align: left;
 }
 main section#testimonials #testimonials-content .testimonials .testimonial-box:nth-child(odd) {
   background: #272727;
   color: white;
 }
+main section#testimonials #testimonials-content .testimonials .testimonial-box:nth-child(odd) p span {
+  color: #00B8F2;
+  font-weight: bold;
+}
 main section#testimonials #testimonials-content .testimonials .testimonial-box:nth-child(even) {
   color: black;
   background: white;
+}
+main section#testimonials #testimonials-content .testimonials .testimonial-box:nth-child(even) p span {
+  color: #145196;
+  font-weight: bold;
 }
 main section#testimonials #testimonials-content .testimonials p {
   text-align: center;
@@ -407,22 +426,27 @@ main section#ready {
   position: relative;
   background: #fff;
 }
+main section#ready img {
+  display: none;
+}
 main section#ready #ready-content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 main section#ready #ready-content > div {
+  margin-right: 10px;
   margin-top: 50px;
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 main section#ready #ready-content > div #cta-enroll-bottom {
-  background: #145196;
+  background: #00B8F2;
 }
 main section#ready #ready-content > div #cta-explore-bottom {
   margin-top: 20px;
-  color: #145196;
+  color: #00B8F2;
 }
 
 footer section#footer-links {
@@ -554,17 +578,11 @@ footer section#contact #contact-content a {
     display: flex;
     align-items: center;
   }
-  main section#home video {
-    z-index: -2;
-    display: block !important;
-    opacity: 1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+  main section#home #video-wrapper video {
+    transform: translate(0, 0);
   }
   main section#home #home-content {
-    max-width: 1200px;
+    max-width: 1000px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 1fr;
@@ -624,7 +642,7 @@ footer section#contact #contact-content a {
     flex-direction: row !important;
   }
   main section#testimonials .testimonials .testimonial-box {
-    height: 350px;
+    max-width: 300px !important;
   }
   main section#testimonials .testimonials .testimonial-box .pfp, main section#testimonials .testimonials .testimonial-box .pfp-name {
     display: block !important;
@@ -658,22 +676,32 @@ footer section#contact #contact-content a {
   main section#testimonials .testimonials .testimonial-box:nth-child(2) .pfp div {
     color: white;
   }
+  main section#ready img {
+    display: block !important;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    width: 25%;
+    max-width: 350px;
+  }
+  main section#ready #ready-content {
+    padding: 160px 0;
+  }
   main section#ready #ready-content > div {
+    margin-top: 80px;
     flex-direction: row;
     align-items: center;
   }
   main section#ready #ready-content > div #cta-explore-bottom {
     margin-top: 0;
-    margin-left: 10px;
-  }
-  main section#ready #ready-content > div #cta-enroll-bottom {
-    margin-right: 10px;
+    margin-left: 40px;
   }
 
   footer section#footer-links #footer-links-content {
     max-width: 1000px;
     display: flex;
     justify-content: space-between;
+    padding: 5px 0;
   }
   footer section#footer-links #footer-links-content a {
     margin: 0;

@@ -1,7 +1,7 @@
 
 function setupMobileAni() {
   "use strict";
-  let pageWrapper = document.querySelector("#page-wrapper");
+  let body = document.querySelector("body");
   let burger = document.querySelector("#burger");
   let burgerBars = burger.querySelectorAll("#burger > div");
   let mobileNav = document.querySelector("nav#mobile-nav");
@@ -29,6 +29,7 @@ function setupMobileAni() {
 
   burger.addEventListener("click", () => {
     mobileNav.classList.toggle("open");
+    body.classList.toggle("nav-open");
     if (mobileNav.classList.contains("open")) {
       // pageWrapper.style.overflow = "hidden";
       burgerTl.restart();

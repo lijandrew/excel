@@ -7,6 +7,7 @@ $dark: #272727;
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html,body {
@@ -17,11 +18,8 @@ html,body {
   scroll-behavior: smooth;
 }
 
-#page-wrapper {
-  width: 100%;
-  height: 100%;
-  min-width: 100%;
-  min-height: 100%;
+body.nav-open {
+  overflow: hidden;
 }
 
 a {
@@ -80,7 +78,7 @@ p {
 }
 
 header {
-  position: fixed;
+  // position: fixed;
   z-index: 99;
   width: 100%;
   max-width: 100%;
@@ -105,7 +103,7 @@ header {
     display: none;
   }
   #burger {
-    z-index: 1;
+    z-index: 100;
     width: 25px;
     max-width: 30px;
     min-width: 25px;
@@ -130,6 +128,7 @@ header {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 99;
     width: 100%;
     height: 100%;
     min-width: 100%;
@@ -188,24 +187,34 @@ main {
   }
   section#home {
     position: relative;
-    background-color: #192839;
-    video {
-      display: none;
+    #video-wrapper {
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      video {
+        position: relative;
+        min-height: 100%;
+        min-width: 100%;
+        transform: translate(-40%, 0);
+      }
     }
     #home-content {
       display: flex;
       flex-direction: column;
-      padding-top: 150px; // adjust for fixed navbar
-      padding-bottom: 120px;
-      // border: 1px solid white;
     }
     #cta {
       display: flex;
       flex-direction: column;
+      // align-items: center;
       width: 100%;
       margin: auto;
       margin-top: 30px;
       max-width: 500px;
+      // text-align: center;
       h1 {
         color: white;
         margin-bottom: 40px;
@@ -222,7 +231,7 @@ main {
         }
         #cta-explore {
           display: inline-block;
-          margin-left: 20px;
+          margin-left: 30px;
           color: $sky;
           font-family: Cabin, sans-serif;
           font-weight: bold;
@@ -363,23 +372,35 @@ main {
           padding: 30px;
           border-radius: 3px;
           margin-top: 30px;
+          max-width: 375px;
           .pfp {
             display: none;
           }
           .pfp-name {
             margin-bottom: 20px;
-            font-size: 18px;
+            font-size: 22px;
             text-align: center;
             font-family: Cabin, sans-serif;
+          }
+          p {
+            text-align: left;
           }
         }
         .testimonial-box:nth-child(odd) {
           background: $dark;
           color: white;
+          p span {
+            color: $sky;
+            font-weight: bold;
+          }
         }
         .testimonial-box:nth-child(even) {
           color: black;
           background: white;
+          p span {
+            color: $navy;
+            font-weight: bold;
+          }
         }
         p {
           text-align: center;
@@ -411,21 +432,25 @@ main {
   section#ready {
     position: relative;
     background: #fff;
+    img {
+      display: none;
+    }
     #ready-content {
       display: flex;
       flex-direction: column;
       align-items: center;
-      // border: 1px solid black;
       & > div {
+        margin-right: 10px;
         margin-top: 50px;
         display: flex;
         flex-direction: column;
+        text-align: center;
         #cta-enroll-bottom {
-          background: $navy;
+          background: $sky;
         }
         #cta-explore-bottom {
           margin-top: 20px;
-          color: $navy;
+          color: $sky;
         }
       }
     }
@@ -568,17 +593,11 @@ footer {
       height: 800px;
       display: flex;
       align-items: center;
-      video {
-        z-index: -2;
-        display: block !important;
-        opacity: 1;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
+      #video-wrapper video {
+        transform: translate(0, 0);
       }
       #home-content {
-        max-width: 1200px;
+        max-width: 1000px;
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: 1fr;
@@ -643,7 +662,7 @@ footer {
       .testimonials {
         flex-direction: row !important;
         .testimonial-box {
-          height: 350px;
+          max-width: 300px !important;
           .pfp,.pfp-name {
             display: block !important;
             font-family: Cabin, sans-serif;
@@ -678,16 +697,23 @@ footer {
       }
     }
     section#ready {
+      img {
+        display: block !important;
+        position: absolute;
+        left: 20px;
+        bottom: 20px;
+        width: 25%;
+        max-width: 350px;
+      }
       #ready-content {
+        padding: 160px 0;
         & > div {
+          margin-top: 80px;
           flex-direction: row;
           align-items: center;
           #cta-explore-bottom {
             margin-top: 0;
-            margin-left: 10px;
-          }
-          #cta-enroll-bottom {
-            margin-right: 10px;
+            margin-left: 40px;
           }
         }
       }
@@ -699,6 +725,7 @@ footer {
         max-width: 1000px;
         display: flex;
         justify-content: space-between;
+        padding: 5px 0;
         a {
           margin: 0;
         }
