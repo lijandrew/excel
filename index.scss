@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Merriweather:wght@300;400&family=Nunito:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Merriweather:wght@300;400&display=swap');
 $sky: #00B8F2;
 $navy: #145196;
 $dark: #272727;
@@ -30,6 +30,7 @@ a {
 
 .cta-btn {
   display: inline-block;
+  user-select: none;
   text-align: center;
   box-sizing: border-box;
   border-radius: 5px;
@@ -93,6 +94,7 @@ header {
   #logo {
     justify-self: flex-start;
     img {
+      user-select: none;
       width: 100%;
     }
   }
@@ -104,6 +106,7 @@ header {
   }
   #burger {
     z-index: 100;
+    user-select: none;
     width: 25px;
     max-width: 30px;
     min-width: 25px;
@@ -125,6 +128,7 @@ header {
   }
   nav#mobile-nav {
     display: none;
+    user-select: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -184,6 +188,7 @@ main {
   }
   .leaves {
     display: none;
+    user-select: none;
   }
   section#home {
     position: relative;
@@ -240,6 +245,7 @@ main {
     }
     #home-svg {
       display: none;
+      user-select: none;
       margin: 0 !important;
       position: relative;
       align-self: center;
@@ -334,7 +340,7 @@ main {
           opacity: 0;
           transform: translate(0, 0);
         }
-        $schoolColors: #A51C30, #B31B1B, #8BB3DA, #54301A, #B00836, #00205B, #A80532, #00356B;
+        $schoolColors: #A51C30, #8BB3DA, #B31B1B, #54301A, #B00836, #00205B, #A80532, #00356B;
         @for $i from 1 through 8 {
           &:nth-child(#{$i}) {
             .front { background: nth($schoolColors, $i)}
@@ -710,6 +716,7 @@ footer {
     section#ready {
       img {
         display: block !important;
+        user-select: none;
         position: absolute;
         left: 20px;
         bottom: 20px;

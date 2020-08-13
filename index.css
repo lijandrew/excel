@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Merriweather:wght@300;400&family=Nunito:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Merriweather:wght@300;400&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -25,6 +25,7 @@ a {
 
 .cta-btn {
   display: inline-block;
+  user-select: none;
   text-align: center;
   box-sizing: border-box;
   border-radius: 5px;
@@ -89,6 +90,7 @@ header #logo {
   justify-self: flex-start;
 }
 header #logo img {
+  user-select: none;
   width: 100%;
 }
 header nav#desktop-nav {
@@ -99,6 +101,7 @@ header #login {
 }
 header #burger {
   z-index: 100;
+  user-select: none;
   width: 25px;
   max-width: 30px;
   min-width: 25px;
@@ -120,6 +123,7 @@ header #burger div:nth-child(3) {
 }
 header nav#mobile-nav {
   display: none;
+  user-select: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -179,6 +183,7 @@ main .content {
 }
 main .leaves {
   display: none;
+  user-select: none;
 }
 main section#home {
   position: relative;
@@ -234,6 +239,7 @@ main section#home #cta > div #cta-explore {
 }
 main section#home #home-svg {
   display: none;
+  user-select: none;
   margin: 0 !important;
   position: relative;
   align-self: center;
@@ -336,16 +342,16 @@ main section#acceptances #school-grid .school:nth-child(1) .back {
   border: 2px solid #A51C30;
 }
 main section#acceptances #school-grid .school:nth-child(2) .front {
-  background: #B31B1B;
-}
-main section#acceptances #school-grid .school:nth-child(2) .back {
-  border: 2px solid #B31B1B;
-}
-main section#acceptances #school-grid .school:nth-child(3) .front {
   background: #8BB3DA;
 }
-main section#acceptances #school-grid .school:nth-child(3) .back {
+main section#acceptances #school-grid .school:nth-child(2) .back {
   border: 2px solid #8BB3DA;
+}
+main section#acceptances #school-grid .school:nth-child(3) .front {
+  background: #B31B1B;
+}
+main section#acceptances #school-grid .school:nth-child(3) .back {
+  border: 2px solid #B31B1B;
 }
 main section#acceptances #school-grid .school:nth-child(4) .front {
   background: #54301A;
@@ -722,6 +728,7 @@ footer section#contact #contact-content a {
   }
   main section#ready img {
     display: block !important;
+    user-select: none;
     position: absolute;
     left: 20px;
     bottom: 20px;
