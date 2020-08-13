@@ -612,7 +612,7 @@ footer section#contact #contact-content a {
     min-width: 200px;
   }
   header nav#desktop-nav {
-    justify-self: flex-end;
+    justify-self: center;
     display: flex;
     align-items: center;
     justify-content: space-around;
