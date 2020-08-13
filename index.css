@@ -113,7 +113,6 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 100px;
   font-family: Cabin, sans-serif;
 }
 .cta-group .cta-enroll {
@@ -582,6 +581,9 @@ main section#ready #ready-content {
   flex-direction: column;
   align-items: center;
 }
+main section#ready #ready-content .cta-group {
+  margin-top: 50px;
+}
 main section#ready #ready-content .link::after {
   background: black;
 }
@@ -824,10 +826,8 @@ footer section#contact #contact-content a {
   main section#ready #ready-content {
     padding: 160px 0;
   }
-  main section#ready #ready-content > div {
+  main section#ready #ready-content .cta-group {
     margin-top: 80px;
-    flex-direction: row;
-    align-items: center;
   }
 
   footer section#footer-links #footer-links-content {

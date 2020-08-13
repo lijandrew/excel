@@ -118,7 +118,6 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 100px;
   font-family: Cabin, sans-serif;
   .cta-enroll {
     background: $sky;
@@ -545,6 +544,9 @@ main {
       display: flex;
       flex-direction: column;
       align-items: center;
+      .cta-group {
+        margin-top: 50px;
+      }
       .link::after {
         background: black;
       }
@@ -808,10 +810,8 @@ footer {
       }
       #ready-content {
         padding: 160px 0;
-        & > div {
+        .cta-group {
           margin-top: 80px;
-          flex-direction: row;
-          align-items: center;
         }
       }
     }
