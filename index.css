@@ -24,15 +24,63 @@ a {
 }
 
 .cta-btn {
-  display: inline-block;
+  position: relative;
+  display: flex;
   user-select: none;
   text-align: center;
   box-sizing: border-box;
-  border-radius: 5px;
+  border-radius: 3px;
   font-family: Cabin, sans-serif;
   font-weight: bold;
   color: white;
   padding: 15px 25px;
+}
+.cta-btn .fill-circle-wrapper {
+  z-index: 0 !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 3px;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.cta-btn .fill-circle-wrapper .fill-circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 250%;
+  border-radius: 50%;
+  background: #272727;
+  width: 0;
+  opacity: 0;
+  will-change: width, opacity;
+  transition: width 200ms ease-out, opacity 200ms ease-out;
+}
+.cta-btn span {
+  display: block !important;
+  z-index: 1 !important;
+  will-change: transform, opacity;
+  transition: transform 200ms ease-out, opacity 200ms ease-out;
+}
+.cta-btn .lower {
+  position: absolute;
+  transform: translate(0, 100%);
+  opacity: 0;
+}
+
+.cta-btn:hover .fill-circle {
+  width: 180%;
+  opacity: 1;
+}
+.cta-btn:hover .upper {
+  transform: translate(0, -100%);
+  opacity: 0;
+}
+.cta-btn:hover .lower {
+  transform: translate(0, 0);
+  opacity: 1;
 }
 
 .cta-link {
@@ -390,12 +438,9 @@ main section#acceptances #school-grid .school:nth-child(n+4):nth-child(-n+8) {
   display: none;
 }
 main section#acceptances #school-grid #cta-acceptances {
-  position: relative;
-  display: flex;
   padding: 20px 30px;
-  justify-content: center;
-  align-items: center;
   background: #272727;
+  border: 2px solid #272727;
 }
 main section#acceptances #school-grid #cta-acceptances #cap {
   position: absolute;
@@ -410,6 +455,12 @@ main section#acceptances #school-grid #cta-acceptances #diploma {
   left: 0;
   transform: translate(-35%, 30%);
   width: 50%;
+}
+main section#acceptances #school-grid #cta-acceptances .fill-circle {
+  background: white;
+}
+main section#acceptances #school-grid #cta-acceptances .lower {
+  color: black;
 }
 main section#testimonials {
   position: relative;
@@ -468,7 +519,6 @@ main section#testimonials #testimonials-content .testimonials p {
   text-align: center;
 }
 main section#testimonials #testimonials-content #cta-testimonials {
-  position: relative;
   padding: 20px 30px;
   margin-top: 80px;
   color: black;
@@ -487,6 +537,9 @@ main section#testimonials #testimonials-content #cta-testimonials #paper {
   bottom: 0;
   right: 0;
   transform: translate(55%, 40%);
+}
+main section#testimonials #testimonials-content #cta-testimonials .lower {
+  color: white;
 }
 main section#ready {
   position: relative;
@@ -640,6 +693,8 @@ footer section#contact #contact-content a {
   }
   header #login {
     display: flex;
+    flex-direction: column;
+    color: black;
     justify-content: center;
     justify-self: flex-end;
     align-items: center;
