@@ -55,6 +55,38 @@ function setupMobileAni() {
 }
 
 function setupScrollAni() {
+  let schoolTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#school-grid",
+      start: "20% bottom",
+    }
+  });
+  schoolTl.add( countSchoolsUp, "schoolIn" )
+          .to(".front", {opacity: 1, ease: "power2.inOut", stagger: {amount: 0.5}}, "schoolIn")
+          .to(".back", {opacity: 1, duration: 1.5, transform: "translate(-5px, -5px)", ease: "power4.out"});
+
+  gsap.to(".testimonial-box", {opacity: 1, ease: "power2.out", stagger: {amount: 0.5},
+    scrollTrigger: {
+      trigger: ".testimonials",
+      start: "20% bottom",
+    }
+  });
+}
+
+function countSchoolsUp() {
+  let countDivArr = Array.from(document.querySelectorAll(".school-count"));
+  for (let countDiv of countDivArr) {
+    let target = parseInt(countDiv.textContent);
+    let totalTime = 1500;
+    let interval = totalTime / target;
+    let current = -1;
+    let countUp = setInterval(() => {
+      countDiv.textContent = ++current;
+      if (current === target) {
+        clearInterval(countUp);
+      }
+    }, interval);
+  }
 }
 
 function main() {

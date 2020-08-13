@@ -299,11 +299,13 @@ main section#acceptances #school-grid .school {
   position: relative;
 }
 main section#acceptances #school-grid .school .front, main section#acceptances #school-grid .school .back {
+  will-change: opacity, transform;
   position: absolute;
   width: 100%;
   height: 100%;
 }
 main section#acceptances #school-grid .school .front {
+  opacity: 0;
   transform: translate(5px, 5px);
   color: white;
   text-align: center;
@@ -321,10 +323,11 @@ main section#acceptances #school-grid .school .front .school-count {
   margin: 5px 0;
 }
 main section#acceptances #school-grid .school .front p {
-  font-size: 10px;
+  font-size: 12px;
 }
 main section#acceptances #school-grid .school .back {
-  transform: translate(-5px, -5px);
+  opacity: 0;
+  transform: translate(0, 0);
 }
 main section#acceptances #school-grid .school:nth-child(1) .front {
   background: #A51C30;
@@ -420,7 +423,8 @@ main section#testimonials #testimonials-content .testimonials {
   flex-direction: column;
 }
 main section#testimonials #testimonials-content .testimonials .testimonial-box {
-  will-change: transform;
+  will-change: opacity;
+  opacity: 0;
   padding: 30px;
   border-radius: 3px;
   margin-top: 30px;

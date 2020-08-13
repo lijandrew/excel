@@ -304,11 +304,13 @@ main {
         max-height: 150px;
         position: relative;
         .front,.back {
+          will-change: opacity, transform;
           position: absolute;
           width: 100%;
           height: 100%;
         }
         .front {
+          opacity: 0;
           transform: translate(5px, 5px);
           color: white;
           text-align: center;
@@ -325,11 +327,12 @@ main {
             margin: 5px 0;
           }
           p {
-            font-size: 10px;
+            font-size: 12px;
           }
         }
         .back {
-          transform: translate(-5px, -5px);
+          opacity: 0;
+          transform: translate(0, 0);
         }
         $schoolColors: #A51C30, #B31B1B, #8BB3DA, #54301A, #B00836, #00205B, #A80532, #00356B;
         @for $i from 1 through 8 {
@@ -384,7 +387,8 @@ main {
         display: flex;
         flex-direction: column;
         .testimonial-box {
-          will-change: transform;
+          will-change: opacity;
+          opacity: 0;
           padding: 30px;
           border-radius: 3px;
           margin-top: 30px;
