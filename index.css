@@ -127,7 +127,7 @@ a {
   font-weight: bold;
 }
 .cta-group .link::after {
-  background: white;
+  background: #00B8F2;
 }
 
 h1 {
@@ -584,8 +584,14 @@ main section#ready #ready-content {
 main section#ready #ready-content .cta-group {
   margin-top: 50px;
 }
+main section#ready #ready-content .cta-enroll {
+  background: #145196;
+}
+main section#ready #ready-content .cta-explore {
+  color: #145196;
+}
 main section#ready #ready-content .link::after {
-  background: black;
+  background: #145196;
 }
 
 footer section#footer-links {
@@ -716,11 +722,14 @@ footer section#contact #contact-content a {
     margin-left: 70px;
     width: 70%;
   }
-  header nav#desktop-nav a {
+  header nav#desktop-nav .link {
     font-size: 18px;
     font-family: Cabin, sans-serif;
-    color: black;
+    color: #145196;
     font-weight: bolder;
+  }
+  header nav#desktop-nav .link::after {
+    background: #145196;
   }
   header #login {
     display: flex;

@@ -131,7 +131,7 @@ a {
     font-weight: bold;
   }
   .link::after {
-    background: white;
+    background: $sky;
   }
 }
 
@@ -547,8 +547,14 @@ main {
       .cta-group {
         margin-top: 50px;
       }
+      .cta-enroll {
+        background: $navy;
+      }
+      .cta-explore {
+        color: $navy;
+      }
       .link::after {
-        background: black;
+        background: $navy;
       }
     }
   }
@@ -687,14 +693,15 @@ footer {
       align-items: center;
       justify-content: space-around;
       margin-left: 70px;
-      // border: 1px solid black;
       width: 70%;
-      a {
-        // border: 1px solid blue;
+      .link {
         font-size: 18px;
         font-family: Cabin, sans-serif;
-        color: black;
+        color: $navy;
         font-weight: bolder;
+      }
+      .link::after {
+        background: $navy;
       }
     }
     #login {
