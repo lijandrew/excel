@@ -30,6 +30,7 @@ a {
 
 .cta-btn {
   position: relative;
+  cursor: pointer;
   display: flex;
   user-select: none;
   text-align: center;
@@ -130,6 +131,7 @@ a {
     }
     .location {
       color: black;
+      border-radius: 0;
       font-weight: bold;
       background: white;
       .lower {

@@ -25,6 +25,7 @@ a {
 
 .cta-btn {
   position: relative;
+  cursor: pointer;
   display: flex;
   user-select: none;
   text-align: center;
@@ -129,6 +130,7 @@ a {
 }
 .cta-group .enroll-dropdown .location {
   color: black;
+  border-radius: 0;
   font-weight: bold;
   background: white;
 }
