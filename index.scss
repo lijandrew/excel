@@ -18,7 +18,7 @@ html,body {
   scroll-behavior: smooth;
 }
 
-body.nav-open {
+body.mobile-nav-open {
   overflow: hidden;
 }
 
@@ -119,16 +119,12 @@ a {
   align-items: center;
   font-family: Cabin, sans-serif;
   .enroll-dropdown {
+    z-index: 2;
     position: relative;
-    .cta-enroll {
-      background: $sky;
-      color: white;
-    }
     .location-list {
       position: absolute;
       width: 100%;
       height: 0;
-      // transform: translate(0, -10%);
       overflow: hidden;
       transition: height 100ms ease-out;
     }
@@ -140,7 +136,10 @@ a {
         color: white;
       }
     }
-    &:hover {
+
+    /* this special case repeats the .cta-btn:hover code so that the
+       enroll button stays filled when hovering dropdown items */
+    &.enroll-dropdown-open {
       .location-list {
         height: 250%;
       }
@@ -160,8 +159,12 @@ a {
       }
     }
   }
-
+  .cta-enroll {
+    background: $sky;
+    color: white;
+  }
   .cta-explore {
+    z-index: 1;
     margin-top: 20px;
     display: block;
     color: $sky;
@@ -276,7 +279,7 @@ header {
     }
     #mobile-nav-links {
       position: absolute;
-      left: 25%;
+      left: 15%;
       top: 20%;
       height: 60%;
       min-height: 350px;

@@ -13,7 +13,7 @@ html, body {
   scroll-behavior: smooth;
 }
 
-body.nav-open {
+body.mobile-nav-open {
   overflow: hidden;
 }
 
@@ -115,11 +115,10 @@ a {
   font-family: Cabin, sans-serif;
 }
 .cta-group .enroll-dropdown {
+  z-index: 2;
   position: relative;
-}
-.cta-group .enroll-dropdown .cta-enroll {
-  background: #00B8F2;
-  color: white;
+  /* this special case repeats the .cta-btn:hover code so that the
+     enroll button stays filled when hovering dropdown items */
 }
 .cta-group .enroll-dropdown .location-list {
   position: absolute;
@@ -136,22 +135,27 @@ a {
 .cta-group .enroll-dropdown .location .lower {
   color: white;
 }
-.cta-group .enroll-dropdown:hover .location-list {
+.cta-group .enroll-dropdown.enroll-dropdown-open .location-list {
   height: 250%;
 }
-.cta-group .enroll-dropdown:hover .cta-enroll .fill-circle {
+.cta-group .enroll-dropdown.enroll-dropdown-open .cta-enroll .fill-circle {
   width: 180%;
   opacity: 1;
 }
-.cta-group .enroll-dropdown:hover .cta-enroll .upper {
+.cta-group .enroll-dropdown.enroll-dropdown-open .cta-enroll .upper {
   transform: translate(0, -100%);
   opacity: 0;
 }
-.cta-group .enroll-dropdown:hover .cta-enroll .lower {
+.cta-group .enroll-dropdown.enroll-dropdown-open .cta-enroll .lower {
   transform: translate(0, 0);
   opacity: 1;
 }
+.cta-group .cta-enroll {
+  background: #00B8F2;
+  color: white;
+}
 .cta-group .cta-explore {
+  z-index: 1;
   margin-top: 20px;
   display: block;
   color: #00B8F2;
@@ -267,7 +271,7 @@ header nav#mobile-nav #mobile-nav-bg {
 }
 header nav#mobile-nav #mobile-nav-links {
   position: absolute;
-  left: 25%;
+  left: 15%;
   top: 20%;
   height: 60%;
   min-height: 350px;

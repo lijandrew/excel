@@ -28,9 +28,9 @@ function setupMobileAni() {
                   .set(mobileNav, {display: "none"});
 
   burger.addEventListener("click", () => {
-    mobileNav.classList.toggle("open");
-    body.classList.toggle("nav-open");
-    if (mobileNav.classList.contains("open")) {
+    mobileNav.classList.toggle("mobile-nav-open");
+    body.classList.toggle("mobile-nav-open");
+    if (mobileNav.classList.contains("mobile-nav-open")) {
       // pageWrapper.style.overflow = "hidden";
       burgerTl.restart();
       closeMobileNavTl.pause();
@@ -46,7 +46,7 @@ function setupMobileAni() {
   let mobileNavLinks = document.querySelectorAll("#mobile-nav-links > a");
   for (let link of Array.from(mobileNavLinks)) {
     link.addEventListener("click", () => {
-      mobileNav.classList.remove("open");
+      mobileNav.classList.remove("mobile-nav-open");
       burgerTl.reverse();
       openMobileNavTl.pause();
       closeMobileNavTl.restart();
@@ -89,9 +89,30 @@ function countSchoolsUp() {
   }
 }
 
+function setupEnrollDropdown() {
+  let homeEnrollDropdown = document.querySelector("section#home .enroll-dropdown");
+  let readyEnrollDropdown = document.querySelector("section#ready .enroll-dropdown");
+
+  homeEnrollDropdown.addEventListener("click", () => {
+    homeEnrollDropdown.classList.toggle("enroll-dropdown-open");
+  });
+
+  readyEnrollDropdown.addEventListener("click", () => {
+    readyEnrollDropdown.classList.toggle("enroll-dropdown-open");
+  });
+
+  window.addEventListener("click", event => {
+    if (event.target.closest(".enroll-dropdown") === null) {
+      homeEnrollDropdown.classList.remove("enroll-dropdown-open");
+      readyEnrollDropdown.classList.remove("enroll-dropdown-open");
+    }
+  });
+}
+
 function main() {
   setupMobileAni();
   setupScrollAni();
+  setupEnrollDropdown();
 }
 
 main();
