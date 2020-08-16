@@ -93,7 +93,6 @@ a {
   position: relative;
   font-family: Cabin, sans-serif;
   font-weight: bold;
-  text-decoration: none;
   &::after {
     position: absolute;
     display: block;
@@ -119,10 +118,49 @@ a {
   flex-direction: column;
   align-items: center;
   font-family: Cabin, sans-serif;
-  .cta-enroll {
-    background: $sky;
-    color: white;
+  .enroll-dropdown {
+    position: relative;
+    .cta-enroll {
+      background: $sky;
+      color: white;
+    }
+    .location-list {
+      position: absolute;
+      width: 100%;
+      height: 0;
+      // transform: translate(0, -10%);
+      overflow: hidden;
+      transition: height 100ms ease-out;
+    }
+    .location {
+      color: black;
+      font-weight: bold;
+      background: white;
+      .lower {
+        color: white;
+      }
+    }
+    &:hover {
+      .location-list {
+        height: 250%;
+      }
+      .cta-enroll {
+        .fill-circle {
+          width: 180%;
+          opacity: 1;
+        }
+        .upper {
+          transform: translate(0, -100%);
+          opacity: 0;
+        }
+        .lower {
+          transform: translate(0, 0);
+          opacity: 1;
+        }
+      }
+    }
   }
+
   .cta-explore {
     margin-top: 20px;
     display: block;
@@ -169,7 +207,6 @@ p {
 }
 
 header {
-  // position: fixed;
   z-index: 99;
   width: 100%;
   max-width: 100%;
@@ -364,7 +401,6 @@ main {
       flex-direction: column;
       align-items: center;
       padding-bottom: 10px;
-      // border: 1px solid black;
     }
     h2,p {
       text-align: center;
@@ -550,6 +586,9 @@ main {
       .cta-enroll {
         background: $navy;
       }
+      .location {
+        border: 1px solid black;
+      }
       .cta-explore {
         color: $navy;
       }
@@ -596,18 +635,15 @@ footer {
       justify-items: center;
       grid-gap: 20px;
       & > div {
-        // border: 1px solid white;
         display: flex;
         flex-direction: column;
         align-items: center;
         width: fit-content;
         p {
-          // border: 1px solid white;
           text-align: center;
           font-family: Cabin, sans-serif;
           color: rgb(182, 182, 182);
           span {
-            // border: 1px solid white;
             color: #fff;
             font-weight: bolder;
           }
@@ -677,12 +713,10 @@ footer {
     #mobile-nav,#burger { display: none; }
     #header-content {
       grid-template-columns: 2fr 4fr 1fr;
-      max-width: 1200px;
+      max-width: 1000px;
     }
     #logo {
-      // border: 1px solid black;
       img {
-        // border: 1px solid black;
         width: 100%;
         min-width: 200px;
       }
@@ -706,7 +740,7 @@ footer {
     }
     #login {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       color: black;
       justify-content: center;
       justify-self: flex-end;
@@ -714,7 +748,7 @@ footer {
       background: $navy;
       color: white;
       width: 100%;
-      max-width: 125px;
+      max-width: 150px;
       font-size: 100%;
       height: 80%;
       max-height: 55px;
