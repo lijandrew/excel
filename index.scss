@@ -280,15 +280,15 @@ header {
     }
     #mobile-nav-links {
       position: absolute;
-      left: 15%;
-      top: 20%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       height: 60%;
       min-height: 350px;
       overflow: scroll;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      // align-items: flex-start;
       align-items: flex-end;
       a {
         position: relative;
