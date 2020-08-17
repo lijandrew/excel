@@ -281,7 +281,7 @@ header nav#mobile-nav #mobile-nav-links {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: flex-end;
 }
 header nav#mobile-nav #mobile-nav-links a {
   position: relative;
