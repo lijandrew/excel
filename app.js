@@ -112,32 +112,16 @@ function setupCourseDropdown() {
   let categoryArr = Array.from(document.querySelectorAll(".category"));
   for (let category of categoryArr) {
     let categoryTitle = category.querySelector(".category-title");
-    let ul = category.querySelector("ul");
-    let liHeight = 60;
-    let liCount = Array.from(category.querySelectorAll("li")).length;
-    console.log(liCount);
-    let ulHeight = `${liHeight * liCount}px`;
     categoryTitle.addEventListener("click", () => {
       category.classList.toggle("category-open");
-      /*
-      if (category.classList.contains("category-open")) {
-        gsap.to(ul, {height: ulHeight, duration: 0.3, ease: "power1.out"});
-      } else {
-        gsap.to(ul, {height: 0, duration: 0.3, ease: "power1.out"});
-      }
-      */
     });
   }
 }
 
 function main() {
   setupMobileNavAni();
-  if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
-    setupScrollAni();
-    setupEnrollDropdown();
-  } else if (window.location.pathname === "/courses.html") {
-    setupCourseDropdown();
-  }
+  setupScrollAni();
+  setupEnrollDropdown();
 }
 
 main();
