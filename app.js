@@ -1,5 +1,5 @@
 
-function setupMobileAni() {
+function setupMobileNavAni() {
   "use strict";
   let body = document.querySelector("body");
   let burger = document.querySelector("#burger");
@@ -31,12 +31,10 @@ function setupMobileAni() {
     mobileNav.classList.toggle("mobile-nav-open");
     body.classList.toggle("mobile-nav-open");
     if (mobileNav.classList.contains("mobile-nav-open")) {
-      // pageWrapper.style.overflow = "hidden";
       burgerTl.restart();
       closeMobileNavTl.pause();
       openMobileNavTl.restart();
     } else {
-      // pageWrapper.style.overflow = "scroll";
       burgerTl.reverse();
       openMobileNavTl.pause();
       closeMobileNavTl.restart();
@@ -46,6 +44,7 @@ function setupMobileAni() {
   let mobileNavLinks = document.querySelectorAll("#mobile-nav-links > a");
   for (let link of Array.from(mobileNavLinks)) {
     link.addEventListener("click", () => {
+      body.classList.remove("mobile-nav-open");
       mobileNav.classList.remove("mobile-nav-open");
       burgerTl.reverse();
       openMobileNavTl.pause();
@@ -109,10 +108,36 @@ function setupEnrollDropdown() {
   });
 }
 
+function setupCourseDropdown() {
+  let categoryArr = Array.from(document.querySelectorAll(".category"));
+  for (let category of categoryArr) {
+    let categoryTitle = category.querySelector(".category-title");
+    let ul = category.querySelector("ul");
+    let liHeight = 60;
+    let liCount = Array.from(category.querySelectorAll("li")).length;
+    console.log(liCount);
+    let ulHeight = `${liHeight * liCount}px`;
+    categoryTitle.addEventListener("click", () => {
+      category.classList.toggle("category-open");
+      /*
+      if (category.classList.contains("category-open")) {
+        gsap.to(ul, {height: ulHeight, duration: 0.3, ease: "power1.out"});
+      } else {
+        gsap.to(ul, {height: 0, duration: 0.3, ease: "power1.out"});
+      }
+      */
+    });
+  }
+}
+
 function main() {
-  setupMobileAni();
-  setupScrollAni();
-  setupEnrollDropdown();
+  setupMobileNavAni();
+  if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
+    setupScrollAni();
+    setupEnrollDropdown();
+  } else if (window.location.pathname === "/courses.html") {
+    setupCourseDropdown();
+  }
 }
 
 main();

@@ -5,231 +5,63 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
+  <link href="master.css" rel="stylesheet">
   <link href="index.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/ScrollTrigger.min.js"></script>
-  <script src="index.js" defer></script>
+  <script src="app.js" defer></script>
   <title>Excel Academy of New York</title>
 </head>
 
 <body>
-  <div id="page-wrapper">
-
-    <header>
-      <div id="header-content" class="content">
-        <nav id="mobile-nav">
-          <div id="mobile-nav-bg"></div>
-          <div id="mobile-nav-links">
-            <a target="_blank" href="https://www.excelacademyny.com/CDreg/OR_Login.html"><div>Parent Login</div></a>
-            <a target="_blank" href="https://www.excelacademyny.com/curricula.html"><div>Courses</div></a>
-            <a target="_blank" href="https://www.excelacademyny.com/Calendar.html"><div>Calendar</div></a>
-            <a target="_blank" href="https://www.excelacademyny.com/aboutUs.html"><div>About</div></a>
-            <a href="#contact"><div>Contact</div></a>
-          </div>
-        </nav>
-        <a href="#" id="logo"><img src="res/logo.svg" alt="Excel Academy logo"></a>
-        <nav id="desktop-nav">
-          <a class="link" target="_blank" href="https://www.excelacademyny.com/curricula.html">Courses</a>
-          <a class="link" target="_blank" href="https://www.excelacademyny.com/Calendar.html">Calendar</a>
-          <a class="link" target="_blank" href="https://www.excelacademyny.com/aboutUs.html">About</a>
-          <a class="link" href="#contact">Contact</a>
-        </nav>
-        <a target="_blank" href="https://www.excelacademyny.com/CDreg/OR_Login.html" id="login" class="cta-btn">
-          <div class="fill-circle-wrapper">
-            <div class="fill-circle"></div>
-          </div>
-          <span class="upper">Parent Login</span>
-          <span class="lower">Parent Login</span>
-        </a>
-        <div id="burger">
-          <div id="bar1"></div>
-          <div id="bar2"></div>
-          <div id="bar3"></div>
+  <header>
+    <div id="header-content" class="content">
+      <nav id="mobile-nav">
+        <div id="mobile-nav-bg"></div>
+        <div id="mobile-nav-links">
+          <a target="_blank" href="https://www.excelacademyny.com/CDreg/OR_Login.html"><div>Parent Login</div></a>
+          <a class="active" href="index.html"><div>Home</div></a>
+          <a href="courses.html"><div>Courses</div></a>
+          <a target="_blank" href="https://www.excelacademyny.com/Calendar.html"><div>Calendar</div></a>
+          <a target="_blank" href="https://www.excelacademyny.com/aboutUs.html"><div>About</div></a>
+          <a href="#contact"><div>Contact</div></a>
         </div>
+      </nav>
+      <a href="index.html" id="logo"><img src="res/logo.svg" alt="Excel Academy logo"></a>
+      <nav id="desktop-nav">
+        <a class="link active" href="index.html"><div>Home</div></a>
+        <a class="link" href="courses.html">Courses</a>
+        <a class="link" target="_blank" href="https://www.excelacademyny.com/Calendar.html">Calendar</a>
+        <a class="link" target="_blank" href="https://www.excelacademyny.com/aboutUs.html">About</a>
+        <a class="link" href="#contact">Contact</a>
+      </nav>
+      <a target="_blank" href="https://www.excelacademyny.com/CDreg/OR_Login.html" id="login" class="cta-btn">
+        <div class="fill-circle-wrapper">
+          <div class="fill-circle"></div>
+        </div>
+        <span class="upper">Parent Login</span>
+        <span class="lower">Parent Login</span>
+      </a>
+      <div id="burger">
+        <div id="bar1"></div>
+        <div id="bar2"></div>
+        <div id="bar3"></div>
       </div>
-    </header>
-    <main>
-      <section id="home">
-        <div id="video-wrapper">
-          <video src="res/whiteboard.mp4" playsinline autoplay muted loop></video>
-        </div>
-        <img class="leaves" src="res/home_leaves.svg" alt="falling leaves">
-        <div id="home-content" class="content">
-          <div id="cta">
-            <h1>Enriching education<br>for grades 3-12</h1>
-            <p>Our quality teachers, materials, and guidance give
-              students everything they need to succeed. With a
-              constantly adapting curriculum, we ensure your child
-              stays ahead of the curve.</p>
-            <div class="cta-group">
-              <div class="enroll-dropdown">
-                <a class="cta-enroll cta-btn">
-                  <div class="fill-circle-wrapper">
-                    <div class="fill-circle"></div>
-                  </div>
-                  <span class="upper">Enroll for Fall 2020</span>
-                  <span class="lower">Enroll for Fall 2020</span>
-                </a>
-                <div class="location-list">
-                  <a class="location cta-btn" target="_blank" href="https://www.excelacademyny.com/2020FallProgramManhassetnew.pdf">
-                    <div class="fill-circle-wrapper">
-                      <div class="fill-circle"></div>
-                    </div>
-                    <span class="upper">Manhasset</span>
-                    <span class="lower">Manhasset</span>
-                  </a>
-                  <a class="location cta-btn" target="_blank" href="https://www.excelacademyny.com/2020FallProgramSyossetnew.pdf">
-                    <div class="fill-circle-wrapper">
-                      <div class="fill-circle"></div>
-                    </div>
-                    <span class="upper">Syosset/Jericho</span>
-                    <span class="lower">Syosset/Jericho</span>
-                  </a>
-                </div>
-              </div>
-              <a target="_blank" href="https://www.excelacademyny.com/curricula.html" class="cta-explore link">
-                Explore courses
-              </a>
-            </div>
-          </div>
-          <div id="home-svg">
-            <img id="phone-svg" src="res/phone.svg" alt="phone">
-            <img id="reading-svg" src="res/reading_girl.svg" alt="girl reading">
-          </div>
-        </div>
-      </section>
-      <section id="acceptances">
-        <img class="leaves" src="res/acceptances_leaves.svg" alt="falling leaves">
-        <div id="acceptances-content" class="content">
-          <div>
-            <h2 class="title">Acceptances</h2>
-            <p class="subtitle">Where our students have been accepted</p>
-          </div>
-          <div id="school-grid">
-            <div class="school">
-              <div class="back"></div>
-              <div class="front">
-                <div class="school-name">Harvard U.</div>
-                <div class="school-count">29</div>
-                <p>students</p>
-              </div>
-            </div>
-            <div class="school">
-              <div class="back"></div>
-              <div class="front">
-                <div class="school-name">Columbia U.</div>
-                <div class="school-count">60</div>
-                <p>students</p>
-              </div>
-            </div>
-            <div class="school">
-              <div class="back"></div>
-              <div class="front">
-                <div class="school-name">Cornell U.</div>
-                <div class="school-count">90</div>
-                <p>students</p>
-              </div>
-            </div>
-            <div class="school">
-              <div class="back"></div>
-              <div class="front">
-                <div class="school-name">Brown U.</div>
-                <div class="school-count">24</div>
-                <p>students</p>
-              </div>
-            </div>
-            <div class="school">
-              <div class="back"></div>
-              <div class="front">
-                <div class="school-name">MIT</div>
-                <div class="school-count">27</div>
-                <p>students</p>
-              </div>
-            </div>
-            <div class="school">
-              <div class="back"></div>
-              <div class="front">
-                <div class="school-name">UPenn</div>
-                <div class="school-count">54</div>
-                <p>students</p>
-              </div>
-            </div>
-            <div class="school">
-              <div class="back"></div>
-              <div class="front">
-                <div class="school-name">Stanford U.</div>
-                <div class="school-count">25</div>
-                <p>students</p>
-              </div>
-            </div>
-            <div class="school">
-              <div class="back"></div>
-              <div class="front">
-                <div class="school-name">Yale U.</div>
-                <div class="school-count">30</div>
-                <p>students</p>
-              </div>
-            </div>
-            <a target="_blanK" href="https://www.excelacademyny.com/Congratulations.html" id="cta-acceptances" class="cta-btn">
-              <div class="fill-circle-wrapper">
-                <div class="fill-circle"></div>
-              </div>
-              <img src="res/cap.svg" alt="graduation cap" id="cap">
-              <img src="res/diploma.svg" alt="diploma" id="diploma">
-              <span class="upper">All Acceptances</span>
-              <span class="lower">All Acceptances</span>
-            </a>
-          </div>
-        </div>
-      </section>
-      <section id="testimonials">
-        <img class="leaves" src="res/testimonials_leaves.svg" alt="falling leaves">
-        <div id="testimonials-content" class="content">
-          <div id="testimonials-title">
-            <h2 class="title">Testimonials</h2>
-            <p class="subtitle">What people are saying about us</p>
-          </div>
-          <div class="testimonials">
-            <div class="testimonial-box">
-              <div class="pfp-name">Ghinwa J.</div>
-              <p>Joy and her family have dedicated so much effort
-                 in the business, and it <span>truly shows</span>.
-                 They <span>care about each student</span> and do their
-                 best to <span>accommodate everyone</span>.
-                 I'm very impressed and glad they are expanding!</p>
-            </div>
-            <div class="testimonial-box">
-              <div class="pfp-name">Miriam W.</div>
-              <p>Highly recommendable because of their <span>caring and
-                professional attitude</span>! As a tutor, I can clearly see
-                a <span>difference in approach and execution</span> among my
-                students on any educational level.</p>
-            </div>
-            <div class="testimonial-box">
-              <div class="pfp-name">A. C.</div>
-              <p>Great tutoring place. Helped raise my son's SAT
-                math scores by <span>over 100 points</span>. My son said he
-                realized he had a lot of holes in his knowledge
-                and he <span>understood everything in a more comprehensive
-                way</span>. Highly recommend!</p>
-            </div>
-          </div>
-          <a href="#testimonials" id="cta-testimonials" class="cta-btn">
-            <div class="fill-circle-wrapper">
-              <div class="fill-circle"></div>
-            </div>
-            <img src="res/branch.svg" alt="branch with blue leaves" id="branch">
-            <img src="res/paper.svg" alt="paper with blue check mark" id="paper">
-            <span class="upper">All Testimonials</span>
-            <span class="lower">All Testimonials</span>
-          </a>
-        </div>
-      </section>
-      <section id="ready">
-        <img class="leaves" src="res/ready_leaves.svg" alt="falling leaves">
-        <img src="res/studying_girl.svg" alt="girl studying">
-        <div id="ready-content" class="content">
-          <h1 class="title">Ready to learn?</h1>
+    </div>
+  </header>
+  <main>
+    <section id="home">
+      <div id="video-wrapper">
+        <video src="res/whiteboard.mp4" playsinline autoplay muted loop></video>
+      </div>
+      <img class="leaves" src="res/home_leaves.svg" alt="falling leaves">
+      <div id="home-content" class="content">
+        <div id="cta">
+          <h1>Enriching education<br>for grades 3-12</h1>
+          <p>Our quality teachers, materials, and guidance give
+            students everything they need to succeed. With a
+            constantly adapting curriculum, we ensure your child
+            stays ahead of the curve.</p>
           <div class="cta-group">
             <div class="enroll-dropdown">
               <a class="cta-enroll cta-btn">
@@ -256,55 +88,222 @@
                 </a>
               </div>
             </div>
-            <a target="_blank" href="https://www.excelacademyny.com/curricula.html" class="cta-explore link">
+            <a href="courses.html" class="cta-explore link">
               Explore courses
             </a>
           </div>
         </div>
-      </section>
-    </main>
-    <footer>
-      <section id="footer-links">
-        <div id="footer-links-content" class="content">
-          <a class="link" target="_blank" href="https://www.excelacademyny.com/curricula.html"><span>Courses</span></a>
-          <a class="link" href="#testimonials">Testimonials</a>
-          <a class="link" href="#acceptances">Acceptances</a>
-          <a class="link" target="_blank" href="https://www.excelacademyny.com/Calendar.html">Calendar</a>
-          <a class="link" target="_blank" href="https://www.excelacademyny.com/aboutUs.html">About</a>
-          <a class="link" href="#contact">Contact</a>
+        <div id="home-svg">
+          <img id="phone-svg" src="res/phone.svg" alt="phone">
+          <img id="reading-svg" src="res/reading_girl.svg" alt="girl reading">
         </div>
-      </section>
-      <section id="contact">
-        <div id="contact-content" class="content">
-          <div class="manhasset address">
-            <p><span>Excel Academy - Manhasset<span></p>
-            <p>1447 Northern Boulevard, 2F,<br>Manhasset, NY 11030</p>
+      </div>
+    </section>
+    <section id="acceptances">
+      <img class="leaves" src="res/acceptances_leaves.svg" alt="falling leaves">
+      <div id="acceptances-content" class="content">
+        <div>
+          <h2 class="title">Acceptances</h2>
+          <p class="subtitle">Where our students have been accepted</p>
+        </div>
+        <div id="school-grid">
+          <div class="school">
+            <div class="back"></div>
+            <div class="front">
+              <div class="school-name">Harvard U.</div>
+              <div class="school-count">29</div>
+              <p>students</p>
+            </div>
           </div>
-          <div class="manhasset number">
-            <p><span>Tel</span>&nbsp;&nbsp;516-365-8870</p>
-            <p><span>Fax</span>&nbsp;516-365-8873</p>
+          <div class="school">
+            <div class="back"></div>
+            <div class="front">
+              <div class="school-name">Columbia U.</div>
+              <div class="school-count">60</div>
+              <p>students</p>
+            </div>
           </div>
-          <div class="syosset address">
-            <p><span>Excel Academy - Syosset/Jericho<span></p>
-            <p>6801 Jericho Turnpike, Suite 210,<br>Syosset, NY 11791</p>
+          <div class="school">
+            <div class="back"></div>
+            <div class="front">
+              <div class="school-name">Cornell U.</div>
+              <div class="school-count">90</div>
+              <p>students</p>
+            </div>
           </div>
-          <div class="syosset number">
-            <p><span>Tel</span>&nbsp;&nbsp;516-365-8870</p>
-            <p><span>Fax</span>&nbsp;516-365-8873</p>
+          <div class="school">
+            <div class="back"></div>
+            <div class="front">
+              <div class="school-name">Brown U.</div>
+              <div class="school-count">24</div>
+              <p>students</p>
+            </div>
           </div>
-          <div class="email">
-            <p><span>learn@excelacademyny.com</span></p>
-            <p><span>joy@excelacademyny.com</span></p>
-            <p><span>michael@excelacademyny.com</span></p>
+          <div class="school">
+            <div class="back"></div>
+            <div class="front">
+              <div class="school-name">MIT</div>
+              <div class="school-count">27</div>
+              <p>students</p>
+            </div>
           </div>
-          <div id="footer-logo-wrapper">
-            <a href="#"><img src="res/logo_light.svg" alt="Excel Academy logo"></a>
+          <div class="school">
+            <div class="back"></div>
+            <div class="front">
+              <div class="school-name">UPenn</div>
+              <div class="school-count">54</div>
+              <p>students</p>
+            </div>
+          </div>
+          <div class="school">
+            <div class="back"></div>
+            <div class="front">
+              <div class="school-name">Stanford U.</div>
+              <div class="school-count">25</div>
+              <p>students</p>
+            </div>
+          </div>
+          <div class="school">
+            <div class="back"></div>
+            <div class="front">
+              <div class="school-name">Yale U.</div>
+              <div class="school-count">30</div>
+              <p>students</p>
+            </div>
+          </div>
+          <a target="_blanK" href="https://www.excelacademyny.com/Congratulations.html" id="cta-acceptances" class="cta-btn">
+            <div class="fill-circle-wrapper">
+              <div class="fill-circle"></div>
+            </div>
+            <img src="res/cap.svg" alt="graduation cap" id="cap">
+            <img src="res/diploma.svg" alt="diploma" id="diploma">
+            <span class="upper">All Acceptances</span>
+            <span class="lower">All Acceptances</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section id="testimonials">
+      <img class="leaves" src="res/testimonials_leaves.svg" alt="falling leaves">
+      <div id="testimonials-content" class="content">
+        <div id="testimonials-title">
+          <h2 class="title">Testimonials</h2>
+          <p class="subtitle">What people are saying about us</p>
+        </div>
+        <div class="testimonials">
+          <div class="testimonial-box">
+            <div class="pfp-name">Ghinwa J.</div>
+            <p>Joy and her family have dedicated so much effort
+               in the business, and it <span>truly shows</span>.
+               They <span>care about each student</span> and do their
+               best to <span>accommodate everyone</span>.
+               I'm very impressed and glad they are expanding!</p>
+          </div>
+          <div class="testimonial-box">
+            <div class="pfp-name">Miriam W.</div>
+            <p>Highly recommendable because of their <span>caring and
+              professional attitude</span>! As a tutor, I can clearly see
+              a <span>difference in approach and execution</span> among my
+              students on any educational level.</p>
+          </div>
+          <div class="testimonial-box">
+            <div class="pfp-name">A. C.</div>
+            <p>Great tutoring place. Helped raise my son's SAT
+              math scores by <span>over 100 points</span>. My son said he
+              realized he had a lot of holes in his knowledge
+              and he <span>understood everything in a more comprehensive
+              way</span>. Highly recommend!</p>
           </div>
         </div>
-      </section>
-    </footer>
-
-  </div>
+        <a href="#testimonials" id="cta-testimonials" class="cta-btn">
+          <div class="fill-circle-wrapper">
+            <div class="fill-circle"></div>
+          </div>
+          <img src="res/branch.svg" alt="branch with blue leaves" id="branch">
+          <img src="res/paper.svg" alt="paper with blue check mark" id="paper">
+          <span class="upper">All Testimonials</span>
+          <span class="lower">All Testimonials</span>
+        </a>
+      </div>
+    </section>
+    <section id="ready">
+      <img class="leaves" src="res/ready_leaves.svg" alt="falling leaves">
+      <img src="res/studying_girl.svg" alt="girl studying">
+      <div id="ready-content" class="content">
+        <h1 class="title">Ready to learn?</h1>
+        <div class="cta-group">
+          <div class="enroll-dropdown">
+            <a class="cta-enroll cta-btn">
+              <div class="fill-circle-wrapper">
+                <div class="fill-circle"></div>
+              </div>
+              <span class="upper">Enroll for Fall 2020</span>
+              <span class="lower">Enroll for Fall 2020</span>
+            </a>
+            <div class="location-list">
+              <a class="location cta-btn" target="_blank" href="https://www.excelacademyny.com/2020FallProgramManhassetnew.pdf">
+                <div class="fill-circle-wrapper">
+                  <div class="fill-circle"></div>
+                </div>
+                <span class="upper">Manhasset</span>
+                <span class="lower">Manhasset</span>
+              </a>
+              <a class="location cta-btn" target="_blank" href="https://www.excelacademyny.com/2020FallProgramSyossetnew.pdf">
+                <div class="fill-circle-wrapper">
+                  <div class="fill-circle"></div>
+                </div>
+                <span class="upper">Syosset/Jericho</span>
+                <span class="lower">Syosset/Jericho</span>
+              </a>
+            </div>
+          </div>
+          <a href="courses.html" class="cta-explore link">
+            Explore courses
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <section id="footer-links">
+      <div id="footer-links-content" class="content">
+        <a class="link" href="courses.html">Courses</a>
+        <a class="link" href="#testimonials">Testimonials</a>
+        <a class="link" href="#acceptances">Acceptances</a>
+        <a class="link" target="_blank" href="https://www.excelacademyny.com/Calendar.html">Calendar</a>
+        <a class="link" target="_blank" href="https://www.excelacademyny.com/aboutUs.html">About</a>
+        <a class="link" href="#contact">Contact</a>
+      </div>
+    </section>
+    <section id="contact">
+      <div id="contact-content" class="content">
+        <div class="manhasset address">
+          <p><span>Excel Academy - Manhasset<span></p>
+          <p>1447 Northern Boulevard, 2F,<br>Manhasset, NY 11030</p>
+        </div>
+        <div class="manhasset number">
+          <p><span>Tel</span>&nbsp;&nbsp;516-365-8870</p>
+          <p><span>Fax</span>&nbsp;516-365-8873</p>
+        </div>
+        <div class="syosset address">
+          <p><span>Excel Academy - Syosset/Jericho<span></p>
+          <p>6801 Jericho Turnpike, Suite 210,<br>Syosset, NY 11791</p>
+        </div>
+        <div class="syosset number">
+          <p><span>Tel</span>&nbsp;&nbsp;516-365-8870</p>
+          <p><span>Fax</span>&nbsp;516-365-8873</p>
+        </div>
+        <div class="email">
+          <p><span>learn@excelacademyny.com</span></p>
+          <p><span>joy@excelacademyny.com</span></p>
+          <p><span>michael@excelacademyny.com</span></p>
+        </div>
+        <div id="footer-logo-wrapper">
+          <a href="index.html"><img src="res/logo_light.svg" alt="Excel Academy logo"></a>
+        </div>
+      </div>
+    </section>
+  </footer>
 </body>
 
 </html>
