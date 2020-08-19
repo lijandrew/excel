@@ -27,6 +27,7 @@ a {
   position: relative;
   cursor: pointer;
   display: flex;
+  justify-content: center;
   user-select: none;
   box-sizing: border-box;
   border-radius: 3px;
