@@ -1,4 +1,3 @@
-
 function mobileNavAni() {
   "use strict";
   let body = document.querySelector("body");
@@ -53,6 +52,7 @@ function mobileNavAni() {
 }
 
 function countSchoolsUp() {
+  "use strict";
   let countDivArr = Array.from(document.querySelectorAll(".school-count"));
   for (let countDiv of countDivArr) {
     let target = parseInt(countDiv.textContent);
@@ -68,6 +68,7 @@ function countSchoolsUp() {
   }
 }
 function homeAni() {
+  "use strict";
   /* Intro animations */
   let tl = gsap.timeline();
   tl.from("#cta > h1, #cta > p", {delay: 0.5, duration: 0.5, opacity: 0, transform: "translate(-30px, 0)", stagger: {amount: 0.3}});
@@ -91,6 +92,40 @@ function homeAni() {
     }
   });
 
+  /* Huge text scroll scrub */
+  let hugeAcceptances = document.querySelector("#acceptances .huge");
+  gsap.to(hugeAcceptances, {transform: "translateX(-35%)", scrollTrigger: {
+    trigger: hugeAcceptances,
+    start: "top bottom",
+    end: "100% top",
+    scrub: 1,
+  }});
+
+  let hugeTestimonials = document.querySelector("#testimonials .huge");
+  gsap.from(hugeTestimonials, {transform: "translateX(-35%)", scrollTrigger: {
+    trigger: hugeTestimonials,
+    start: "top bottom",
+    end: "top top",
+    scrub: 1,
+  }});
+
+  /* Ready to learn underline animation */
+  let line = document.querySelector("#ready-content .title #underline");
+  let lineTl = gsap.timeline({scrollTrigger: {
+    trigger: "#ready-content .cta-group",
+    start: "bottom bottom",
+  }});
+  lineTl.to(line, {transform: "scaleX(1)", duration: 0.5, ease: "power1.in"});
+  lineTl.set(line, {transformOrigin: "right"});
+  lineTl.to(line, {transform: "scaleX(0)", duration: 0.5, ease: "power2.out"});
+
+  gsap.from("#ready-content .cta-group", {opacity: 0, transform: "translateY(50px)", duration: 0.5, ease: "power1.out", scrollTrigger: {
+    trigger: "#ready-content .cta-group",
+    start: "top bottom",
+  }});
+}
+function homeEnrollDropdown() {
+  "use strict";
   /* Setup enroll dropdown class toggling */
   let homeEnrollDropdown = document.querySelector("section#home .enroll-dropdown");
   let readyEnrollDropdown = document.querySelector("section#ready .enroll-dropdown");
@@ -109,9 +144,11 @@ function homeAni() {
       readyEnrollDropdown.classList.remove("enroll-dropdown-open");
     }
   });
+
 }
 
-function courseAni() {
+function coursesAni() {
+  "use strict";
   let enrichmentCats = document.querySelectorAll("#enrichment-content .categories-container > .category");
   let fundamentalsCats = document.querySelectorAll("#fundamentals-content .categories-container > .category ");
   gsap.from(enrichmentCats, {
@@ -133,6 +170,7 @@ function courseAni() {
 }
 
 function initBarba() {
+  "use strict";
   barba.init({
     preventRunning: true,
     views: [
@@ -140,13 +178,14 @@ function initBarba() {
         namespace: "home",
         beforeEnter() {
           homeAni();
+          homeEnrollDropdown();
           document.querySelector("video").play();
         },
       },
       {
         namespace: "courses",
         beforeEnter() {
-          courseAni();
+          coursesAni();
         }
       }
     ],
@@ -179,9 +218,10 @@ function initBarba() {
 }
 
 function main() {
+  "use strict";
+  document.querySelector("body").style.opacity = 1;
   mobileNavAni();
   initBarba();
-  document.querySelector("body").style.opacity = 1;
 }
 
 main();

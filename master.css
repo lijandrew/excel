@@ -19,6 +19,7 @@ html, body {
   min-width: 100%;
   min-height: 100%;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body.mobile-nav-open {
@@ -324,10 +325,34 @@ header nav#mobile-nav #mobile-nav-links a div {
   transform: translate(0, 100%);
 }
 
+.huge {
+  z-index: -1;
+  user-select: none;
+  position: absolute;
+  font-size: 200px;
+  top: 0;
+  left: 0;
+  transform: translateY(-40px);
+  opacity: 0.015;
+  white-space: nowrap;
+}
+
+#testimonials .huge {
+  color: white;
+  z-index: 0;
+  opacity: 0.03;
+  transform: translateY(0);
+}
+
+#testimonials-title {
+  z-index: 1;
+}
+
 main {
   width: 100%;
   min-width: 100%;
   max-width: 100%;
+  overflow-x: hidden;
 }
 main section {
   width: 100%;
@@ -646,6 +671,19 @@ main#main-home section#ready #ready-content {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+main#main-home section#ready #ready-content .title {
+  position: relative;
+}
+main#main-home section#ready #ready-content .title #underline {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  transform-origin: left;
+  transform: scaleX(0);
+  height: 3px;
+  background: black;
 }
 main#main-home section#ready #ready-content .cta-group {
   margin-top: 50px;
