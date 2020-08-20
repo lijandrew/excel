@@ -52,7 +52,7 @@ function setupMobileNavAni() {
   }
 }
 
-function setupScrollAni() {
+function setupHomeScrollAni() {
   let schoolTl = gsap.timeline({
     scrollTrigger: {
       trigger: "#school-grid",
@@ -107,28 +107,47 @@ function setupEnrollDropdown() {
   });
 }
 
-function setupCourseDropdown() {
-  let categoryArr = Array.from(document.querySelectorAll(".category"));
-  for (let category of categoryArr) {
-    let categoryTitle = category.querySelector(".category-title");
-    categoryTitle.addEventListener("click", () => {
-      category.classList.toggle("category-open");
-    });
-  }
+function setupCourseScrollAni() {
+  let enrichmentCats = document.querySelectorAll("#enrichment-content .categories-container > .category");
+  let fundamentalsCats = document.querySelectorAll("#fundamentals-content .categories-container > .category ");
+  gsap.to(enrichmentCats, {
+    opacity: 1,
+    transform: "translate(0, 0)",
+    duration: 0.5,
+    stagger: {amount: 0.5},
+  });
+  gsap.to(fundamentalsCats, {
+    opacity: 1,
+    transform: "translate(0, 0)",
+    duration: 0.5,
+    stagger: {amount: 0.5},
+    scrollTrigger: {
+      trigger: "#fundamentals-content .title",
+      start: "center 70%",
+    }
+  });
 }
 
 function setupBarba() {
   let cover = document.querySelector("#cover");
   barba.init({
     preventRunning: true,
-    views: [{
-      namespace: "home",
-      beforeEnter(data) {
-        setupScrollAni();
-        setupEnrollDropdown();
-        document.querySelector("video").play();
+    views: [
+      {
+        namespace: "home",
+        beforeEnter() {
+          setupHomeScrollAni();
+          setupEnrollDropdown();
+          document.querySelector("video").play();
+        },
+      },
+      {
+        namespace: "courses",
+        beforeEnter() {
+          setupCourseScrollAni();
+        }
       }
-    }],
+    ],
     transitions: [
       {
         name: "default-opacity",
