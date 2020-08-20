@@ -5,6 +5,14 @@
   box-sizing: border-box;
 }
 
+body {
+  /* undone in window.onload js code, so that content only shows
+  after javascript has ran. this hides from the user
+  the brief flicker in position and opacity that occurs
+  before gsap.from() kicks in. */
+  opacity: 0;
+}
+
 html, body {
   width: 100%;
   height: 100%;
@@ -370,11 +378,13 @@ main#main-home section#home #cta {
 main#main-home section#home #cta h1 {
   color: white;
   margin-bottom: 40px;
+  will-change: transform, opacity;
 }
 main#main-home section#home #cta p {
   color: white;
   margin-bottom: 50px;
   max-width: 370px;
+  will-change: transform, opacity;
 }
 main#main-home section#home #home-svg {
   display: none;
@@ -450,7 +460,6 @@ main#main-home section#acceptances #school-grid .school .front, main#main-home s
   height: 100%;
 }
 main#main-home section#acceptances #school-grid .school .front {
-  opacity: 0;
   transform: translate(5px, 5px);
   color: white;
   text-align: center;
@@ -471,8 +480,7 @@ main#main-home section#acceptances #school-grid .school .front p {
   font-size: 12px;
 }
 main#main-home section#acceptances #school-grid .school .back {
-  opacity: 0;
-  transform: translate(0, 0);
+  transform: translate(-5px, -5px);
 }
 main#main-home section#acceptances #school-grid .school:nth-child(1) .front {
   background: #A51C30;
@@ -572,7 +580,6 @@ main#main-home section#testimonials #testimonials-content .testimonials {
 }
 main#main-home section#testimonials #testimonials-content .testimonials .testimonial-box {
   will-change: opacity;
-  opacity: 0;
   padding: 30px;
   margin-top: 30px;
   max-width: 375px;
@@ -670,8 +677,6 @@ main#main-courses .categories-container {
 main#main-courses .category {
   margin-bottom: 80px;
   width: fit-content;
-  opacity: 0;
-  transform: translate(0, 30px);
 }
 main#main-courses .category-title {
   cursor: pointer;

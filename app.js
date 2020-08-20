@@ -1,5 +1,5 @@
 
-function setupMobileNavAni() {
+function mobileNavAni() {
   "use strict";
   let body = document.querySelector("body");
   let burger = document.querySelector("#burger");
@@ -52,25 +52,6 @@ function setupMobileNavAni() {
   }
 }
 
-function setupHomeScrollAni() {
-  let schoolTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#school-grid",
-      start: "20% bottom",
-    }
-  });
-  schoolTl.add( countSchoolsUp, "schoolIn" )
-          .to(".front", {opacity: 1, ease: "power2.inOut", stagger: {amount: 0.5}}, "schoolIn")
-          .to(".back", {opacity: 1, duration: 1.5, transform: "translate(-5px, -5px)", ease: "power4.out"});
-
-  gsap.to(".testimonial-box", {opacity: 1, ease: "power2.out", stagger: {amount: 0.5},
-    scrollTrigger: {
-      trigger: ".testimonials",
-      start: "20% bottom",
-    }
-  });
-}
-
 function countSchoolsUp() {
   let countDivArr = Array.from(document.querySelectorAll(".school-count"));
   for (let countDiv of countDivArr) {
@@ -86,8 +67,31 @@ function countSchoolsUp() {
     }, interval);
   }
 }
+function homeAni() {
+  /* Intro animations */
+  let tl = gsap.timeline();
+  tl.from("#cta > h1, #cta > p", {delay: 0.5, duration: 0.5, opacity: 0, transform: "translate(-30px, 0)", stagger: {amount: 0.3}});
+  tl.from("#cta .cta-btn, #cta .link", {duration: 0.5, opacity: 0, transform: "translate(0, 30px)"});
 
-function setupEnrollDropdown() {
+  /* Scroll animations */
+  let schoolTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#school-grid",
+      start: "20% bottom",
+    }
+  });
+  schoolTl.add( countSchoolsUp, "schoolIn" )
+          .from(".front", {opacity: 0, ease: "power2.inOut", stagger: {amount: 0.5}}, "schoolIn")
+          .from(".back", {opacity: 0, duration: 1.5, transform: "translate(0, 0)", ease: "power4.out"});
+
+  gsap.from(".testimonial-box", {opacity: 0, ease: "power2.out", stagger: {amount: 0.5},
+    scrollTrigger: {
+      trigger: ".testimonials",
+      start: "20% bottom",
+    }
+  });
+
+  /* Setup enroll dropdown class toggling */
   let homeEnrollDropdown = document.querySelector("section#home .enroll-dropdown");
   let readyEnrollDropdown = document.querySelector("section#ready .enroll-dropdown");
 
@@ -107,18 +111,18 @@ function setupEnrollDropdown() {
   });
 }
 
-function setupCourseScrollAni() {
+function courseAni() {
   let enrichmentCats = document.querySelectorAll("#enrichment-content .categories-container > .category");
   let fundamentalsCats = document.querySelectorAll("#fundamentals-content .categories-container > .category ");
-  gsap.to(enrichmentCats, {
-    opacity: 1,
-    transform: "translate(0, 0)",
+  gsap.from(enrichmentCats, {
+    opacity: 0,
+    transform: "translate(0, 30px)",
     duration: 0.5,
     stagger: {amount: 0.5},
   });
-  gsap.to(fundamentalsCats, {
-    opacity: 1,
-    transform: "translate(0, 0)",
+  gsap.from(fundamentalsCats, {
+    opacity: 0,
+    transform: "translate(0, 30px)",
     duration: 0.5,
     stagger: {amount: 0.5},
     scrollTrigger: {
@@ -128,23 +132,21 @@ function setupCourseScrollAni() {
   });
 }
 
-function setupBarba() {
-  let cover = document.querySelector("#cover");
+function initBarba() {
   barba.init({
     preventRunning: true,
     views: [
       {
         namespace: "home",
         beforeEnter() {
-          setupHomeScrollAni();
-          setupEnrollDropdown();
+          homeAni();
           document.querySelector("video").play();
         },
       },
       {
         namespace: "courses",
         beforeEnter() {
-          setupCourseScrollAni();
+          courseAni();
         }
       }
     ],
@@ -177,8 +179,9 @@ function setupBarba() {
 }
 
 function main() {
-  setupMobileNavAni();
-  setupBarba();
+  mobileNavAni();
+  initBarba();
+  document.querySelector("body").style.opacity = 1;
 }
 
 main();
