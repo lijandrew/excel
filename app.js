@@ -8,8 +8,7 @@ function setupMobileNavAni() {
 
   let burgerTl = gsap.timeline();
   burgerTl.pause();
-  burgerTl.to(burgerBars, {background: "white", duration: 0.1}, "b1")
-          .to(burgerBars[0], {transform: "translate(0, 100%)", duration: 0.1}, "b1")
+  burgerTl.to(burgerBars[0], {transform: "translate(0, 100%)", duration: 0.1}, "b1")
           .to(burgerBars[1], {opacity: 0, duration: 0.1}, "b1")
           .to(burgerBars[2], {transform: "translate(0, -100%)", duration: 0.1}, "b1")
           .to(burgerBars[0], {transform: "translate(0, 100%) rotate(45deg)", duration: 0.1}, "b2")
@@ -118,10 +117,49 @@ function setupCourseDropdown() {
   }
 }
 
+function setupBarba() {
+  let cover = document.querySelector("#cover");
+  barba.init({
+    preventRunning: true,
+    views: [{
+      namespace: "home",
+      beforeEnter(data) {
+        setupScrollAni();
+        setupEnrollDropdown();
+        document.querySelector("video").play();
+      }
+    }],
+    transitions: [
+      {
+        name: "default-opacity",
+        leave(data) {
+          return gsap.to(data.current.container, {
+            opacity: 0,
+            transform: "translate(0, 50px)",
+            duration: 0.4,
+            ease: "power1.in",
+          });
+        },
+        enter(data) {
+          return gsap.from(data.next.container, {
+            opacity: 0,
+            transform: "translate(0, -50px)",
+            duration: 0.4,
+            ease: "power1.out",
+          });
+        },
+      }
+    ]
+  });
+
+  barba.hooks.enter(() => {
+    window.scrollTo(0, 0);
+  });
+}
+
 function main() {
   setupMobileNavAni();
-  setupScrollAni();
-  setupEnrollDropdown();
+  setupBarba();
 }
 
 main();
