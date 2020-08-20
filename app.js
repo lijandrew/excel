@@ -219,9 +219,9 @@ function initBarba() {
 
 function main() {
   "use strict";
-  document.querySelector("body").style.opacity = 1;
   mobileNavAni();
   initBarba();
+  document.querySelector("body").style.opacity = 1;
 }
 
 main();
