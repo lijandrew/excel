@@ -124,27 +124,41 @@ function homeAni() {
     start: "top bottom",
   }});
 }
+
 function homeEnrollDropdown() {
   "use strict";
   /* Setup enroll dropdown class toggling */
   let homeEnrollDropdown = document.querySelector("section#home .enroll-dropdown");
   let readyEnrollDropdown = document.querySelector("section#ready .enroll-dropdown");
 
-  homeEnrollDropdown.addEventListener("click", () => {
+  homeEnrollDropdown.onclick = () => {
     homeEnrollDropdown.classList.toggle("enroll-dropdown-open");
-  });
+  };
 
-  readyEnrollDropdown.addEventListener("click", () => {
+  readyEnrollDropdown.onclick = () => {
     readyEnrollDropdown.classList.toggle("enroll-dropdown-open");
-  });
+  };
 
-  window.addEventListener("click", event => {
+  window.onclick = event => {
     if (event.target.closest(".enroll-dropdown") === null) {
       homeEnrollDropdown.classList.remove("enroll-dropdown-open");
       readyEnrollDropdown.classList.remove("enroll-dropdown-open");
     }
-  });
+  };
+}
+function coursesEnrollDropdown() {
+  "use strict";
+  let coursesReadyEnrollDropdown = document.querySelector("section#courses-ready .enroll-dropdown");
 
+  coursesReadyEnrollDropdown.onclick = () => {
+    coursesReadyEnrollDropdown.classList.toggle("enroll-dropdown-open");
+  };
+
+  window.onclick = event => {
+    if (event.target.closest(".enroll-dropdown") === null) {
+      coursesReadyEnrollDropdown.classList.remove("enroll-dropdown-open");
+    }
+  };
 }
 
 function coursesAni() {
@@ -186,8 +200,9 @@ function initBarba() {
         namespace: "courses",
         beforeEnter() {
           coursesAni();
-        }
-      }
+          coursesEnrollDropdown();
+        },
+      },
     ],
     transitions: [
       {
@@ -219,9 +234,11 @@ function initBarba() {
 
 function main() {
   "use strict";
-  mobileNavAni();
-  initBarba();
-  document.querySelector("body").style.opacity = 1;
+  window.onload = () => {
+    mobileNavAni();
+    initBarba();
+    document.querySelector("body").style.opacity = 1;
+  };
 }
 
 main();

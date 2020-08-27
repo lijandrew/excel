@@ -61,7 +61,6 @@ a {
     position: relative;
     .location-list {
       position: absolute;
-      width: 100%;
       height: 0;
       overflow: hidden;
       transition: height 100ms ease-out;
@@ -69,16 +68,23 @@ a {
     .location {
       color: black;
       background: white;
+      span {
+        margin-left: 12px;
+        margin-right: 12px;
+      }
       .lower {
         color: white;
       }
+    }
+    .location.cta-btn {
+      justify-content: flex-start;
     }
 
     /* this special case repeats the .cta-btn:hover code so that the
        enroll button stays filled when hovering dropdown items */
     &.enroll-dropdown-open {
       .location-list {
-        height: 250%;
+        height: 350%;
       }
       .cta-enroll {
         .fill-circle {
@@ -697,6 +703,45 @@ main#main-courses {
     font-size: 18px;
     a {
       text-decoration: underline;
+    }
+  }
+  section#courses-ready {
+    padding-top: 80px;
+    position: relative;
+    background: $navy;
+    img {
+      display: none;
+    }
+    #ready-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .title {
+        position: relative;
+        color: white;
+      }
+      .title #underline {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        transform-origin: left;
+        transform: scaleX(0);
+        height: 3px;
+        background: white;
+      }
+      .cta-group {
+        margin-top: 50px;
+      }
+      .location {
+        border: 1px solid black;
+      }
+      .cta-explore {
+        color: $sky;
+      }
+      .link::after {
+        background: $sky;
+      }
     }
   }
   section#enrichment {
