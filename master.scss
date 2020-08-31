@@ -44,7 +44,6 @@ body.mobile-nav-open {
   background: black;
   transform: translate(100%, 0) skewX(-10deg);
 }
-
 a {
   text-decoration: none;
   color: inherit;
@@ -199,6 +198,7 @@ a {
 h1 {
   font-family: $sans;
   font-size: 32px;
+  font-weight: bolder;
 }
 
 h2 {
@@ -227,10 +227,6 @@ p {
   max-width: 1000px;
 }
 
-.title {
-  font-weight: bold;
-}
-
 .subtitle {
   font-size: 14px;
   opacity: 0.8;
@@ -241,18 +237,18 @@ p {
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
 }
 
 header {
   position: fixed;
   z-index: 99;
   width: 100%;
-  max-width: 100%;
   background: $dark;
   #header-content {
-    max-width: none;
-    padding: 15px 0 !important;
     width: 80%;
+    max-width: 1800px;
+    padding: 15px 0 !important;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -365,10 +361,7 @@ main {
   width: 100%;
   min-width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
-  section {
-    width: 100%;
-  }
+  min-height: 100vh;
   .content {
     padding: 80px 0;
     width: 80%;
@@ -380,6 +373,7 @@ main {
 }
 main#main-home {
   section#home {
+    max-height: 1000px;
     position: relative;
     #video-wrapper {
       z-index: -1;
@@ -709,8 +703,8 @@ main#main-courses {
     }
   }
   section#courses-ready {
-    padding-top: 80px;
     padding: 30px 0;
+    padding-top: 120px;
     position: relative;
     background: $navy;
     img {
@@ -762,6 +756,32 @@ main#main-courses {
   section#fundamentals {
     background: $navy;
     color: white;
+  }
+}
+main#main-about {
+  #about-content {
+    width: 50%;
+    max-width: 750px;
+    padding-top: 180px;
+    padding-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+      text-align: center;
+      margin-bottom: 120px;
+    }
+    .cta-btn {
+      margin-top: 120px;
+      background: $dark;
+      border: 2px solid $dark;
+    }
+    .cta-btn .fill-circle {
+      background: white;
+    }
+    .lower {
+      color: black;
+    }
   }
 }
 footer {
@@ -821,27 +841,6 @@ footer {
         margin-top: 50px;
       }
     }
-  }
-}
-
-@keyframes phoneIn {
-  0% {
-    opacity: 0;
-    transform: translate(-40%, -10%);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-20%, -10%);
-  }
-}
-@keyframes readingIn {
-  0% {
-    opacity: 0;
-    transform: translate(40%, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(20%, 0);
   }
 }
 

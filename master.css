@@ -189,6 +189,7 @@ a {
 h1 {
   font-family: "Raleway", sans-serif;
   font-size: 32px;
+  font-weight: bolder;
 }
 
 h2 {
@@ -218,10 +219,6 @@ p {
   max-width: 1000px;
 }
 
-.title {
-  font-weight: bold;
-}
-
 .subtitle {
   font-size: 14px;
   opacity: 0.8;
@@ -232,19 +229,19 @@ p {
   top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
 }
 
 header {
   position: fixed;
   z-index: 99;
   width: 100%;
-  max-width: 100%;
   background: #272727;
 }
 header #header-content {
-  max-width: none;
-  padding: 15px 0 !important;
   width: 80%;
+  max-width: 1800px;
+  padding: 15px 0 !important;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -357,10 +354,7 @@ main {
   width: 100%;
   min-width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
-}
-main section {
-  width: 100%;
+  min-height: 100vh;
 }
 main .content {
   padding: 80px 0;
@@ -372,6 +366,7 @@ main .leaves {
 }
 
 main#main-home section#home {
+  max-height: 1000px;
   position: relative;
 }
 main#main-home section#home #video-wrapper {
@@ -743,8 +738,8 @@ main#main-courses li a {
   text-decoration: underline;
 }
 main#main-courses section#courses-ready {
-  padding-top: 80px;
   padding: 30px 0;
+  padding-top: 120px;
   position: relative;
   background: #145196;
 }
@@ -796,6 +791,31 @@ main#main-courses section#enrichment #enrichment-content {
 main#main-courses section#fundamentals {
   background: #145196;
   color: white;
+}
+
+main#main-about #about-content {
+  width: 50%;
+  max-width: 750px;
+  padding-top: 180px;
+  padding-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main#main-about #about-content h1 {
+  text-align: center;
+  margin-bottom: 120px;
+}
+main#main-about #about-content .cta-btn {
+  margin-top: 120px;
+  background: #272727;
+  border: 2px solid #272727;
+}
+main#main-about #about-content .cta-btn .fill-circle {
+  background: white;
+}
+main#main-about #about-content .lower {
+  color: black;
 }
 
 footer section#footer-links {
@@ -856,26 +876,6 @@ footer section#contact #contact-content a {
   margin-top: 50px;
 }
 
-@keyframes phoneIn {
-  0% {
-    opacity: 0;
-    transform: translate(-40%, -10%);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-20%, -10%);
-  }
-}
-@keyframes readingIn {
-  0% {
-    opacity: 0;
-    transform: translate(40%, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(20%, 0);
-  }
-}
 @media only screen and (min-width: 600px) {
   #main-courses .categories-container {
     display: grid !important;
