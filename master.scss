@@ -238,6 +238,16 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  main {
+    flex-grow: 1;
+    display: flex !important;
+    flex-direction: column;
+    section {
+      flex-grow: 1;
+    }
+  }
 }
 
 header {
@@ -361,7 +371,6 @@ main {
   width: 100%;
   min-width: 100%;
   max-width: 100%;
-  min-height: 100vh;
   .content {
     padding: 80px 0;
     width: 80%;
