@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Raleway:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Roboto:wght@300;400&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -6,10 +6,7 @@
 }
 
 body {
-  /* undone in window.onload js code, so that content only shows
-  after javascript has ran. this hides from the user
-  the brief flicker in position and opacity that occurs
-  before gsap.from() kicks in. */
+  /* Undone by JS */
   opacity: 0;
 }
 
@@ -112,9 +109,10 @@ a {
 }
 .cta-group .cta-explore {
   z-index: 1;
-  margin-top: 20px;
+  margin-top: 30px;
   display: block;
-  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal !important;
   color: #00B8F2;
 }
 
@@ -125,7 +123,7 @@ a {
   user-select: none;
   text-align: center;
   justify-content: center;
-  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px !important;
   color: white;
   padding: 12px 20px;
@@ -178,8 +176,7 @@ a {
 
 .link {
   position: relative;
-  font-family: "Raleway", sans-serif;
-  font-weight: lighter !important;
+  font-family: "Roboto", sans-serif;
 }
 .link::after {
   position: absolute;
@@ -203,7 +200,7 @@ a {
 
 h1 {
   font-family: "Merriweather", serif;
-  font-size: clamp(32px, 5vw, 50px);
+  font-size: clamp(30px, 5vw, 50px);
   font-weight: lighter;
 }
 
@@ -220,8 +217,7 @@ h3 {
 }
 
 p {
-  font-family: "Raleway", sans-serif;
-  font-weight: lighter;
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
   line-height: 150%;
 }
@@ -328,7 +324,7 @@ header nav#mobile-nav #mobile-nav-links a {
   position: relative;
   color: white;
   font-size: 50px;
-  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: lighter;
   overflow: hidden;
   height: max-content;
@@ -349,8 +345,8 @@ main .leaves {
 }
 
 main#main-home section#home {
-  max-height: 1000px;
   position: relative;
+  height: clamp(650px, 90vh, 850px);
 }
 main#main-home section#home #home-content {
   padding-top: 180px;
@@ -374,26 +370,19 @@ main#main-home section#home #cta {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   margin: auto;
   max-width: 500px;
 }
-main#main-home section#home #cta h1 {
+main#main-home section#home #cta h1, main#main-home section#home #cta p {
+  text-align: center;
   color: white;
-  margin-bottom: 40px;
   will-change: transform, opacity;
+  margin-bottom: 40px;
 }
 main#main-home section#home #cta p {
-  color: white;
-  margin-bottom: 50px;
-  will-change: transform, opacity;
-}
-main#main-home section#home #cta .cta-group {
-  align-items: flex-start;
-}
-main#main-home section#home #cta .cta-group .cta-explore {
-  margin-left: 18px;
+  margin-bottom: 80px;
 }
 main#main-home section#acceptances {
   overflow-x: hidden;
@@ -445,7 +434,7 @@ main#main-home section#acceptances #school-grid .school .front {
   justify-content: center;
 }
 main#main-home section#acceptances #school-grid .school .front .school-name {
-  font-family: "Raleway", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 20px;
 }
 main#main-home section#acceptances #school-grid .school .front .school-count {
@@ -659,10 +648,8 @@ main#main-home section#ready #ready-content .link::after {
   background: #145196;
 }
 
-main#main-courses .content > div:nth-child(1) {
-  margin-bottom: 120px;
-}
 main#main-courses .categories-container {
+  margin-top: 120px;
   display: flex;
   flex-direction: column;
 }
@@ -677,19 +664,12 @@ main#main-courses .category-title {
 main#main-courses li {
   list-style-type: none;
   margin-top: 20px;
-  font-family: "Raleway", sans-serif;
-  font-weight: lighter;
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
-}
-main#main-courses li a {
-  text-decoration: underline;
 }
 main#main-courses section#courses-ready {
   position: relative;
   background: #145196;
-}
-main#main-courses section#courses-ready img {
-  display: none;
 }
 main#main-courses section#courses-ready #ready-content {
   display: flex;
@@ -698,7 +678,9 @@ main#main-courses section#courses-ready #ready-content {
 }
 main#main-courses section#courses-ready #ready-content .title {
   position: relative;
-  color: white;
+}
+main#main-courses section#courses-ready #ready-content .title h2, main#main-courses section#courses-ready #ready-content .title p {
+  color: white !important;
 }
 main#main-courses section#courses-ready #ready-content .title #underline {
   content: "";
@@ -767,12 +749,12 @@ main#main-about #about-content {
   flex-direction: column;
   align-items: center;
 }
-main#main-about #about-content h1 {
+main#main-about #about-content h2 {
   text-align: center;
-  margin-bottom: 120px;
+  margin-bottom: 80px;
 }
 main#main-about #about-content .cta-btn {
-  margin-top: 120px;
+  margin-top: 80px;
   background: #272727;
   border: 2px solid #272727;
 }
@@ -902,7 +884,7 @@ footer section#contact #contact-content a {
   }
   .cta-group .cta-explore {
     margin-top: 0;
-    margin-left: 40px;
+    margin-left: 40px !important;
   }
   .cta-group .cta-explore::after {
     background: #00B8F2;
@@ -953,7 +935,6 @@ footer section#contact #contact-content a {
     background: none;
     display: flex;
     align-items: center;
-    min-height: 90vh;
   }
   main#main-home section#home #video-wrapper video {
     transform: translate(0, 0);

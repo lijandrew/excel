@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Raleway:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Roboto:wght@300;400&display=swap');
 $sky: #00B8F2;
 $navy: #145196;
 $dark: #272727;
-$sans: "Raleway", sans-serif;
+$sans: "Roboto", sans-serif;
 $serif: "Merriweather", serif;
 
 * {
@@ -12,10 +12,7 @@ $serif: "Merriweather", serif;
 }
 
 body {
-  /* undone in window.onload js code, so that content only shows
-  after javascript has ran. this hides from the user
-  the brief flicker in position and opacity that occurs
-  before gsap.from() kicks in. */
+  /* Undone by JS */
   opacity: 0;
 }
 
@@ -121,9 +118,10 @@ a {
   }
   .cta-explore {
     z-index: 1;
-    margin-top: 20px;
+    margin-top: 30px;
     display: block;
     font-family: $sans;
+    font-weight: normal !important;
     color: $sky;
   }
 }
@@ -188,7 +186,6 @@ a {
 .link {
   position: relative;
   font-family: $sans;
-  font-weight: lighter !important;
   &::after {
     position: absolute;
     display: block;
@@ -210,7 +207,7 @@ a {
 }
 h1 {
   font-family: $serif;
-  font-size: clamp(32px, 5vw, 50px);
+  font-size: clamp(30px, 5vw, 50px);
   font-weight: lighter;
 }
 h2 {
@@ -225,7 +222,6 @@ h3 {
 }
 p {
   font-family: $sans;
-  font-weight: lighter;
   font-size: 18px;
   line-height: 150%;
 }
@@ -353,8 +349,8 @@ main {
 }
 main#main-home {
   section#home {
-    max-height: 1000px;
     position: relative;
+    height: clamp(650px, 90vh, 850px);
     #home-content {
       padding-top: 180px;
     }
@@ -377,26 +373,18 @@ main#main-home {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: flex-start;
+      align-items: center;
       width: 100%;
       margin: auto;
       max-width: 500px;
-      h1 {
+      h1,p {
+        text-align: center;
         color: white;
-        margin-bottom: 40px;
         will-change: transform, opacity;
+        margin-bottom: 40px;
       }
       p {
-        color: white;
-        margin-bottom: 50px;
-        // max-width: 370px;
-        will-change: transform, opacity;
-      }
-      .cta-group {
-        align-items: flex-start;
-        .cta-explore {
-          margin-left: 18px;
-        }
+        margin-bottom: 80px;
       }
     }
   }
@@ -592,7 +580,9 @@ main#main-home {
     }
     #ready-content {
       text-align: center;
-      .title { position: relative; }
+      .title {
+        position: relative;
+      }
       .title #underline {
         content: '';
         display: block;
@@ -622,10 +612,8 @@ main#main-home {
   }
 }
 main#main-courses {
-  .content > div:nth-child(1) {
-    margin-bottom: 120px;
-  }
   .categories-container {
+    margin-top: 120px;
     display: flex;
     flex-direction: column;
   }
@@ -641,25 +629,20 @@ main#main-courses {
     list-style-type: none;
     margin-top: 20px;
     font-family: $sans;
-    font-weight: lighter;
     font-size: 18px;
-    a {
-      text-decoration: underline;
-    }
   }
   section#courses-ready {
     position: relative;
     background: $navy;
-    img {
-      display: none;
-    }
     #ready-content {
       display: flex;
       text-align: center;
       padding-top: 180px;
       .title {
         position: relative;
-        color: white;
+        h2,p {
+          color: white !important;
+        }
       }
       .title #underline {
         content: '';
@@ -730,12 +713,12 @@ main#main-about {
     display: flex;
     flex-direction: column;
     align-items: center;
-    h1 {
+    h2 {
       text-align: center;
-      margin-bottom: 120px;
+      margin-bottom: 80px;
     }
     .cta-btn {
-      margin-top: 120px;
+      margin-top: 80px;
       background: $dark;
       border: 2px solid $dark;
     }
@@ -879,7 +862,7 @@ footer {
     align-items: center !important;
     .cta-explore {
       margin-top: 0;
-      margin-left: 40px;
+      margin-left: 40px !important;
       &::after {
         background: $sky;
       }
@@ -932,7 +915,6 @@ footer {
       background: none;
       display: flex;
       align-items: center;
-      min-height: 90vh;
       #video-wrapper video {
         transform: translate(0, 0);
       }
