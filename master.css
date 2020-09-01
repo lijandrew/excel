@@ -878,6 +878,10 @@ footer section#contact #contact-content a {
     white-space: nowrap;
   }
 
+  #cta h1, #cta p {
+    text-align: left !important;
+  }
+
   .cta-group {
     flex-direction: row;
     align-items: center !important;
