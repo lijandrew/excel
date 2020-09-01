@@ -33,7 +33,6 @@ body.mobile-nav-open {
 }
 
 .barba-container {
-  overflow-x: hidden;
   position: absolute;
   top: 0;
   left: 0;
@@ -399,6 +398,7 @@ main#main-home section#home #cta .cta-group .cta-explore {
   margin-left: 18px;
 }
 main#main-home section#acceptances {
+  overflow-x: hidden;
   position: relative;
   background-position: center;
   background-size: contain;
@@ -538,6 +538,7 @@ main#main-home section#acceptances #school-grid #cta-acceptances .lower {
   color: black;
 }
 main#main-home section#testimonials {
+  overflow-x: hidden;
   position: relative;
   background: #145196;
 }

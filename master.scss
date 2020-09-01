@@ -39,7 +39,6 @@ body.mobile-nav-open {
 }
 
 .barba-container {
-  overflow-x: hidden;
   position: absolute;
   top: 0;
   left: 0;
@@ -403,6 +402,7 @@ main#main-home {
     }
   }
   section#acceptances {
+    overflow-x: hidden;
     position: relative;
     background-position: center;
     background-size: contain;
@@ -501,6 +501,7 @@ main#main-home {
     }
   }
   section#testimonials {
+    overflow-x: hidden;
     position: relative;
     background: $navy;
     .huge {
