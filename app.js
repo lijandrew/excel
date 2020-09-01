@@ -178,7 +178,7 @@ function coursesAni() {
     stagger: {amount: 0.5},
     scrollTrigger: {
       trigger: "#fundamentals-content .title",
-      start: "center 70%",
+      start: "center bottom",
     }
   });
 }

@@ -32,24 +32,40 @@ body.mobile-nav-open {
   overflow: hidden;
 }
 
-#cover {
-  z-index: 98;
-  position: fixed;
+.content {
+  width: 80%;
+  margin: auto;
+  padding: 120px 0;
+  max-width: 1000px;
+}
+
+.barba-container {
+  position: absolute;
   top: 0;
   left: 0;
-  height: 200%;
-  width: 200%;
-  min-height: 200%;
-  min-width: 200%;
-  background: black;
-  transform: translate(100%, 0) skewX(-10deg);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  main {
+    flex-grow: 1;
+    display: flex !important;
+    flex-direction: column;
+    section,.content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+    }
+  }
 }
+
 a {
   text-decoration: none;
   color: inherit;
   white-space: nowrap;
 }
-
 .cta-group {
   display: flex;
   flex-direction: column;
@@ -85,7 +101,7 @@ a {
         height: 350%;
       }
       .cta-enroll {
-        .fill-circle {
+        .fill {
           width: 180%;
           opacity: 1;
         }
@@ -123,7 +139,7 @@ a {
   font-size: 16px !important;
   color: white;
   padding: 12px 20px;
-  .fill-circle-wrapper {
+  .fill-wrapper {
     z-index: 0 !important;
     position: absolute;
     top: 0;
@@ -131,7 +147,7 @@ a {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    .fill-circle {
+    .fill {
       position: absolute;
       left: 50%;
       top: 50%;
@@ -157,7 +173,7 @@ a {
   }
 }
 .cta-btn:hover {
-  .fill-circle {
+  .fill {
     width: 180%;
     opacity: 1;
   }
@@ -170,7 +186,6 @@ a {
     opacity: 1;
   }
 }
-
 .link {
   position: relative;
   font-family: $sans;
@@ -194,19 +209,16 @@ a {
   transform: scaleX(1);
   opacity: 1;
 }
-
 h1 {
   font-family: $sans;
   font-size: 32px;
   font-weight: bolder;
 }
-
 h2 {
   font-family: $sans;
   font-weight: lighter;
   font-size: 32px;
 }
-
 h3 {
   font-family: $sans;
   font-weight: lighter;
@@ -218,36 +230,20 @@ p {
   font-size: 16px;
   line-height: 150%;
 }
-
-.content {
-  width: 80%;
-  height: 100%;
-  margin: auto;
-  padding: 80px 0;
-  max-width: 1000px;
-}
-
 .subtitle {
   font-size: 14px;
   opacity: 0.8;
 }
-
-.barba-container {
+.huge {
+  z-index: -1;
+  user-select: none;
   position: absolute;
+  font-size: 200px;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  main {
-    flex-grow: 1;
-    display: flex !important;
-    flex-direction: column;
-    section {
-      flex-grow: 1;
-    }
-  }
+  transform: translateY(-40px);
+  opacity: 0.015;
+  white-space: nowrap;
 }
 
 header {
@@ -347,34 +343,10 @@ header {
   }
 }
 
-.huge {
-  z-index: -1;
-  user-select: none;
-  position: absolute;
-  font-size: 200px;
-  top: 0;
-  left: 0;
-  transform: translateY(-40px);
-  opacity: 0.015;
-  white-space: nowrap;
-}
-#testimonials .huge {
-  color: white;
-  z-index: 0;
-  opacity: 0.03;
-  transform: translateY(0);
-}
-#testimonials-title {
-  z-index: 1;
-}
 main {
   width: 100%;
   min-width: 100%;
   max-width: 100%;
-  .content {
-    padding: 80px 0;
-    width: 80%;
-  }
   .leaves {
     display: none;
     user-select: none;
@@ -398,12 +370,6 @@ main#main-home {
         min-width: 100%;
         transform: translate(-40%, 0);
       }
-    }
-    #home-content {
-      display: flex;
-      flex-direction: column;
-      padding: 140px 0;
-      padding-top: 180px;
     }
     #cta {
       display: flex;
@@ -471,7 +437,7 @@ main#main-home {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-bottom: 10px;
+      padding-bottom: 80px;
     }
     h2,p {
       text-align: center;
@@ -551,7 +517,7 @@ main#main-home {
           transform: translate(-35%, 30%);
           width: 50%;
         }
-        .fill-circle {
+        .fill {
           background: white;
         }
         .lower {
@@ -563,11 +529,18 @@ main#main-home {
   section#testimonials {
     position: relative;
     background: $navy;
+    .huge {
+      color: white;
+      z-index: 0;
+      opacity: 0.03;
+      transform: translateY(0);
+    }
     #testimonials-content {
       display: flex;
       flex-direction: column;
       align-items: center;
       #testimonials-title {
+        z-index: 1;
         color: white;
         display: flex;
         flex-direction: column;
@@ -639,15 +612,11 @@ main#main-home {
   }
   section#ready {
     position: relative;
-    padding: 30px 0;
     background: #fff;
     img {
       display: none;
     }
     #ready-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       text-align: center;
       .title { position: relative; }
       .title #underline {
@@ -679,23 +648,18 @@ main#main-home {
   }
 }
 main#main-courses {
-  .content {
-    padding: 120px 0;
-  }
   .content > div:nth-child(1) {
     margin-bottom: 120px;
   }
   .categories-container {
     display: flex;
     flex-direction: column;
-    height: 100%;
   }
   .category {
     margin-bottom: 80px;
     width: fit-content;
   }
   .category-title {
-    cursor: pointer;
     margin-bottom: 30px;
   }
   .category-title-text {
@@ -712,8 +676,6 @@ main#main-courses {
     }
   }
   section#courses-ready {
-    padding: 30px 0;
-    padding-top: 120px;
     position: relative;
     background: $navy;
     img {
@@ -721,9 +683,8 @@ main#main-courses {
     }
     #ready-content {
       display: flex;
-      flex-direction: column;
-      align-items: center;
       text-align: center;
+      padding-top: 180px;
       .title {
         position: relative;
         color: white;
@@ -758,13 +719,25 @@ main#main-courses {
   section#enrichment {
     background: white;
     #enrichment-content {
-      padding-top: 200px !important;
       color: $navy;
     }
   }
   section#fundamentals {
     background: $navy;
     color: white;
+    .cta-btn {
+      margin-top: 80px;
+      background: white;
+    }
+    .fill {
+      background: $dark;
+    }
+    .upper {
+      color: black;
+    }
+    .lower {
+      color: white;
+    }
   }
 }
 main#main-about {
@@ -785,7 +758,7 @@ main#main-about {
       background: $dark;
       border: 2px solid $dark;
     }
-    .cta-btn .fill-circle {
+    .cta-btn .fill {
       background: white;
     }
     .lower {
@@ -860,8 +833,6 @@ footer {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
       grid-auto-flow: column;
-      .category {
-      }
     }
   }
 }
@@ -869,7 +840,7 @@ footer {
   main#main-home {
     section#acceptances {
       #acceptances-content {
-        padding-bottom: 80px !important;
+        // padding-bottom: 80px !important;
       }
       #school-grid {
         min-width: 650px;
@@ -917,9 +888,6 @@ footer {
     white-space: nowrap;
     font-size: 40px;
   }
-  .content {
-    width: 70%;
-  }
   .cta-group {
     flex-direction: row;
     .cta-explore {
@@ -964,7 +932,7 @@ footer {
       width: 100%;
       font-size: 100%;
       font-size: 20px;
-      .fill-circle {
+      .fill {
         background: white;
       }
       .lower {
@@ -978,7 +946,7 @@ footer {
       background: none;
       display: flex;
       align-items: center;
-      height: 90vh;
+      height: 80vh;
       #video-wrapper video {
         transform: translate(0, 0);
       }
@@ -1063,12 +1031,6 @@ footer {
         bottom: 20px;
         width: 25%;
         max-width: 350px;
-      }
-      #ready-content {
-        padding: 160px 0;
-        .cta-group {
-          margin-top: 80px;
-        }
       }
     }
   }
