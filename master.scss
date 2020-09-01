@@ -69,7 +69,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: $sans;
+  font-family: $serif;
   .enroll-dropdown {
     z-index: 2;
     position: relative;
@@ -209,24 +209,24 @@ a {
   opacity: 1;
 }
 h1 {
-  font-family: $sans;
-  font-size: clamp(32px, 5vw, 40px);
-  font-weight: bolder;
+  font-family: $serif;
+  font-size: clamp(32px, 5vw, 50px);
+  font-weight: lighter;
 }
 h2 {
-  font-family: $sans;
+  font-family: $serif;
   font-weight: lighter;
   font-size: 32px;
 }
 h3 {
-  font-family: $sans;
+  font-family: $serif;
   font-weight: lighter;
   font-size: 28px;
 }
 p {
-  font-family: $serif;
+  font-family: $sans;
   font-weight: lighter;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 150%;
 }
 .subtitle {
@@ -387,10 +387,9 @@ main#main-home {
         will-change: transform, opacity;
       }
       p {
-        font-size: 15px;
         color: white;
         margin-bottom: 50px;
-        max-width: 370px;
+        // max-width: 370px;
         will-change: transform, opacity;
       }
       .cta-group {
@@ -447,11 +446,11 @@ main#main-home {
           flex-direction: column;
           justify-content: center;
           .school-name {
-            font-family: $serif;
+            font-family: $sans;
             font-size: 20px;
           }
           .school-count {
-            font-family: $sans;
+            font-family: $serif;
             font-size: 40px;
             margin: 5px 0;
           }
@@ -534,7 +533,7 @@ main#main-home {
             margin-bottom: 20px;
             font-size: 22px;
             text-align: center;
-            font-family: $sans;
+            font-family: $serif;
           }
           p {
             text-align: left;
@@ -638,13 +637,10 @@ main#main-courses {
     margin-bottom: 30px;
     text-decoration: underline;
   }
-  .category-title-text {
-    font-weight: bolder;
-  }
   li {
     list-style-type: none;
     margin-top: 20px;
-    font-family: Merriweather, sans-serif;
+    font-family: $sans;
     font-weight: lighter;
     font-size: 18px;
     a {
@@ -765,8 +761,6 @@ footer {
         width: fit-content;
         font-size: 16px;
         margin: 10px auto;
-        font-family: $sans;
-        font-weight: lighter;
         color: white;
         &::after {
           background: white;
@@ -791,7 +785,6 @@ footer {
         width: fit-content;
         p {
           text-align: center;
-          font-family: $sans;
           color: rgb(182, 182, 182);
           span {
             color: #fff;
@@ -878,12 +871,8 @@ footer {
     top: 50%;
     transform: translate(0, -50%);
   }
-  p {
-    font-size: 16px;
-  }
   h1 {
     white-space: nowrap;
-    font-size: 40px !important;
   }
   .cta-group {
     flex-direction: row;
@@ -907,7 +896,6 @@ footer {
       width: fit-content;
       .link {
         font-size: 16px;
-        font-family: $sans;
         color: white;
         margin-right: 20px;
       }
@@ -944,7 +932,7 @@ footer {
       background: none;
       display: flex;
       align-items: center;
-      height: 80vh;
+      min-height: 90vh;
       #video-wrapper video {
         transform: translate(0, 0);
       }
