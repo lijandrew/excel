@@ -636,6 +636,7 @@ main#main-courses {
   }
   .category-title {
     margin-bottom: 30px;
+    text-decoration: underline;
   }
   .category-title-text {
     font-weight: bolder;
@@ -694,16 +695,12 @@ main#main-courses {
   section#enrichment {
     background: white;
     #enrichment-content {
-      align-items: flex-start;
       color: $navy;
     }
   }
   section#fundamentals {
     background: $navy;
     color: white;
-    #fundamentals-content {
-      align-items: flex-start;
-    }
     .cta-btn {
       margin-top: 80px;
       background: white;
@@ -717,6 +714,15 @@ main#main-courses {
     .lower {
       color: white;
     }
+  }
+  .category {
+    text-align: center;
+  }
+  .title {
+    text-align: center;
+  }
+  .categories-container {
+    align-items: center;
   }
 }
 main#main-about {
@@ -812,12 +818,18 @@ footer {
         align-items: center !important;
       }
     }
+    .category {
+      text-align: left !important;
+      // margin-bottom: 0 !important;
+    }
     .categories-container {
       display: grid !important;
+      align-items: flex-start !important;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
       grid-auto-flow: column;
-      grid-gap: 30px;
+      grid-row-gap: 10px;
+      grid-column-gap: 50px;
     }
   }
 }

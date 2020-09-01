@@ -674,6 +674,7 @@ main#main-courses .category {
 }
 main#main-courses .category-title {
   margin-bottom: 30px;
+  text-decoration: underline;
 }
 main#main-courses .category-title-text {
   font-weight: bolder;
@@ -733,15 +734,11 @@ main#main-courses section#enrichment {
   background: white;
 }
 main#main-courses section#enrichment #enrichment-content {
-  align-items: flex-start;
   color: #145196;
 }
 main#main-courses section#fundamentals {
   background: #145196;
   color: white;
-}
-main#main-courses section#fundamentals #fundamentals-content {
-  align-items: flex-start;
 }
 main#main-courses section#fundamentals .cta-btn {
   margin-top: 80px;
@@ -755,6 +752,15 @@ main#main-courses section#fundamentals .upper {
 }
 main#main-courses section#fundamentals .lower {
   color: white;
+}
+main#main-courses .category {
+  text-align: center;
+}
+main#main-courses .title {
+  text-align: center;
+}
+main#main-courses .categories-container {
+  align-items: center;
 }
 
 main#main-about #about-content {
@@ -844,12 +850,17 @@ footer section#contact #contact-content a {
   #main-courses #enrichment .content, #main-courses #fundamentals .content {
     align-items: center !important;
   }
+  #main-courses .category {
+    text-align: left !important;
+  }
   #main-courses .categories-container {
     display: grid !important;
+    align-items: flex-start !important;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-auto-flow: column;
-    grid-gap: 30px;
+    grid-row-gap: 10px;
+    grid-column-gap: 50px;
   }
 }
 @media only screen and (min-width: 768px) {
