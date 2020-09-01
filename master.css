@@ -557,9 +557,9 @@ main#main-home section#testimonials #testimonials-content .testimonials .testimo
 }
 main#main-home section#testimonials #testimonials-content .testimonials .testimonial-box .pfp-name {
   margin-bottom: 20px;
-  font-size: 22px;
+  font-size: 20px;
   text-align: center;
-  font-family: "Merriweather", serif;
+  font-family: "Roboto", sans-serif;
 }
 main#main-home section#testimonials #testimonials-content .testimonials .testimonial-box p {
   text-align: left;
