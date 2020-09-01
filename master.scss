@@ -381,10 +381,7 @@ main#main-home {
         text-align: center;
         color: white;
         will-change: transform, opacity;
-        margin-bottom: 40px;
-      }
-      p {
-        margin-bottom: 80px;
+        margin-bottom: 60px;
       }
     }
   }
@@ -796,7 +793,6 @@ footer {
     }
     .category {
       text-align: left !important;
-      // margin-bottom: 0 !important;
     }
     .categories-container {
       display: grid !important;
@@ -812,9 +808,6 @@ footer {
 @media only screen and (min-width: 768px) {
   main#main-home {
     section#acceptances {
-      #acceptances-content {
-        // padding-bottom: 80px !important;
-      }
       #school-grid {
         min-width: 650px;
         grid-template-rows: repeat(3, 1fr) !important;

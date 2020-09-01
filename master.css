@@ -379,10 +379,7 @@ main#main-home section#home #cta h1, main#main-home section#home #cta p {
   text-align: center;
   color: white;
   will-change: transform, opacity;
-  margin-bottom: 40px;
-}
-main#main-home section#home #cta p {
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 main#main-home section#acceptances {
   overflow-x: hidden;
