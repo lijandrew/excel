@@ -71,8 +71,14 @@ function homeAni() {
   "use strict";
   /* Intro animations */
   let tl = gsap.timeline();
-  tl.from("#cta > h1, #cta > p", {delay: 0.5, duration: 0.5, opacity: 0, transform: "translate(-30px, 0)", stagger: {amount: 0.3}});
-  tl.from("#cta .cta-btn, #cta .link", {duration: 0.5, opacity: 0, transform: "translate(0, 30px)"});
+  tl.from("#cta > h1, #cta > p, #cta .cta-btn, #cta .link", {
+    delay: 0.3,
+    duration: 0.5,
+    ease: "power1.out",
+    opacity: 0,
+    transform: "translate(0, 30px)",
+    stagger: {amount: 1.5}
+  });
 
   /* Scroll animations */
   let schoolTl = gsap.timeline({
