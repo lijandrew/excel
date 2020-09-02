@@ -71,13 +71,13 @@ function homeAni() {
   "use strict";
   /* Intro animations */
   let tl = gsap.timeline();
-  tl.from("#cta > h1, #cta > p, #cta .cta-btn, #cta .link", {
+  tl.from("#cta > h1, #cta > p, #cta > .cta-group", {
     delay: 0.3,
     duration: 0.5,
     ease: "power1.out",
     opacity: 0,
     transform: "translate(0, 30px)",
-    stagger: {amount: 1.5}
+    stagger: {amount: 0.7}
   });
 
   /* Scroll animations */
