@@ -51,22 +51,31 @@ function mobileNavAni() {
   }
 }
 
+async function sleep(ms) {
+  return new Promise((resolve, reject) => {
+    setTimeout(resolve, ms);
+  });
+}
+
+async function countUp(elem, target, totalTime) {
+  let i = 0;
+  let sleepTime = totalTime / target;
+  while (i <= target) {
+    elem.textContent = i++;
+    await sleep(sleepTime);
+  }
+}
+
 function countSchoolsUp() {
   "use strict";
   let countDivArr = Array.from(document.querySelectorAll(".school-count"));
+  let totalTime = 1500;
   for (let countDiv of countDivArr) {
     let target = parseInt(countDiv.textContent);
-    let totalTime = 1500;
-    let interval = totalTime / target;
-    let current = -1;
-    let countUp = setInterval(() => {
-      countDiv.textContent = ++current;
-      if (current === target) {
-        clearInterval(countUp);
-      }
-    }, interval);
+    countUp(countDiv, target, totalTime);
   }
 }
+
 function homeAni() {
   "use strict";
   /* Intro animations */
@@ -77,7 +86,7 @@ function homeAni() {
     ease: "power1.out",
     opacity: 0,
     transform: "translate(0, 30px)",
-    stagger: {amount: 0.7}
+    stagger: {amount: 0.5}
   });
 
   /* Scroll animations */
@@ -87,7 +96,7 @@ function homeAni() {
       start: "20% bottom",
     }
   });
-  schoolTl.add( countSchoolsUp, "schoolIn" )
+  schoolTl.add(countSchoolsUp, "schoolIn")
           .from(".front", {opacity: 0, ease: "power2.inOut", stagger: {amount: 0.5}}, "schoolIn")
           .from(".back", {opacity: 0, duration: 1.5, transform: "translate(0, 0)", ease: "power4.out"});
 
@@ -233,7 +242,7 @@ function initBarba() {
     ]
   });
 
-  barba.hooks.enter(() => {
+  barba.hooks.beforeEnter(() => {
     window.scrollTo(0, 0);
   });
 }
