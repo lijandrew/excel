@@ -635,7 +635,7 @@ main#main-home section#ready #ready-content .cta-enroll {
   background: #145196;
 }
 main#main-home section#ready #ready-content .location {
-  border: 1px solid black;
+  border: 2px solid #272727;
 }
 main#main-home section#ready #ready-content .cta-explore {
   color: #145196;
@@ -695,7 +695,7 @@ main#main-courses section#courses-ready #ready-content .cta-group {
   margin-top: 50px;
 }
 main#main-courses section#courses-ready #ready-content .location {
-  border: 1px solid black;
+  border: 2px solid #272727;
 }
 main#main-courses section#courses-ready #ready-content .cta-explore {
   color: #00B8F2;
@@ -714,17 +714,17 @@ main#main-courses section#fundamentals {
   color: white;
 }
 main#main-courses section#fundamentals .cta-btn {
-  margin-top: 20px;
-  background: white;
+  margin-top: 60px;
+  border: 2px solid white;
 }
 main#main-courses section#fundamentals .fill {
-  background: #272727;
+  background: white;
 }
 main#main-courses section#fundamentals .upper {
-  color: black;
+  color: white;
 }
 main#main-courses section#fundamentals .lower {
-  color: white;
+  color: black;
 }
 main#main-courses .category {
   text-align: center;
@@ -734,6 +734,46 @@ main#main-courses .title {
 }
 main#main-courses .categories-container {
   align-items: center;
+}
+
+main#main-calendar #calendar-content {
+  width: 90%;
+  max-width: 1200px;
+  padding-top: 180px;
+}
+main#main-calendar #calendar-content #calendar-entry-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  justify-items: center;
+  align-items: center;
+  grid-gap: 120px;
+}
+main#main-calendar #calendar-content #calendar-entry-grid .cta-btn {
+  border: 2px solid #272727;
+  background: #272727;
+  width: fit-content;
+  margin: auto;
+  margin-top: 25px;
+}
+main#main-calendar #calendar-content #calendar-entry-grid .fill {
+  background: white;
+}
+main#main-calendar #calendar-content #calendar-entry-grid .lower {
+  color: black;
+}
+main#main-calendar #calendar-content > .cta-btn {
+  margin-top: 120px;
+  border: 2px solid #272727;
+}
+main#main-calendar #calendar-content > .cta-btn .fill {
+  background: #272727;
+}
+main#main-calendar #calendar-content > .cta-btn .upper {
+  color: black;
+}
+main#main-calendar #calendar-content > .cta-btn .lower {
+  color: white;
 }
 
 main#main-about #about-content {
@@ -751,14 +791,16 @@ main#main-about #about-content h2 {
 }
 main#main-about #about-content .cta-btn {
   margin-top: 80px;
-  background: #272727;
   border: 2px solid #272727;
 }
 main#main-about #about-content .cta-btn .fill {
-  background: white;
+  background: #272727;
+}
+main#main-about #about-content .upper {
+  color: black;
 }
 main#main-about #about-content .lower {
-  color: black;
+  color: white;
 }
 
 footer section#footer-links {

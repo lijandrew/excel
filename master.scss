@@ -596,7 +596,7 @@ main#main-home {
         background: $navy;
       }
       .location {
-        border: 1px solid black;
+        border: 2px solid $dark;
       }
       .cta-explore {
         color: $navy;
@@ -657,7 +657,7 @@ main#main-courses {
         margin-top: 50px;
       }
       .location {
-        border: 1px solid black;
+        border: 2px solid $dark;
       }
       .cta-explore {
         color: $sky;
@@ -677,17 +677,17 @@ main#main-courses {
     background: $navy;
     color: white;
     .cta-btn {
-      margin-top: 20px;
-      background: white;
+      margin-top: 60px;
+      border: 2px solid white;
     }
     .fill {
-      background: $dark;
+      background: white;
     }
     .upper {
-      color: black;
+      color: white;
     }
     .lower {
-      color: white;
+      color: black;
     }
   }
   .category {
@@ -698,6 +698,47 @@ main#main-courses {
   }
   .categories-container {
     align-items: center;
+  }
+}
+main#main-calendar {
+  #calendar-content {
+    width: 90%;
+    max-width: 1200px;
+    padding-top: 180px;
+    #calendar-entry-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+      justify-items: center;
+      align-items: center;
+      grid-gap: 120px;
+      .cta-btn {
+        border: 2px solid $dark;
+        background: $dark;
+        width: fit-content;
+        margin: auto;
+        margin-top: 25px;
+      }
+      .fill {
+        background: white;
+      }
+      .lower {
+        color: black;
+      }
+    }
+    & > .cta-btn {
+      margin-top: 120px;
+      border: 2px solid $dark;
+      .fill {
+        background: $dark;
+      }
+      .upper {
+        color: black;
+      }
+      .lower {
+        color: white;
+      }
+    }
   }
 }
 main#main-about {
@@ -715,14 +756,16 @@ main#main-about {
     }
     .cta-btn {
       margin-top: 80px;
-      background: $dark;
       border: 2px solid $dark;
     }
     .cta-btn .fill {
-      background: white;
+      background: $dark;
+    }
+    .upper {
+      color: black;
     }
     .lower {
-      color: black;
+      color: white;
     }
   }
 }
