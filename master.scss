@@ -195,15 +195,14 @@ a {
     background: black;
     margin-top: 2px;
     transform: scaleX(0);
-    transform-origin: left;
-    opacity: 0;
+    transform-origin: right;
     will-change: transform, opacity;
     transition: transform 200ms ease-out, opacity 200ms linear;
   }
 }
 .link:hover::after {
+  transform-origin: left;
   transform: scaleX(1);
-  opacity: 1;
 }
 h1 {
   font-family: $serif;
