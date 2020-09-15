@@ -197,7 +197,7 @@ a {
 
 h1 {
   font-family: "Merriweather", serif;
-  font-size: clamp(30px, 5vw, 50px);
+  font-size: 50px;
   font-weight: lighter;
 }
 
