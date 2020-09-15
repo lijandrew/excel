@@ -18,6 +18,10 @@ html, body {
   scroll-behavior: smooth;
 }
 
+body {
+  height: 100%;
+}
+
 body.mobile-nav-open {
   overflow: hidden;
 }
@@ -35,20 +39,14 @@ body.mobile-nav-open {
   left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.barba-container main {
-  flex-grow: 1;
-  display: flex !important;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr auto;
 }
 .barba-container main section, .barba-container main .content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-grow: 1;
 }
 
 a {
@@ -244,7 +242,7 @@ header {
   width: 100%;
   background: #272727;
 }
-header #header-content {
+header .content {
   width: 80%;
   max-width: 1800px;
   padding: 15px 0 !important;
@@ -347,7 +345,7 @@ main#main-home section#home {
   position: relative;
   height: clamp(650px, 90vh, 850px);
 }
-main#main-home section#home #home-content {
+main#main-home section#home .content {
   padding-top: 180px;
 }
 main#main-home section#home #video-wrapper {
@@ -387,7 +385,7 @@ main#main-home section#acceptances {
   background-size: contain;
   background-repeat: no-repeat;
 }
-main#main-home section#acceptances #acceptances-content {
+main#main-home section#acceptances .content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -531,12 +529,12 @@ main#main-home section#testimonials .huge {
   opacity: 0.03;
   transform: translateY(0);
 }
-main#main-home section#testimonials #testimonials-content {
+main#main-home section#testimonials .content {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-main#main-home section#testimonials #testimonials-content #testimonials-title {
+main#main-home section#testimonials .content #testimonials-title {
   z-index: 1;
   color: white;
   display: flex;
@@ -544,65 +542,65 @@ main#main-home section#testimonials #testimonials-content #testimonials-title {
   align-items: center;
   margin-bottom: 50px;
 }
-main#main-home section#testimonials #testimonials-content .testimonials {
+main#main-home section#testimonials .content .testimonials {
   display: flex;
   flex-direction: column;
 }
-main#main-home section#testimonials #testimonials-content .testimonials .testimonial-box {
+main#main-home section#testimonials .content .testimonials .testimonial-box {
   will-change: opacity;
   padding: 30px;
   margin-top: 30px;
   max-width: 375px;
 }
-main#main-home section#testimonials #testimonials-content .testimonials .testimonial-box .pfp-name {
+main#main-home section#testimonials .content .testimonials .testimonial-box .pfp-name {
   margin-bottom: 20px;
   font-size: 20px;
   text-align: center;
   font-family: "Roboto", sans-serif;
 }
-main#main-home section#testimonials #testimonials-content .testimonials .testimonial-box p {
+main#main-home section#testimonials .content .testimonials .testimonial-box p {
   text-align: left;
 }
-main#main-home section#testimonials #testimonials-content .testimonials .testimonial-box:nth-child(odd) {
+main#main-home section#testimonials .content .testimonials .testimonial-box:nth-child(odd) {
   background: #272727;
   color: white;
 }
-main#main-home section#testimonials #testimonials-content .testimonials .testimonial-box:nth-child(odd) p span {
+main#main-home section#testimonials .content .testimonials .testimonial-box:nth-child(odd) p span {
   color: #00B8F2;
   font-weight: bold;
 }
-main#main-home section#testimonials #testimonials-content .testimonials .testimonial-box:nth-child(even) {
+main#main-home section#testimonials .content .testimonials .testimonial-box:nth-child(even) {
   color: black;
   background: white;
 }
-main#main-home section#testimonials #testimonials-content .testimonials .testimonial-box:nth-child(even) p span {
+main#main-home section#testimonials .content .testimonials .testimonial-box:nth-child(even) p span {
   color: #145196;
   font-weight: bold;
 }
-main#main-home section#testimonials #testimonials-content .testimonials p {
+main#main-home section#testimonials .content .testimonials p {
   text-align: center;
 }
-main#main-home section#testimonials #testimonials-content #cta-testimonials {
+main#main-home section#testimonials .content #cta-testimonials {
   padding: 20px 30px;
   margin-top: 80px;
   color: black;
   background: white;
 }
-main#main-home section#testimonials #testimonials-content #cta-testimonials #branch {
+main#main-home section#testimonials .content #cta-testimonials #branch {
   position: absolute;
   width: 30%;
   top: 0;
   left: 0;
   transform: translate(-60%, 0);
 }
-main#main-home section#testimonials #testimonials-content #cta-testimonials #paper {
+main#main-home section#testimonials .content #cta-testimonials #paper {
   position: absolute;
   width: 30%;
   bottom: 0;
   right: 0;
   transform: translate(55%, 40%);
 }
-main#main-home section#testimonials #testimonials-content #cta-testimonials .lower {
+main#main-home section#testimonials .content #cta-testimonials .lower {
   color: white;
 }
 main#main-home section#ready {
@@ -612,13 +610,13 @@ main#main-home section#ready {
 main#main-home section#ready img {
   display: none;
 }
-main#main-home section#ready #ready-content {
+main#main-home section#ready .content {
   text-align: center;
 }
-main#main-home section#ready #ready-content .title {
+main#main-home section#ready .content .title {
   position: relative;
 }
-main#main-home section#ready #ready-content .title #underline {
+main#main-home section#ready .content .title #underline {
   content: "";
   display: block;
   position: absolute;
@@ -628,19 +626,19 @@ main#main-home section#ready #ready-content .title #underline {
   height: 3px;
   background: black;
 }
-main#main-home section#ready #ready-content .cta-group {
+main#main-home section#ready .content .cta-group {
   margin-top: 50px;
 }
-main#main-home section#ready #ready-content .cta-enroll {
+main#main-home section#ready .content .cta-enroll {
   background: #145196;
 }
-main#main-home section#ready #ready-content .location {
+main#main-home section#ready .content .location {
   border: 2px solid #272727;
 }
-main#main-home section#ready #ready-content .cta-explore {
+main#main-home section#ready .content .cta-explore {
   color: #145196;
 }
-main#main-home section#ready #ready-content .link::after {
+main#main-home section#ready .content .link::after {
   background: #145196;
 }
 
@@ -667,18 +665,18 @@ main#main-courses section#courses-ready {
   position: relative;
   background: #145196;
 }
-main#main-courses section#courses-ready #ready-content {
+main#main-courses section#courses-ready .content {
   display: flex;
   text-align: center;
   padding-top: 180px;
 }
-main#main-courses section#courses-ready #ready-content .title {
+main#main-courses section#courses-ready .content .title {
   position: relative;
 }
-main#main-courses section#courses-ready #ready-content .title h2, main#main-courses section#courses-ready #ready-content .title p {
+main#main-courses section#courses-ready .content .title h2, main#main-courses section#courses-ready .content .title p {
   color: white !important;
 }
-main#main-courses section#courses-ready #ready-content .title #underline {
+main#main-courses section#courses-ready .content .title #underline {
   content: "";
   display: block;
   position: absolute;
@@ -688,25 +686,25 @@ main#main-courses section#courses-ready #ready-content .title #underline {
   height: 3px;
   background: white;
 }
-main#main-courses section#courses-ready #ready-content .subtitle {
+main#main-courses section#courses-ready .content .subtitle {
   margin-top: 10px;
 }
-main#main-courses section#courses-ready #ready-content .cta-group {
+main#main-courses section#courses-ready .content .cta-group {
   margin-top: 50px;
 }
-main#main-courses section#courses-ready #ready-content .location {
+main#main-courses section#courses-ready .content .location {
   border: 2px solid #272727;
 }
-main#main-courses section#courses-ready #ready-content .cta-explore {
+main#main-courses section#courses-ready .content .cta-explore {
   color: #00B8F2;
 }
-main#main-courses section#courses-ready #ready-content .link::after {
+main#main-courses section#courses-ready .content .link::after {
   background: #00B8F2;
 }
 main#main-courses section#enrichment {
   background: white;
 }
-main#main-courses section#enrichment #enrichment-content {
+main#main-courses section#enrichment .content {
   color: #145196;
 }
 main#main-courses section#fundamentals {
@@ -736,12 +734,12 @@ main#main-courses .categories-container {
   align-items: center;
 }
 
-main#main-calendar #calendar-content {
+main#main-calendar .content {
   width: 90%;
   max-width: 1200px;
   padding-top: 180px;
 }
-main#main-calendar #calendar-content #calendar-entry-grid {
+main#main-calendar .content #calendar-entry-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: repeat(1, 1fr);
@@ -749,34 +747,34 @@ main#main-calendar #calendar-content #calendar-entry-grid {
   align-items: center;
   grid-gap: 120px;
 }
-main#main-calendar #calendar-content #calendar-entry-grid .cta-btn {
+main#main-calendar .content #calendar-entry-grid .cta-btn {
   border: 2px solid #272727;
   background: #272727;
   width: fit-content;
   margin: auto;
   margin-top: 25px;
 }
-main#main-calendar #calendar-content #calendar-entry-grid .fill {
+main#main-calendar .content #calendar-entry-grid .fill {
   background: white;
 }
-main#main-calendar #calendar-content #calendar-entry-grid .lower {
+main#main-calendar .content #calendar-entry-grid .lower {
   color: black;
 }
-main#main-calendar #calendar-content > .cta-btn {
+main#main-calendar .content > .cta-btn {
   margin-top: 120px;
   border: 2px solid #272727;
 }
-main#main-calendar #calendar-content > .cta-btn .fill {
+main#main-calendar .content > .cta-btn .fill {
   background: #272727;
 }
-main#main-calendar #calendar-content > .cta-btn .upper {
+main#main-calendar .content > .cta-btn .upper {
   color: black;
 }
-main#main-calendar #calendar-content > .cta-btn .lower {
+main#main-calendar .content > .cta-btn .lower {
   color: white;
 }
 
-main#main-about #about-content {
+main#main-about .content {
   width: 70%;
   max-width: 600px;
   padding-top: 180px;
@@ -785,21 +783,21 @@ main#main-about #about-content {
   flex-direction: column;
   align-items: center;
 }
-main#main-about #about-content h2 {
+main#main-about .content h2 {
   text-align: center;
   margin-bottom: 80px;
 }
-main#main-about #about-content .cta-btn {
+main#main-about .content .cta-btn {
   margin-top: 80px;
   border: 2px solid #272727;
 }
-main#main-about #about-content .cta-btn .fill {
+main#main-about .content .cta-btn .fill {
   background: #272727;
 }
-main#main-about #about-content .upper {
+main#main-about .content .upper {
   color: black;
 }
-main#main-about #about-content .lower {
+main#main-about .content .lower {
   color: white;
 }
 
@@ -808,19 +806,19 @@ footer section#footer-links {
   display: flex;
   justify-content: center;
 }
-footer section#footer-links #footer-links-content {
+footer section#footer-links .content {
   padding: 20px 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
 }
-footer section#footer-links #footer-links-content .link {
+footer section#footer-links .content .link {
   width: fit-content;
   font-size: 16px;
   margin: 10px auto;
   color: white;
 }
-footer section#footer-links #footer-links-content .link::after {
+footer section#footer-links .content .link::after {
   background: white;
 }
 footer section#contact {
@@ -828,31 +826,31 @@ footer section#contact {
   justify-content: center;
   background: #032246;
 }
-footer section#contact #contact-content {
+footer section#contact .content {
   padding: 40px 0;
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
   grid-gap: 20px;
 }
-footer section#contact #contact-content > div {
+footer section#contact .content > div {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: fit-content;
 }
-footer section#contact #contact-content > div p {
+footer section#contact .content > div p {
   text-align: center;
   color: #b6b6b6;
 }
-footer section#contact #contact-content > div p span {
+footer section#contact .content > div p span {
   color: #fff;
   font-weight: bolder;
 }
-footer section#contact #contact-content .number {
+footer section#contact .content .number {
   margin-bottom: 50px;
 }
-footer section#contact #contact-content a {
+footer section#contact .content a {
   display: flex;
   justify-content: center;
   margin-top: 50px;
@@ -981,19 +979,19 @@ footer section#contact #contact-content a {
   main#main-home section#home #video-wrapper video {
     transform: translate(0, 0);
   }
-  main#main-home section#home #home-content {
+  main#main-home section#home .content {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 12px;
     align-content: center;
   }
-  main#main-home section#home #home-content #cta {
+  main#main-home section#home .content #cta {
     grid-column: 1/7;
     align-items: flex-start;
     text-align: left;
   }
-  main#main-home section#home #home-content #home-svg {
+  main#main-home section#home .content #home-svg {
     display: block;
     margin: 0 !important;
     position: static;
@@ -1004,7 +1002,7 @@ footer section#contact #contact-content a {
     width: 100%;
     grid-column: 8/-1;
   }
-  main#main-home section#home #home-content #home-svg #phone-svg {
+  main#main-home section#home .content #home-svg #phone-svg {
     display: block;
     opacity: 0;
     width: 50%;
@@ -1015,7 +1013,7 @@ footer section#contact #contact-content a {
     transform: translate(-40%, -10%);
     animation: phoneIn 800ms 300ms ease-out forwards;
   }
-  main#main-home section#home #home-content #home-svg #reading-svg {
+  main#main-home section#home .content #home-svg #reading-svg {
     display: block;
     opacity: 0;
     transform: translate(40%, 0);
@@ -1054,62 +1052,62 @@ footer section#contact #contact-content a {
     max-width: 350px;
   }
 
-  footer section#footer-links #footer-links-content {
+  footer section#footer-links .content {
     max-width: 1000px;
     display: flex !important;
     justify-content: space-between;
     grid-gap: 20px;
   }
-  footer section#footer-links #footer-links-content a {
+  footer section#footer-links .content a {
     margin: 0 !important;
   }
-  footer section#contact #contact-content {
+  footer section#contact .content {
     max-width: 1000px;
     grid-template-columns: repeat(3, 1fr) !important;
     grid-template-rows: repeat(2, 1fr) !important;
     grid-template-areas: "maddr saddr logo" "mnum  snum  email";
   }
-  footer section#contact #contact-content p {
+  footer section#contact .content p {
     text-align: left !important;
   }
-  footer section#contact #contact-content .address, footer section#contact #contact-content .number {
+  footer section#contact .content .address, footer section#contact .content .number {
     justify-self: flex-start;
   }
-  footer section#contact #contact-content .address {
+  footer section#contact .content .address {
     align-self: flex-start;
   }
-  footer section#contact #contact-content .number {
+  footer section#contact .content .number {
     margin-bottom: 0 !important;
     align-self: flex-end;
   }
-  footer section#contact #contact-content .manhasset.address {
+  footer section#contact .content .manhasset.address {
     grid-area: maddr;
   }
-  footer section#contact #contact-content .manhasset.number {
+  footer section#contact .content .manhasset.number {
     grid-area: mnum;
   }
-  footer section#contact #contact-content .syosset.address {
+  footer section#contact .content .syosset.address {
     grid-area: saddr;
   }
-  footer section#contact #contact-content .syosset.number {
+  footer section#contact .content .syosset.number {
     grid-area: snum;
   }
-  footer section#contact #contact-content .email {
+  footer section#contact .content .email {
     grid-area: email;
     align-items: flex-end;
     align-self: flex-end;
     justify-self: flex-end;
   }
-  footer section#contact #contact-content .email p:nth-child(2) {
+  footer section#contact .content .email p:nth-child(2) {
     margin: 0;
   }
-  footer section#contact #contact-content #footer-logo-wrapper {
+  footer section#contact .content #footer-logo-wrapper {
     position: relative;
     grid-area: logo;
     width: 100%;
     height: 100%;
   }
-  footer section#contact #contact-content #footer-logo-wrapper img {
+  footer section#contact .content #footer-logo-wrapper img {
     position: absolute;
     width: 100%;
     top: 0;

@@ -125,17 +125,17 @@ function homeAni() {
   }});
 
   /* Ready to learn underline animation */
-  let line = document.querySelector("#ready-content .title #underline");
+  let line = document.querySelector("section#ready .content .title #underline");
   let lineTl = gsap.timeline({scrollTrigger: {
-    trigger: "#ready-content .cta-group",
+    trigger: "section#ready .content .cta-group",
     start: "bottom bottom",
   }});
   lineTl.to(line, {transform: "scaleX(1)", duration: 0.5, ease: "power1.in"});
   lineTl.set(line, {transformOrigin: "right"});
   lineTl.to(line, {transform: "scaleX(0)", duration: 0.5, ease: "power2.out"});
 
-  gsap.from("#ready-content .cta-group", {opacity: 0, transform: "translateY(50px)", duration: 0.5, ease: "power1.out", scrollTrigger: {
-    trigger: "#ready-content .cta-group",
+  gsap.from("section#ready .content .cta-group", {opacity: 0, transform: "translateY(50px)", duration: 0.5, ease: "power1.out", scrollTrigger: {
+    trigger: "section#ready .content .cta-group",
     start: "top bottom",
   }});
 }
@@ -178,8 +178,8 @@ function coursesEnrollDropdown() {
 
 function coursesAni() {
   "use strict";
-  let enrichmentCats = document.querySelectorAll("#enrichment-content .categories-container > .category");
-  let fundamentalsCats = document.querySelectorAll("#fundamentals-content .categories-container > .category ");
+  let enrichmentCats = document.querySelectorAll("section#enrichment .content .categories-container > .category");
+  let fundamentalsCats = document.querySelectorAll("section#fundamentals .content .categories-container > .category ");
   gsap.from(enrichmentCats, {
     opacity: 0,
     transform: "translate(0, 30px)",
@@ -192,7 +192,7 @@ function coursesAni() {
     duration: 0.5,
     stagger: {amount: 0.5},
     scrollTrigger: {
-      trigger: "#fundamentals-content .title",
+      trigger: "section#fundamentals .content .title",
       start: "center bottom",
     }
   });
