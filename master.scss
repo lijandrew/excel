@@ -205,7 +205,7 @@ a {
 }
 h1 {
   font-family: $serif;
-  font-size: 50px;
+  font-size: clamp(40px, 5vw, 50px);
   font-weight: lighter;
 }
 h2 {
