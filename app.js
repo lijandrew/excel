@@ -76,7 +76,7 @@ function countSchoolsUp() {
   }
 }
 
-function homeAni() {
+function setupHome() {
   "use strict";
   /* Intro animations */
   let tl = gsap.timeline();
@@ -138,10 +138,7 @@ function homeAni() {
     trigger: "section#ready .content .cta-group",
     start: "top bottom",
   }});
-}
 
-function homeEnrollDropdown() {
-  "use strict";
   /* Setup enroll dropdown class toggling */
   let homeEnrollDropdown = document.querySelector("section#home .enroll-dropdown");
   let readyEnrollDropdown = document.querySelector("section#ready .enroll-dropdown");
@@ -161,22 +158,8 @@ function homeEnrollDropdown() {
     }
   };
 }
-function coursesEnrollDropdown() {
-  "use strict";
-  let coursesReadyEnrollDropdown = document.querySelector("section#courses-ready .enroll-dropdown");
 
-  coursesReadyEnrollDropdown.onclick = () => {
-    coursesReadyEnrollDropdown.classList.toggle("enroll-dropdown-open");
-  };
-
-  window.onclick = event => {
-    if (event.target.closest(".enroll-dropdown") === null) {
-      coursesReadyEnrollDropdown.classList.remove("enroll-dropdown-open");
-    }
-  };
-}
-
-function coursesAni() {
+function setupCourses() {
   "use strict";
   let enrichmentCats = document.querySelectorAll("section#enrichment .content .categories-container > .category");
   let fundamentalsCats = document.querySelectorAll("section#fundamentals .content .categories-container > .category ");
@@ -196,62 +179,28 @@ function coursesAni() {
       start: "center bottom",
     }
   });
-}
 
-function initBarba() {
-  "use strict";
-  barba.init({
-    preventRunning: true,
-    views: [
-      {
-        namespace: "home",
-        beforeEnter() {
-          homeAni();
-          homeEnrollDropdown();
-          document.querySelector("video").play();
-        },
-      },
-      {
-        namespace: "courses",
-        beforeEnter() {
-          coursesAni();
-          coursesEnrollDropdown();
-        },
-      },
-    ],
-    transitions: [
-      {
-        name: "default-opacity",
-        leave(data) {
-          return gsap.to(data.current.container, {
-            opacity: 0,
-            transform: "translate(0, 50px)",
-            duration: 0.4,
-            ease: "power1.in",
-          });
-        },
-        enter(data) {
-          return gsap.from(data.next.container, {
-            opacity: 0,
-            transform: "translate(0, -50px)",
-            duration: 0.4,
-            ease: "power1.out",
-          });
-        },
-      }
-    ]
-  });
+  let coursesReadyEnrollDropdown = document.querySelector("section#courses-ready .enroll-dropdown");
+  coursesReadyEnrollDropdown.onclick = () => {
+    coursesReadyEnrollDropdown.classList.toggle("enroll-dropdown-open");
+  };
 
-  barba.hooks.beforeEnter(() => {
-    window.scrollTo(0, 0);
-  });
+  window.onclick = event => {
+    if (event.target.closest(".enroll-dropdown") === null) {
+      coursesReadyEnrollDropdown.classList.remove("enroll-dropdown-open");
+    }
+  };
 }
 
 function main() {
   "use strict";
   window.onload = () => {
     mobileNavAni();
-    initBarba();
+    if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
+      setupHome();
+    } else if (window.location.pathname === "/courses.html") {
+      setupCourses();
+    }
     document.querySelector("body").style.opacity = 1;
   };
 }
