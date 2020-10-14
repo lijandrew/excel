@@ -145,13 +145,13 @@ function generateStudentInvoices() {
       });
     } else { // create new sheet. find correct sheet index by comparing years and months.
       let i = 0;
-      let currYear = sheetName.split("/")[1];
-      let currMonth = sheetName.split("/")[0];
+      let currYear = parseInt(sheetName.split("/")[1]);
+      let currMonth = parseInt(sheetName.split("/")[0]);
       for (; i < tempSheetArr.length - 1; i++) {
-        let compareYear = tempSheetArr[i].getSheetName().split("/")[1];
-        let compareMonth = tempSheetArr[i].getSheetName().split("/")[0];
+        let compareYear = parseInt(tempSheetArr[i].getSheetName().split("/")[1]);
+        let compareMonth = parseInt(tempSheetArr[i].getSheetName().split("/")[0]);
         if (currYear < compareYear) continue;
-        if (currMonth < compareMonth) continue;
+        if (currYear === compareYear && currMonth < compareMonth) continue;
         break;
       }
       sheet = ss.insertSheet(sheetName, i, {
@@ -162,7 +162,7 @@ function generateStudentInvoices() {
     /* Populate sheet */
     sheet.getRange("C1").setValue(`${monthName} Invoice`);
     sheet.getRange("C2").setValue(`Student Name: ${formatName(studentName)}`);
-    sheet.getRange("E19").setValue(`='${ss.getSheets()[1].getSheetName()}'!F25`); // Prev. balance carry over
+    // sheet.getRange("E19").setValue(`='${ss.getSheets()[1].getSheetName()}'!F25`); // Prev. balance carry over
     let row = 7;
     for (let teacherName of Object.keys(studentInv.invoice)) { // fill in invoice using invoice object
       let teacherEntry = studentInv.invoice[teacherName];
