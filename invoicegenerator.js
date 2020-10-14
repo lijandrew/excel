@@ -1,7 +1,7 @@
 // Run either generateStudentInvoices or generateTeacherInvoices
 // Edit these date values     VVV
-const startDate = new Date("August 1, 2020");
-const endDate = new Date("August 31, 2020");
+const startDate = new Date("September 1, 2020");
+const endDate = new Date("September 30, 2020");
 
 
 
@@ -76,7 +76,6 @@ function generateStatement() {
   let ss = SpreadsheetApp.open(ssFile);
   ss.renameActiveSheet(`${sheetName}`);
   let sheet = ss.getActiveSheet();
-
   sheet.getRange("D1").setValue(`${monthName} Statement`);
 
   /* Fill students */
@@ -85,7 +84,6 @@ function generateStatement() {
     sheet.getRange(`A${row}`).setValue(formatName(studentInv.studentName));
     let total = 0;
     for (let teacherKey of Object.keys(studentInv.invoice)) { // calculate student payment
-      // Logger.log(teacherInfo[teacherKey]);
       total += studentInv.invoice[teacherKey].totalHours * teacherInfo[teacherKey].rate;
     }
     sheet.getRange(`B${row}`).setValue(total);
@@ -138,12 +136,12 @@ function generateStudentInvoices() {
       }
     }
     let sheet;
-    if (savedIndex !== null) { // if sheet already exists, delete it and reinsert fresh copy at saved index (effectively reset it)
+    if (savedIndex !== null) { // if sheet already exists, delete and reinsert fresh copy at saved index (effectively resets it)
       ss.deleteSheet(tempSheetArr[savedIndex]);
       sheet = ss.insertSheet(sheetName, savedIndex, {
         template: ss.getSheetByName("template")
       });
-    } else { // create new sheet. find correct sheet index by comparing years and months.
+    } else { // create new sheet. find correct index by comparing years and months.
       let i = 0;
       let currYear = parseInt(sheetName.split("/")[1]);
       let currMonth = parseInt(sheetName.split("/")[0]);
@@ -156,13 +154,16 @@ function generateStudentInvoices() {
       }
       sheet = ss.insertSheet(sheetName, i, {
         template: ss.getSheetByName("template")
-      }); // if sheet doesn't exist, simply insert copy of template sheet at start
+      });
     }
 
     /* Populate sheet */
     sheet.getRange("C1").setValue(`${monthName} Invoice`);
     sheet.getRange("C2").setValue(`Student Name: ${formatName(studentName)}`);
+
+    // FIXME: Prev. balance carry over not working.
     // sheet.getRange("E19").setValue(`='${ss.getSheets()[1].getSheetName()}'!F25`); // Prev. balance carry over
+
     let row = 7;
     for (let teacherName of Object.keys(studentInv.invoice)) { // fill in invoice using invoice object
       let teacherEntry = studentInv.invoice[teacherName];
@@ -197,13 +198,11 @@ function generateTeacherInvoices() {
   for (let cal of validCalArr) {
     let teacherInv = getTeacherInv(cal);
     let teacherName = cal.getTitle().trim().toUpperCase();
-
     let template = DriveApp.getFileById("1P-9YpkUURljQ9air6wr1dKXp2vOgKOLZWQ1aow56DJU");
     let ssFile = template.makeCopy(formatName(teacherName), teacherDateFolder);
     let ss = SpreadsheetApp.open(ssFile);
     ss.renameActiveSheet(sheetName);
     let sheet = ss.getActiveSheet();
-
     sheet.getRange("C1").setValue(`${monthName} Invoice`);
     sheet.getRange("C2").setValue(`Teacher Name: ${formatName(teacherName)}`);
     let row = 7;
