@@ -1,2 +1,4 @@
 *.css.map
 _config.yml
+.copyme
+prep.sh
