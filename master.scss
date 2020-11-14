@@ -38,7 +38,7 @@ body.mobile-nav-open {
   max-width: 1000px;
 }
 
-.barba-container {
+.stretch-wrapper {
   position: absolute;
   top: 0;
   left: 0;
@@ -66,52 +66,9 @@ a {
   flex-direction: column;
   align-items: center;
   font-family: $serif;
-  .enroll-dropdown {
+  .cta-enroll {
     z-index: 2;
     position: relative;
-    .location-list {
-      position: absolute;
-      height: 0;
-      overflow: hidden;
-      transition: height 100ms ease-out;
-    }
-    .location {
-      color: black;
-      background: white;
-      span {
-        margin-left: 12px;
-      }
-      .lower {
-        color: white;
-      }
-    }
-    .location.cta-btn {
-      justify-content: flex-start;
-    }
-
-    /* this special case repeats the .cta-btn:hover code so that the
-       enroll button stays filled when hovering dropdown items */
-    &.enroll-dropdown-open {
-      .location-list {
-        height: 350%;
-      }
-      .cta-enroll {
-        .fill {
-          width: 180%;
-          opacity: 1;
-        }
-        .upper {
-          transform: translate(0, -100%);
-          opacity: 0;
-        }
-        .lower {
-          transform: translate(0, 0);
-          opacity: 1;
-        }
-      }
-    }
-  }
-  .cta-enroll {
     background: $sky;
     color: white;
   }
@@ -189,17 +146,19 @@ a {
     position: absolute;
     display: block;
     content: '';
-    height: 1px;
+    height: 2px;
     width: 100%;
     background: black;
-    margin-top: 2px;
+    margin-top: 0px;
     transform: scaleX(0);
     transform-origin: right;
+    opacity: 0;
     will-change: transform, opacity;
     transition: transform 200ms ease-out, opacity 200ms linear;
   }
 }
 .link:hover::after {
+  opacity: 1;
   transform-origin: left;
   transform: scaleX(1);
 }
@@ -380,6 +339,10 @@ main#main-home {
         color: white;
         will-change: transform, opacity;
         margin-bottom: 60px;
+      }
+      .virtualnotice {
+        color: $sky;
+        font-weight: bolder;
       }
     }
   }
@@ -755,6 +718,53 @@ main#main-about {
     }
     .cta-btn {
       margin-top: 80px;
+      border: 2px solid $dark;
+    }
+    .cta-btn .fill {
+      background: $dark;
+    }
+    .upper {
+      color: black;
+    }
+    .lower {
+      color: white;
+    }
+  }
+}
+main#main-enroll {
+  .content {
+    width: 70%;
+    max-width: 600px;
+    padding-top: 200px;
+    padding-bottom: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & > div {
+      text-align: center;
+    }
+    .link {
+      display: inline-block;
+      color: $navy;
+      font-weight: bolder;
+      font-size: 20px;
+      line-height: 175%;
+      &::after {
+        margin-top: -5px;
+      }
+    }
+    h2 {
+      margin-bottom: 70px;
+    }
+    h3 {
+      margin-bottom: 10px;
+      margin-top: 50px;
+    }
+    p {
+      opacity: 0.6;
+    }
+    .cta-btn {
+      margin-top: 120px;
       border: 2px solid $dark;
     }
     .cta-btn .fill {

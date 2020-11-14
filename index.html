@@ -6,64 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-  <link href="master.css" rel="stylesheet">
+  <link href="master.css?v=1" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/ScrollTrigger.min.js"></script>
-  <script src="app.js" defer></script>
+  <script src="app.js?v=1" defer></script>
   <title>Excel Academy of NY - Home</title>
 </head>
 
 <body data-barba="wrapper">
-  <header>
-    <div id="header-content" class="content">
-      <nav id="mobile-nav">
-        <div id="mobile-nav-bg"></div>
-        <div id="mobile-nav-links">
-          <a target="_blank" href="https://www.excelacademyny.com/CDreg/OR_Login.html">
-            <div>Parent Login</div>
-          </a>
-          <a href="index.html">
-            <div>Home</div>
-          </a>
-          <a href="courses.html">
-            <div>Courses</div>
-          </a>
-          <a href="calendar.html">
-            <div>Calendar</div>
-          </a>
-          <a href="about.html">
-            <div>About</div>
-          </a>
-          <a href="#contact">
-            <div>Contact</div>
-          </a>
-        </div>
-      </nav>
-      <a href="index.html" id="logo"><img src="res/logo.svg" alt="Excel Academy logo"></a>
-      <nav id="desktop-nav">
-        <a class="link" href="index.html">
-          <div>Home</div>
-        </a>
-        <a class="link" href="courses.html">Courses</a>
-        <a class="link" href="calendar.html">Calendar</a>
-        <a class="link" href="about.html">About</a>
-        <a class="link" href="#contact">Contact</a>
-        <a target="_blank" href="https://www.excelacademyny.com/CDreg/OR_Login.html" id="login" class="cta-btn">
-          <div class="fill-wrapper">
-            <div class="fill"></div>
-          </div>
-          <span class="upper">Parent Login</span>
-          <span class="lower">Parent Login</span>
-        </a>
-      </nav>
-      <div id="burger">
-        <div id="bar1"></div>
-        <div id="bar2"></div>
-        <div id="bar3"></div>
-      </div>
-    </div>
-  </header>
-  <div class="barba-container" data-barba="container" data-barba-namespace="home">
+  <div class="stretch-wrapper">
     <main id="main-home">
       <section id="home">
         <div id="video-wrapper">
@@ -78,41 +29,16 @@
               constantly adapting curriculum, we ensure your child
               stays ahead of the&nbsp;curve.
               <br><br>
-              Classes now virtual due to COVID-19.
+              <span class="virtualnotice">Classes now virtual due to COVID-19.</span>
             </p>
             <div class="cta-group">
-              <div class="enroll-dropdown">
-                <a class="cta-enroll cta-btn">
-                  <div class="fill-wrapper">
-                    <div class="fill"></div>
-                  </div>
-                  <span class="upper">Enroll for Fall 2020</span>
-                  <span class="lower">Select program</span>
-                </a>
-                <div class="location-list">
-                  <a class="location cta-btn" target="_blank" href="https://www.excelacademyny.com/2020FallProgramManhassetnew.pdf">
-                    <div class="fill-wrapper">
-                      <div class="fill"></div>
-                    </div>
-                    <span class="upper">Manhasset</span>
-                    <span class="lower">Manhasset</span>
-                  </a>
-                  <a class="location cta-btn" target="_blank" href="https://www.excelacademyny.com/2020FallProgramSyossetnew.pdf">
-                    <div class="fill-wrapper">
-                      <div class="fill"></div>
-                    </div>
-                    <span class="upper">Syosset/Jericho</span>
-                    <span class="lower">Syosset/Jericho</span>
-                  </a>
-                  <a class="location cta-btn" target="_blank" href="https://www.excelacademyny.com/2020FallProgramAI.pdf">
-                    <div class="fill-wrapper">
-                      <div class="fill"></div>
-                    </div>
-                    <span class="upper">Computer Programming / AI</span>
-                    <span class="lower">Computer Programming / AI</span>
-                  </a>
+              <a href="enroll.html" class="cta-enroll cta-btn">
+                <div class="fill-wrapper">
+                  <div class="fill"></div>
                 </div>
-              </div>
+                <span class="upper">Enroll Now</span>
+                <span class="lower">Enroll Now</span>
+              </a>
               <a href="courses.html" class="cta-explore link">Explore Courses</a>
             </div>
           </div>
@@ -256,38 +182,13 @@
             <div id="underline"></div>
           </div>
           <div class="cta-group">
-            <div class="enroll-dropdown">
-              <a class="cta-enroll cta-btn">
-                <div class="fill-wrapper">
-                  <div class="fill"></div>
-                </div>
-                <span class="upper">Enroll for Fall 2020</span>
-                <span class="lower">Select program</span>
-              </a>
-              <div class="location-list">
-                <a class="location cta-btn" target="_blank" href="https://www.excelacademyny.com/2020FallProgramManhassetnew.pdf">
-                  <div class="fill-wrapper">
-                    <div class="fill"></div>
-                  </div>
-                  <span class="upper">Manhasset</span>
-                  <span class="lower">Manhasset</span>
-                </a>
-                <a class="location cta-btn" target="_blank" href="https://www.excelacademyny.com/2020FallProgramSyossetnew.pdf">
-                  <div class="fill-wrapper">
-                    <div class="fill"></div>
-                  </div>
-                  <span class="upper">Syosset/Jericho</span>
-                  <span class="lower">Syosset/Jericho</span>
-                </a>
-                <a class="location cta-btn" target="_blank" href="https://www.excelacademyny.com/2020FallProgramAI.pdf">
-                  <div class="fill-wrapper">
-                    <div class="fill"></div>
-                  </div>
-                  <span class="upper">Computer Programming / AI</span>
-                  <span class="lower">Computer Programming / AI</span>
-                </a>
+            <a href="enroll.html" class="cta-enroll cta-btn">
+              <div class="fill-wrapper">
+                <div class="fill"></div>
               </div>
-            </div>
+              <span class="upper">Enroll Now</span>
+              <span class="lower">Enroll Now</span>
+            </a>
             <a href="courses.html" class="cta-explore link">
               Explore courses
             </a>
@@ -295,46 +196,6 @@
         </div>
       </section>
     </main>
-    <footer>
-      <section id="footer-links">
-        <div id="footer-links-content" class="content">
-          <a class="link" href="index.html">Home</a>
-          <a class="link" href="courses.html">Courses</a>
-          <a class="link" href="#testimonials">Testimonials</a>
-          <a class="link" target="_blank" href="https://www.excelacademyny.com/Congratulations.html">Acceptances</a>
-          <a class="link" href="calendar.html">Calendar</a>
-          <a class="link" href="about.html">About</a>
-        </div>
-      </section>
-      <section id="contact">
-        <div id="contact-content" class="content">
-          <div class="manhasset address">
-            <p><span>Excel Academy - Manhasset<span></p>
-            <p>1447 Northern Boulevard, 2F,<br>Manhasset, NY 11030</p>
-          </div>
-          <div class="manhasset number">
-            <p><span>Tel</span>&nbsp;&nbsp;516-365-8870</p>
-            <p><span>Fax</span>&nbsp;516-365-8873</p>
-          </div>
-          <div class="syosset address">
-            <p><span>Excel Academy - Syosset/Jericho<span></p>
-            <p>6801 Jericho Turnpike, Suite 210,<br>Syosset, NY 11791</p>
-          </div>
-          <div class="syosset number">
-            <p><span>Tel</span>&nbsp;&nbsp;516-864-0688</p>
-            <p><span>Fax</span>&nbsp;516-365-8873</p>
-          </div>
-          <div class="email">
-            <p><span>learn@excelacademyny.com</span></p>
-            <p><span>joy@excelacademyny.com</span></p>
-            <p><span>michael@excelacademyny.com</span></p>
-          </div>
-          <div id="footer-logo-wrapper">
-            <a href="index.html"><img src="res/logo.svg" alt="Excel Academy logo"></a>
-          </div>
-        </div>
-      </section>
-    </footer>
   </div>
 </body>
 

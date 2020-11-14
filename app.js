@@ -1,3 +1,110 @@
+function insertHeader() {
+  let header = document.createElement("header");
+  header.innerHTML = `
+    <div id="header-content" class="content">
+      <nav id="mobile-nav">
+        <div id="mobile-nav-bg"></div>
+        <div id="mobile-nav-links">
+          <a target="_blank" href="https://www.excelacademyny.com/CDreg/OR_Login.html">
+            <div>Parent Login</div>
+          </a>
+          <a href="index.html">
+            <div>Home</div>
+          </a>
+          <a href="enroll.html">
+            <div>Enroll</div>
+          </a>
+          <a href="courses.html">
+            <div>Courses</div>
+          </a>
+          <a href="calendar.html">
+            <div>Calendar</div>
+          </a>
+          <a class="link" target="_blank" href="https://www.excelacademyny.com/Congratulations.html">
+            Acceptances
+          </a>
+          <a href="#contact">
+            <div>Contact</div>
+          </a>
+        </div>
+      </nav>
+      <a href="index.html" id="logo"><img src="res/logo.svg" alt="Excel Academy logo"></a>
+      <nav id="desktop-nav">
+        <a class="link" href="index.html">
+          <div>Home</div>
+        </a>
+        <a class="link" href="enroll.html">Enroll</a>
+        <a class="link" href="courses.html">Courses</a>
+        <a class="link" href="calendar.html">Calendar</a>
+        <a class="link" target="_blank" href="https://www.excelacademyny.com/Congratulations.html">Acceptances</a>
+        <a class="link" href="#contact">Contact</a>
+        <a target="_blank" href="https://www.excelacademyny.com/CDreg/OR_Login.html" id="login" class="cta-btn">
+          <div class="fill-wrapper">
+            <div class="fill"></div>
+          </div>
+          <span class="upper">Parent Login</span>
+          <span class="lower">Parent Login</span>
+        </a>
+      </nav>
+      <div id="burger">
+        <div id="bar1"></div>
+        <div id="bar2"></div>
+        <div id="bar3"></div>
+      </div>
+    </div>
+  `;
+  let body = document.querySelector("body");
+  body.insertBefore(header, body.childNodes[0]);
+  console.log(body.childNodes[0]);
+}
+
+function insertFooter() {
+  let footer = document.createElement("footer");
+  footer.innerHTML = `
+    <section id="footer-links">
+      <div id="footer-links-content" class="content">
+        <a class="link" href="index.html">Home</a>
+        <a class="link" href="enroll.html">Enroll</a>
+        <a class="link" href="courses.html">Courses</a>
+        <a class="link" href="#testimonials">Testimonials</a>
+        <a class="link" target="_blank" href="https://www.excelacademyny.com/Congratulations.html">Acceptances</a>
+        <a class="link" href="calendar.html">Calendar</a>
+        <a class="link" href="about.html">About</a>
+      </div>
+    </section>
+    <section id="contact">
+      <div id="contact-content" class="content">
+        <div class="manhasset address">
+          <p><span>Excel Academy - Manhasset<span></p>
+          <p>1447 Northern Boulevard, 2F,<br>Manhasset, NY 11030</p>
+        </div>
+        <div class="manhasset number">
+          <p><span>Tel</span>&nbsp;&nbsp;516-365-8870</p>
+          <p><span>Fax</span>&nbsp;516-365-8873</p>
+        </div>
+        <div class="syosset address">
+          <p><span>Excel Academy - Syosset/Jericho<span></p>
+          <p>6801 Jericho Turnpike, Suite 210,<br>Syosset, NY 11791</p>
+        </div>
+        <div class="syosset number">
+          <p><span>Tel</span>&nbsp;&nbsp;516-864-0688</p>
+          <p><span>Fax</span>&nbsp;516-365-8873</p>
+        </div>
+        <div class="email">
+          <p><span>learn@excelacademyny.com</span></p>
+          <p><span>joy@excelacademyny.com</span></p>
+          <p><span>michael@excelacademyny.com</span></p>
+        </div>
+        <div id="footer-logo-wrapper">
+          <a href="index.html"><img src="res/logo.svg" alt="Excel Academy logo"></a>
+        </div>
+      </div>
+    </section>
+  `;
+  let stretchWrapper = document.querySelector(".stretch-wrapper");
+  stretchWrapper.appendChild(footer);
+}
+
 function mobileNavAni() {
   "use strict";
   let body = document.querySelector("body");
@@ -138,25 +245,6 @@ function setupHome() {
     trigger: "section#ready .content .cta-group",
     start: "top bottom",
   }});
-
-  /* Setup enroll dropdown class toggling */
-  let homeEnrollDropdown = document.querySelector("section#home .enroll-dropdown");
-  let readyEnrollDropdown = document.querySelector("section#ready .enroll-dropdown");
-
-  homeEnrollDropdown.onclick = () => {
-    homeEnrollDropdown.classList.toggle("enroll-dropdown-open");
-  };
-
-  readyEnrollDropdown.onclick = () => {
-    readyEnrollDropdown.classList.toggle("enroll-dropdown-open");
-  };
-
-  window.onclick = event => {
-    if (event.target.closest(".enroll-dropdown") === null) {
-      homeEnrollDropdown.classList.remove("enroll-dropdown-open");
-      readyEnrollDropdown.classList.remove("enroll-dropdown-open");
-    }
-  };
 }
 
 function setupCourses() {
@@ -179,22 +267,13 @@ function setupCourses() {
       start: "center bottom",
     }
   });
-
-  let coursesReadyEnrollDropdown = document.querySelector("section#courses-ready .enroll-dropdown");
-  coursesReadyEnrollDropdown.onclick = () => {
-    coursesReadyEnrollDropdown.classList.toggle("enroll-dropdown-open");
-  };
-
-  window.onclick = event => {
-    if (event.target.closest(".enroll-dropdown") === null) {
-      coursesReadyEnrollDropdown.classList.remove("enroll-dropdown-open");
-    }
-  };
 }
 
 function main() {
   "use strict";
   window.onload = () => {
+    insertHeader();
+    insertFooter();
     mobileNavAni();
     if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
       setupHome();
