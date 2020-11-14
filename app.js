@@ -21,7 +21,7 @@ function insertHeader() {
             <div>Calendar</div>
           </a>
           <a class="link" target="_blank" href="https://www.excelacademyny.com/Congratulations.html">
-            Acceptances
+            <div>Acceptances</div>
           </a>
           <a href="#contact">
             <div>Contact</div>
