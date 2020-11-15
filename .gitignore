@@ -1,5 +1,3 @@
 *.css.map
 _config.yml
-.copyme
-prep.sh
-prep.bat
+.copy
