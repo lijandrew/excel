@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Roboto:wght@300;400&display=swap');
+$sky: #00B8F2;
+$navy: #145196;
+$dark: #272727;
+$sans: "Roboto", sans-serif;
+$serif: "Merriweather", serif;
+
+main {
+  .categories-container {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+  }
+  .category {
+    margin-bottom: 80px;
+    width: fit-content;
+  }
+  .category-title {
+    margin-bottom: 30px;
+    text-decoration: underline;
+  }
+  li {
+    list-style-type: none;
+    margin-top: 20px;
+    font-family: $sans;
+    font-size: 18px;
+  }
+  section {
+    position: relative;
+    background: $navy;
+    .content {
+      display: flex;
+      text-align: center;
+      padding-top: 180px;
+      .title {
+        position: relative;
+        h2,p {
+          color: white !important;
+        }
+      }
+      .title #underline {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        transform-origin: left;
+        transform: scaleX(0);
+        height: 3px;
+        background: white;
+      }
+      .subtitle {
+        margin-top: 10px;
+      }
+      .cta-group {
+        margin-top: 50px;
+      }
+      .location {
+        border: 2px solid $dark;
+      }
+      .cta-explore {
+        color: $sky;
+      }
+      .link::after {
+        background: $sky;
+      }
+    }
+  }
+  section#enrichment {
+    background: white;
+    .content {
+      color: $navy;
+    }
+  }
+  section#fundamentals {
+    background: $navy;
+    color: white;
+    .cta-btn {
+      margin-top: 60px;
+      border: 2px solid white;
+    }
+    .fill {
+      background: white;
+    }
+    .upper {
+      color: white;
+    }
+    .lower {
+      color: black;
+    }
+  }
+  .category {
+    text-align: center;
+  }
+  .title {
+    text-align: center;
+  }
+  .categories-container {
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  main {
+    #enrichment, #fundamentals {
+      .content {
+        align-items: center !important;
+      }
+    }
+    .category {
+      text-align: left !important;
+    }
+    .categories-container {
+      display: grid !important;
+      align-items: flex-start !important;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-auto-flow: column;
+      grid-row-gap: 10px;
+      grid-column-gap: 50px;
+    }
+  }
+}
+
+@media only screen and (min-width: 850px) {
+  main {
+    .categories-container {
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .title,.subtitle {
+      text-align: center;
+    }
+  }
+}

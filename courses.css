@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Roboto:wght@300;400&display=swap");
+main .categories-container {
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+}
+main .category {
+  margin-bottom: 80px;
+  width: fit-content;
+}
+main .category-title {
+  margin-bottom: 30px;
+  text-decoration: underline;
+}
+main li {
+  list-style-type: none;
+  margin-top: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+}
+main section {
+  position: relative;
+  background: #145196;
+}
+main section .content {
+  display: flex;
+  text-align: center;
+  padding-top: 180px;
+}
+main section .content .title {
+  position: relative;
+}
+main section .content .title h2, main section .content .title p {
+  color: white !important;
+}
+main section .content .title #underline {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  transform-origin: left;
+  transform: scaleX(0);
+  height: 3px;
+  background: white;
+}
+main section .content .subtitle {
+  margin-top: 10px;
+}
+main section .content .cta-group {
+  margin-top: 50px;
+}
+main section .content .location {
+  border: 2px solid #272727;
+}
+main section .content .cta-explore {
+  color: #00B8F2;
+}
+main section .content .link::after {
+  background: #00B8F2;
+}
+main section#enrichment {
+  background: white;
+}
+main section#enrichment .content {
+  color: #145196;
+}
+main section#fundamentals {
+  background: #145196;
+  color: white;
+}
+main section#fundamentals .cta-btn {
+  margin-top: 60px;
+  border: 2px solid white;
+}
+main section#fundamentals .fill {
+  background: white;
+}
+main section#fundamentals .upper {
+  color: white;
+}
+main section#fundamentals .lower {
+  color: black;
+}
+main .category {
+  text-align: center;
+}
+main .title {
+  text-align: center;
+}
+main .categories-container {
+  align-items: center;
+}
+
+@media only screen and (min-width: 600px) {
+  main #enrichment .content, main #fundamentals .content {
+    align-items: center !important;
+  }
+  main .category {
+    text-align: left !important;
+  }
+  main .categories-container {
+    display: grid !important;
+    align-items: flex-start !important;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-flow: column;
+    grid-row-gap: 10px;
+    grid-column-gap: 50px;
+  }
+}
+@media only screen and (min-width: 850px) {
+  main .categories-container {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between;
+    width: 100%;
+  }
+  main .title, main .subtitle {
+    text-align: center;
+  }
+}
+
+/*# sourceMappingURL=courses.css.map */

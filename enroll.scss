@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Roboto:wght@300;400&display=swap');
+$sky: #00B8F2;
+$navy: #145196;
+$dark: #272727;
+$sans: "Roboto", sans-serif;
+$serif: "Merriweather", serif;
+
+main section {
+  .content {
+    width: 80%;
+    max-width: 800px;
+    padding-top: 200px;
+    padding-bottom: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .semester-list {
+      margin-top: 100px;
+      width: 100%;
+      justify-content: space-between;
+      display: flex;
+      h3 {
+        margin-bottom: 20px;
+      }
+    }
+    .link {
+      display: inline-block;
+      color: $navy;
+      font-weight: bolder;
+      font-size: 20px;
+      line-height: 175%;
+      &::after {
+        margin-top: -5px;
+      }
+    }
+    p {
+      opacity: 0.6;
+    }
+    .cta-btn {
+      margin-top: 120px;
+      border: 2px solid $dark;
+    }
+    .cta-btn .fill {
+      background: $dark;
+    }
+    .upper {
+      color: black;
+    }
+    .lower {
+      color: white;
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  main section {
+    .semester-list {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      min-height: 500px;
+    }
+  }
+}

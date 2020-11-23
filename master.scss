@@ -23,19 +23,13 @@ html,body {
   min-height: 100%;
   scroll-behavior: smooth;
 }
+
 body {
   height: 100%;
 }
 
 body.mobile-nav-open {
   overflow: hidden;
-}
-
-.content {
-  width: 80%;
-  margin: auto;
-  padding: 120px 0;
-  max-width: 1000px;
 }
 
 .stretch-wrapper {
@@ -56,11 +50,19 @@ body.mobile-nav-open {
   }
 }
 
+.content {
+  width: 80%;
+  margin: auto;
+  padding: 120px 0;
+  max-width: 1000px;
+}
+
 a {
   text-decoration: none;
   color: inherit;
   white-space: nowrap;
 }
+
 .cta-group {
   display: flex;
   flex-direction: column;
@@ -81,6 +83,7 @@ a {
     color: $sky;
   }
 }
+
 .cta-btn {
   position: relative;
   cursor: pointer;
@@ -125,6 +128,7 @@ a {
     opacity: 0;
   }
 }
+
 .cta-btn:hover {
   .fill {
     width: 180%;
@@ -139,6 +143,7 @@ a {
     opacity: 1;
   }
 }
+
 .link {
   position: relative;
   font-family: $sans;
@@ -157,35 +162,42 @@ a {
     transition: transform 200ms ease-out, opacity 200ms linear;
   }
 }
+
 .link:hover::after {
   opacity: 1;
   transform-origin: left;
   transform: scaleX(1);
 }
+
 h1 {
   font-family: $serif;
   font-size: clamp(40px, 5vw, 50px);
   font-weight: lighter;
 }
+
 h2 {
   font-family: $serif;
   font-weight: lighter;
   font-size: 32px;
 }
+
 h3 {
   font-family: $serif;
   font-weight: lighter;
   font-size: 28px;
 }
+
 p {
   font-family: $sans;
   font-size: 18px;
   line-height: 150%;
 }
+
 .subtitle {
   font-size: 14px;
   opacity: 0.8;
 }
+
 .huge {
   z-index: -1;
   user-select: none;
@@ -299,475 +311,8 @@ main {
   width: 100%;
   min-width: 100%;
   max-width: 100%;
-  .leaves {
-    display: none;
-    user-select: none;
-  }
 }
-main#main-home {
-  section#home {
-    position: relative;
-    height: clamp(650px, 90vh, 850px);
-    .content {
-      padding-top: 180px;
-    }
-    #video-wrapper {
-      z-index: -1;
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      overflow: hidden;
-      video {
-        position: relative;
-        min-height: 100%;
-        min-width: 100%;
-        transform: translate(-40%, 0);
-      }
-    }
-    #cta {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      margin: auto;
-      max-width: 500px;
-      h1,p {
-        text-align: center;
-        color: white;
-        will-change: transform, opacity;
-        margin-bottom: 60px;
-      }
-      .virtualnotice {
-        color: $sky;
-        font-weight: bolder;
-      }
-    }
-  }
-  section#acceptances {
-    overflow-x: hidden;
-    position: relative;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    .content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-bottom: 80px;
-    }
-    h2,p {
-      text-align: center;
-    }
-    #school-grid {
-      margin-top: 50px;
-      display: grid;
-      grid-template-rows: repeat(4, 1fr);
-      grid-template-columns: 1fr;
-      width: 100%;
-      max-width: 350px;
-      height: 800px;
-      justify-items: center;
-      align-items: center;
-      .school {
-        display: flex;
-        width: 80%;
-        height: 80%;
-        max-width: 350px;
-        max-height: 150px;
-        position: relative;
-        .front,.back {
-          will-change: opacity, transform;
-          position: absolute;
-          width: 100%;
-          height: 100%;
-        }
-        .front {
-          transform: translate(5px, 5px);
-          color: white;
-          text-align: center;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          .school-name {
-            font-family: $sans;
-            font-size: 20px;
-          }
-          .school-count {
-            font-family: $serif;
-            font-size: 40px;
-            margin: 5px 0;
-          }
-          p {
-            font-size: 12px;
-          }
-        }
-        .back {
-          transform: translate(-5px, -5px);
-        }
-        $schoolColors: #A51C30, #8BB3DA, #B31B1B, #54301A, #B00836, #00205B, #A80532, #00356B;
-        @for $i from 1 through 8 {
-          &:nth-child(#{$i}) {
-            .front { background: nth($schoolColors, $i)}
-            .back { border: 2px solid nth($schoolColors, $i)}
-          }
-        }
-        &:nth-child(n+4):nth-child(-n+8) {
-          display: none;
-        }
-      }
-      #cta-acceptances {
-        padding: 20px 30px;
-        background: $dark;
-        border: 2px solid $dark;
-        #cap {
-          position: absolute;
-          top: 0;
-          right: 0;
-          transform: translate(55%, -45%);
-          width: 45%;
-        }
-        #diploma {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          transform: translate(-35%, 30%);
-          width: 50%;
-        }
-        .fill {
-          background: white;
-        }
-        .lower {
-          color: black;
-        }
-      }
-    }
-  }
-  section#testimonials {
-    overflow-x: hidden;
-    position: relative;
-    background: $navy;
-    .huge {
-      color: white;
-      z-index: 0;
-      opacity: 0.03;
-      transform: translateY(0);
-    }
-    .content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      #testimonials-title {
-        z-index: 1;
-        color: white;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 50px;
-      }
-      .testimonials {
-        display: flex;
-        flex-direction: column;
-        .testimonial-box {
-          will-change: opacity;
-          padding: 30px;
-          margin-top: 30px;
-          max-width: 375px;
-          .pfp-name {
-            margin-bottom: 20px;
-            font-size: 20px;
-            text-align: center;
-            font-family: $sans;
-          }
-          p {
-            text-align: left;
-          }
-        }
-        .testimonial-box:nth-child(odd) {
-          background: $dark;
-          color: white;
-          p span {
-            color: $sky;
-            font-weight: bold;
-          }
-        }
-        .testimonial-box:nth-child(even) {
-          color: black;
-          background: white;
-          p span {
-            color: $navy;
-            font-weight: bold;
-          }
-        }
-        p {
-          text-align: center;
-        }
-      }
-      #cta-testimonials {
-        padding: 20px 30px;
-        margin-top: 80px;
-        color: black;
-        background: white;
-        #branch {
-          position: absolute;
-          width: 30%;
-          top: 0;
-          left: 0;
-          transform: translate(-60%, 0);
-        }
-        #paper {
-          position: absolute;
-          width: 30%;
-          bottom: 0;
-          right: 0;
-          transform: translate(55%, 40%);
-        }
-        .lower {
-          color: white;
-        }
-      }
-    }
-  }
-  section#ready {
-    position: relative;
-    background: #fff;
-    img {
-      display: none;
-    }
-    .content {
-      text-align: center;
-      .title {
-        position: relative;
-      }
-      .title #underline {
-        content: '';
-        display: block;
-        position: absolute;
-        width: 100%;
-        transform-origin: left;
-        transform: scaleX(0);
-        height: 3px;
-        background: black;
-      }
-      .cta-group {
-        margin-top: 50px;
-      }
-      .cta-enroll {
-        background: $navy;
-      }
-      .location {
-        border: 2px solid $dark;
-      }
-      .cta-explore {
-        color: $navy;
-      }
-      .link::after {
-        background: $navy;
-      }
-    }
-  }
-}
-main#main-courses {
-  .categories-container {
-    margin-top: 120px;
-    display: flex;
-    flex-direction: column;
-  }
-  .category {
-    margin-bottom: 80px;
-    width: fit-content;
-  }
-  .category-title {
-    margin-bottom: 30px;
-    text-decoration: underline;
-  }
-  li {
-    list-style-type: none;
-    margin-top: 20px;
-    font-family: $sans;
-    font-size: 18px;
-  }
-  section#courses-ready {
-    position: relative;
-    background: $navy;
-    .content {
-      display: flex;
-      text-align: center;
-      padding-top: 180px;
-      .title {
-        position: relative;
-        h2,p {
-          color: white !important;
-        }
-      }
-      .title #underline {
-        content: '';
-        display: block;
-        position: absolute;
-        width: 100%;
-        transform-origin: left;
-        transform: scaleX(0);
-        height: 3px;
-        background: white;
-      }
-      .subtitle {
-        margin-top: 10px;
-      }
-      .cta-group {
-        margin-top: 50px;
-      }
-      .location {
-        border: 2px solid $dark;
-      }
-      .cta-explore {
-        color: $sky;
-      }
-      .link::after {
-        background: $sky;
-      }
-    }
-  }
-  section#enrichment {
-    background: white;
-    .content {
-      color: $navy;
-    }
-  }
-  section#fundamentals {
-    background: $navy;
-    color: white;
-    .cta-btn {
-      margin-top: 60px;
-      border: 2px solid white;
-    }
-    .fill {
-      background: white;
-    }
-    .upper {
-      color: white;
-    }
-    .lower {
-      color: black;
-    }
-  }
-  .category {
-    text-align: center;
-  }
-  .title {
-    text-align: center;
-  }
-  .categories-container {
-    align-items: center;
-  }
-}
-main#main-calendar {
-  .content {
-    width: 90%;
-    max-width: 1200px;
-    padding-top: 180px;
-    #calendar-entry-grid {
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      grid-template-rows: repeat(1, 1fr);
-      justify-items: center;
-      align-items: center;
-      grid-gap: 120px;
-    }
-    .link {
-      color: $navy;
-      font-size: 20px;
-    }
-    & > .cta-btn {
-      margin-top: 120px;
-      border: 2px solid $dark;
-      .fill {
-        background: $dark;
-      }
-      .upper {
-        color: black;
-      }
-      .lower {
-        color: white;
-      }
-    }
-  }
-}
-main#main-about {
-  .content {
-    width: 70%;
-    max-width: 600px;
-    padding-top: 180px;
-    padding-bottom: 120px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    h2 {
-      text-align: center;
-      margin-bottom: 80px;
-    }
-    .cta-btn {
-      margin-top: 80px;
-      border: 2px solid $dark;
-    }
-    .cta-btn .fill {
-      background: $dark;
-    }
-    .upper {
-      color: black;
-    }
-    .lower {
-      color: white;
-    }
-  }
-}
-main#main-enroll {
-  .content {
-    width: 80%;
-    max-width: 800px;
-    padding-top: 200px;
-    padding-bottom: 140px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .semester-list {
-      margin-top: 100px;
-      width: 100%;
-      justify-content: space-between;
-      display: flex;
-      h3 {
-        margin-bottom: 20px;
-      }
-    }
-    .link {
-      display: inline-block;
-      color: $navy;
-      font-weight: bolder;
-      font-size: 20px;
-      line-height: 175%;
-      &::after {
-        margin-top: -5px;
-      }
-    }
-    p {
-      opacity: 0.6;
-    }
-    .cta-btn {
-      margin-top: 120px;
-      border: 2px solid $dark;
-    }
-    .cta-btn .fill {
-      background: $dark;
-    }
-    .upper {
-      color: black;
-    }
-    .lower {
-      color: white;
-    }
-  }
-}
+
 footer {
   section#footer-links {
     background: #073062;
@@ -825,69 +370,7 @@ footer {
   }
 }
 
-@media only screen and (min-width: 600px) {
-  #main-courses {
-    #enrichment,#fundamentals {
-      .content {
-        align-items: center !important;
-      }
-    }
-    .category {
-      text-align: left !important;
-    }
-    .categories-container {
-      display: grid !important;
-      align-items: flex-start !important;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-      grid-auto-flow: column;
-      grid-row-gap: 10px;
-      grid-column-gap: 50px;
-    }
-  }
-}
-@media only screen and (min-width: 768px) {
-  main#main-home {
-    section#acceptances {
-      #school-grid {
-        min-width: 650px;
-        grid-template-rows: repeat(3, 1fr) !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-      }
-      .school:nth-child(4) {
-        display: block !important;
-      }
-      .school:nth-child(5) {
-        display: block !important;
-      }
-    }
-  }
-}
-@media only screen and (min-width: 850px) {
-  main#main-courses {
-    .categories-container {
-      display: flex !important;
-      flex-direction: row !important;
-      justify-content: space-between;
-      width: 100%;
-    }
-    .title,.subtitle {
-      text-align: center;
-    }
-  }
-}
 @media only screen and (min-width: 992px) {
-  .leaves {
-    display: block !important;
-    z-index: 0;
-    opacity: 0.7;
-    width: 10%;
-    position: absolute;
-    height: 80%;
-    left: 2%;
-    top: 50%;
-    transform: translate(0, -50%);
-  }
   h1 {
     white-space: nowrap;
   }
@@ -943,99 +426,6 @@ footer {
       }
       .lower {
         color: black;
-      }
-    }
-  }
-  main#main-home {
-    section#home {
-      overflow: hidden;
-      background: none;
-      display: flex;
-      align-items: center;
-      #video-wrapper video {
-        transform: translate(0, 0);
-      }
-      .content {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: 1fr;
-        grid-column-gap: 12px;
-        align-content: center;
-        #cta {
-          grid-column: 1 / 7;
-          align-items: flex-start;
-          text-align: left;
-        }
-        #home-svg {
-          display: block;
-          margin: 0 !important;
-          position: static;
-          transform: translate(0, 10px);
-          align-self: center;
-          min-width: 350px;
-          max-width: 450px;
-          width: 100%;
-          grid-column: 8 / -1;
-          #phone-svg {
-            display: block;
-            opacity: 0;
-            width: 50%;
-            max-width: 175px;
-            min-width: 100px;
-            z-index: -1;
-            position: absolute;
-            transform: translate(-40%, -10%);
-            animation: phoneIn 800ms 300ms ease-out forwards;
-          }
-          #reading-svg {
-            display: block;
-            opacity: 0;
-            transform: translate(40%, 0);
-            width: 100%;
-            max-width: 350px;
-            min-width: 200px;
-            animation: readingIn 800ms 300ms ease-out forwards;
-          }
-        }
-      }
-    }
-    section#acceptances {
-      #school-grid {
-        min-width: 100%;
-        grid-template-rows: repeat(3, 1fr) !important;
-        grid-template-columns: repeat(3, 1fr) !important;
-        .school {
-          &:nth-child(n+4):nth-child(-n+8) {
-            display: block;
-          }
-        }
-      }
-    }
-    section#testimonials {
-      .testimonials {
-        .testimonial-box {
-          max-width: 600px !important;
-          &:nth-child(1) {
-            transform: translate(-20%, 0);
-          }
-          &:nth-child(2) {
-            transform: translate(0);
-          }
-          &:nth-child(3) {
-            transform: translate(20%, 0);
-          }
-        }
-      }
-    }
-    section#ready {
-      img {
-        display: block !important;
-        user-select: none;
-        position: absolute;
-        left: 20px;
-        bottom: 20px;
-        width: 25%;
-        max-width: 350px;
       }
     }
   }
@@ -1106,16 +496,6 @@ footer {
           }
         }
       }
-    }
-  }
-}
-@media only screen and (max-width: 991px) {
-  main#main-enroll {
-    .semester-list {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      min-height: 500px;
     }
   }
 }

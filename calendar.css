@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Roboto:wght@300;400&display=swap");
+main .content {
+  width: 90%;
+  max-width: 1200px;
+  padding-top: 180px;
+}
+main .content #calendar-entry-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  justify-items: center;
+  align-items: center;
+  grid-gap: 120px;
+}
+main .content .link {
+  color: #145196;
+  font-size: 20px;
+}
+main .content > .cta-btn {
+  margin-top: 120px;
+  border: 2px solid #272727;
+}
+main .content > .cta-btn .fill {
+  background: #272727;
+}
+main .content > .cta-btn .upper {
+  color: black;
+}
+main .content > .cta-btn .lower {
+  color: white;
+}
+
+/*# sourceMappingURL=calendar.css.map */

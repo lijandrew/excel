@@ -25,10 +25,10 @@ if [[ ! "$2" =~ ^[0-9]+$ ]]; then
   exit
 fi
 
-### Must be 2 occurrences of version=
+### Must be 3 occurrences of version=
 COUNT=$(grep -P "\?version=[0-9]+" "$1" | wc -l)
-if [[ "$COUNT" -ne 2 ]]; then
-  echo "version.sh: $1: More than 2 occurrences of ?version=[0-9]+" 1>&2
+if [[ "$COUNT" -ne 3 ]]; then
+  echo "version.sh: $1: Not 3 occurrences of ?version=[0-9]+" 1>&2
   exit
 fi
 

@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Roboto:wght@300;400&display=swap');
+$sky: #00B8F2;
+$navy: #145196;
+$dark: #272727;
+$sans: "Roboto", sans-serif;
+$serif: "Merriweather", serif;
+
+main {
+  .content {
+    width: 90%;
+    max-width: 1200px;
+    padding-top: 180px;
+    #calendar-entry-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+      justify-items: center;
+      align-items: center;
+      grid-gap: 120px;
+    }
+    .link {
+      color: $navy;
+      font-size: 20px;
+    }
+    & > .cta-btn {
+      margin-top: 120px;
+      border: 2px solid $dark;
+      .fill {
+        background: $dark;
+      }
+      .upper {
+        color: black;
+      }
+      .lower {
+        color: white;
+      }
+    }
+  }
+}

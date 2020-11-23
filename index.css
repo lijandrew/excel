@@ -1,0 +1,420 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Roboto:wght@300;400&display=swap");
+main .leaves {
+  display: none;
+  user-select: none;
+}
+main section#landing {
+  position: relative;
+  height: clamp(650px, 90vh, 850px);
+}
+main section#landing .content {
+  padding-top: 180px;
+}
+main section#landing #video-wrapper {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+main section#landing #video-wrapper video {
+  position: relative;
+  min-height: 100%;
+  min-width: 100%;
+  transform: translate(-40%, 0);
+}
+main section#landing #cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  max-width: 500px;
+}
+main section#landing #cta h1, main section#landing #cta p {
+  text-align: center;
+  color: white;
+  will-change: transform, opacity;
+  margin-bottom: 60px;
+}
+main section#landing #cta .virtualnotice {
+  color: #00B8F2;
+  font-weight: bolder;
+}
+main section#acceptances {
+  overflow-x: hidden;
+  position: relative;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+main section#acceptances .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 80px;
+}
+main section#acceptances h2, main section#acceptances p {
+  text-align: center;
+}
+main section#acceptances #school-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: 1fr;
+  width: 100%;
+  max-width: 350px;
+  height: 800px;
+  justify-items: center;
+  align-items: center;
+}
+main section#acceptances #school-grid .school {
+  display: flex;
+  width: 80%;
+  height: 80%;
+  max-width: 350px;
+  max-height: 150px;
+  position: relative;
+}
+main section#acceptances #school-grid .school .front, main section#acceptances #school-grid .school .back {
+  will-change: opacity, transform;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+main section#acceptances #school-grid .school .front {
+  transform: translate(5px, 5px);
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+main section#acceptances #school-grid .school .front .school-name {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
+main section#acceptances #school-grid .school .front .school-count {
+  font-family: "Merriweather", serif;
+  font-size: 40px;
+  margin: 5px 0;
+}
+main section#acceptances #school-grid .school .front p {
+  font-size: 12px;
+}
+main section#acceptances #school-grid .school .back {
+  transform: translate(-5px, -5px);
+}
+main section#acceptances #school-grid .school:nth-child(1) .front {
+  background: #A51C30;
+}
+main section#acceptances #school-grid .school:nth-child(1) .back {
+  border: 2px solid #A51C30;
+}
+main section#acceptances #school-grid .school:nth-child(2) .front {
+  background: #8BB3DA;
+}
+main section#acceptances #school-grid .school:nth-child(2) .back {
+  border: 2px solid #8BB3DA;
+}
+main section#acceptances #school-grid .school:nth-child(3) .front {
+  background: #B31B1B;
+}
+main section#acceptances #school-grid .school:nth-child(3) .back {
+  border: 2px solid #B31B1B;
+}
+main section#acceptances #school-grid .school:nth-child(4) .front {
+  background: #54301A;
+}
+main section#acceptances #school-grid .school:nth-child(4) .back {
+  border: 2px solid #54301A;
+}
+main section#acceptances #school-grid .school:nth-child(5) .front {
+  background: #B00836;
+}
+main section#acceptances #school-grid .school:nth-child(5) .back {
+  border: 2px solid #B00836;
+}
+main section#acceptances #school-grid .school:nth-child(6) .front {
+  background: #00205B;
+}
+main section#acceptances #school-grid .school:nth-child(6) .back {
+  border: 2px solid #00205B;
+}
+main section#acceptances #school-grid .school:nth-child(7) .front {
+  background: #A80532;
+}
+main section#acceptances #school-grid .school:nth-child(7) .back {
+  border: 2px solid #A80532;
+}
+main section#acceptances #school-grid .school:nth-child(8) .front {
+  background: #00356B;
+}
+main section#acceptances #school-grid .school:nth-child(8) .back {
+  border: 2px solid #00356B;
+}
+main section#acceptances #school-grid .school:nth-child(n+4):nth-child(-n+8) {
+  display: none;
+}
+main section#acceptances #school-grid #cta-acceptances {
+  padding: 20px 30px;
+  background: #272727;
+  border: 2px solid #272727;
+}
+main section#acceptances #school-grid #cta-acceptances #cap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(55%, -45%);
+  width: 45%;
+}
+main section#acceptances #school-grid #cta-acceptances #diploma {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(-35%, 30%);
+  width: 50%;
+}
+main section#acceptances #school-grid #cta-acceptances .fill {
+  background: white;
+}
+main section#acceptances #school-grid #cta-acceptances .lower {
+  color: black;
+}
+main section#testimonials {
+  overflow-x: hidden;
+  position: relative;
+  background: #145196;
+}
+main section#testimonials .huge {
+  color: white;
+  z-index: 0;
+  opacity: 0.03;
+  transform: translateY(0);
+}
+main section#testimonials .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main section#testimonials .content #testimonials-title {
+  z-index: 1;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 50px;
+}
+main section#testimonials .content .testimonials {
+  display: flex;
+  flex-direction: column;
+}
+main section#testimonials .content .testimonials .testimonial-box {
+  will-change: opacity;
+  padding: 30px;
+  margin-top: 30px;
+  max-width: 375px;
+}
+main section#testimonials .content .testimonials .testimonial-box .pfp-name {
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+main section#testimonials .content .testimonials .testimonial-box p {
+  text-align: left;
+}
+main section#testimonials .content .testimonials .testimonial-box:nth-child(odd) {
+  background: #272727;
+  color: white;
+}
+main section#testimonials .content .testimonials .testimonial-box:nth-child(odd) p span {
+  color: #00B8F2;
+  font-weight: bold;
+}
+main section#testimonials .content .testimonials .testimonial-box:nth-child(even) {
+  color: black;
+  background: white;
+}
+main section#testimonials .content .testimonials .testimonial-box:nth-child(even) p span {
+  color: #145196;
+  font-weight: bold;
+}
+main section#testimonials .content .testimonials p {
+  text-align: center;
+}
+main section#testimonials .content #cta-testimonials {
+  padding: 20px 30px;
+  margin-top: 80px;
+  color: black;
+  background: white;
+}
+main section#testimonials .content #cta-testimonials #branch {
+  position: absolute;
+  width: 30%;
+  top: 0;
+  left: 0;
+  transform: translate(-60%, 0);
+}
+main section#testimonials .content #cta-testimonials #paper {
+  position: absolute;
+  width: 30%;
+  bottom: 0;
+  right: 0;
+  transform: translate(55%, 40%);
+}
+main section#testimonials .content #cta-testimonials .lower {
+  color: white;
+}
+main section#ready {
+  position: relative;
+  background: #fff;
+}
+main section#ready img {
+  display: none;
+}
+main section#ready .content {
+  text-align: center;
+}
+main section#ready .content .title {
+  position: relative;
+}
+main section#ready .content .title #underline {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  transform-origin: left;
+  transform: scaleX(0);
+  height: 3px;
+  background: black;
+}
+main section#ready .content .cta-group {
+  margin-top: 50px;
+}
+main section#ready .content .cta-enroll {
+  background: #145196;
+}
+main section#ready .content .location {
+  border: 2px solid #272727;
+}
+main section#ready .content .cta-explore {
+  color: #145196;
+}
+main section#ready .content .link::after {
+  background: #145196;
+}
+
+@media only screen and (min-width: 768px) {
+  main section#acceptances #school-grid {
+    min-width: 650px;
+    grid-template-rows: repeat(3, 1fr) !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  main section#acceptances .school:nth-child(4) {
+    display: block !important;
+  }
+  main section#acceptances .school:nth-child(5) {
+    display: block !important;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .leaves {
+    display: block !important;
+    z-index: 0;
+    opacity: 0.7;
+    width: 10%;
+    position: absolute;
+    height: 80%;
+    left: 2%;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  main section#landing {
+    overflow: hidden;
+    background: none;
+    display: flex;
+    align-items: center;
+  }
+  main section#landing #video-wrapper video {
+    transform: translate(0, 0);
+  }
+  main section#landing .content {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 12px;
+    align-content: center;
+  }
+  main section#landing .content #cta {
+    grid-column: 1/7;
+    align-items: flex-start;
+    text-align: left;
+  }
+  main section#landing .content #home-svg {
+    display: block;
+    margin: 0 !important;
+    position: static;
+    transform: translate(0, 10px);
+    align-self: center;
+    min-width: 350px;
+    max-width: 450px;
+    width: 100%;
+    grid-column: 8/-1;
+  }
+  main section#landing .content #home-svg #phone-svg {
+    display: block;
+    opacity: 0;
+    width: 50%;
+    max-width: 175px;
+    min-width: 100px;
+    z-index: -1;
+    position: absolute;
+    transform: translate(-40%, -10%);
+    animation: phoneIn 800ms 300ms ease-out forwards;
+  }
+  main section#landing .content #home-svg #reading-svg {
+    display: block;
+    opacity: 0;
+    transform: translate(40%, 0);
+    width: 100%;
+    max-width: 350px;
+    min-width: 200px;
+    animation: readingIn 800ms 300ms ease-out forwards;
+  }
+  main section#acceptances #school-grid {
+    min-width: 100%;
+    grid-template-rows: repeat(3, 1fr) !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  main section#acceptances #school-grid .school:nth-child(n+4):nth-child(-n+8) {
+    display: block;
+  }
+  main section#testimonials .testimonials .testimonial-box {
+    max-width: 600px !important;
+  }
+  main section#testimonials .testimonials .testimonial-box:nth-child(1) {
+    transform: translate(-20%, 0);
+  }
+  main section#testimonials .testimonials .testimonial-box:nth-child(2) {
+    transform: translate(0);
+  }
+  main section#testimonials .testimonials .testimonial-box:nth-child(3) {
+    transform: translate(20%, 0);
+  }
+  main section#ready img {
+    display: block !important;
+    user-select: none;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    width: 25%;
+    max-width: 350px;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

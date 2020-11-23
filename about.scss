@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&family=Roboto:wght@300;400&display=swap');
+$sky: #00B8F2;
+$navy: #145196;
+$dark: #272727;
+$sans: "Roboto", sans-serif;
+$serif: "Merriweather", serif;
+
+main {
+  .content {
+    width: 70%;
+    max-width: 600px;
+    padding-top: 180px;
+    padding-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+    .cta-btn {
+      margin-top: 80px;
+      border: 2px solid $dark;
+    }
+    .cta-btn .fill {
+      background: $dark;
+    }
+    .upper {
+      color: black;
+    }
+    .lower {
+      color: white;
+    }
+  }
+}
