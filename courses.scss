@@ -38,19 +38,6 @@ main {
           color: white !important;
         }
       }
-      .title #underline {
-        content: '';
-        display: block;
-        position: absolute;
-        width: 100%;
-        transform-origin: left;
-        transform: scaleX(0);
-        height: 3px;
-        background: white;
-      }
-      .subtitle {
-        margin-top: 10px;
-      }
       .cta-group {
         margin-top: 50px;
       }

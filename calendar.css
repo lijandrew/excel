@@ -16,6 +16,10 @@ main .content .link {
   color: #145196;
   font-size: 20px;
 }
+main .content .link img {
+  width: 25px;
+  margin-right: 5px;
+}
 main .content > .cta-btn {
   margin-top: 120px;
   border: 2px solid #272727;

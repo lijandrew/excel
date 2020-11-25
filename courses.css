@@ -33,19 +33,6 @@ main section .content .title {
 main section .content .title h2, main section .content .title p {
   color: white !important;
 }
-main section .content .title #underline {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 100%;
-  transform-origin: left;
-  transform: scaleX(0);
-  height: 3px;
-  background: white;
-}
-main section .content .subtitle {
-  margin-top: 10px;
-}
 main section .content .cta-group {
   margin-top: 50px;
 }

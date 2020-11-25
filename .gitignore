@@ -1,3 +1,4 @@
 *.css.map
 _config.yml
 .copy
+debug.log

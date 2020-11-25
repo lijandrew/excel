@@ -243,13 +243,10 @@ main {
     }
     .content {
       text-align: center;
-      .title {
-        position: relative;
-      }
-      .title #underline {
+      .underline {
         content: '';
         display: block;
-        position: absolute;
+        position: relative;
         width: 100%;
         transform-origin: left;
         transform: scaleX(0);

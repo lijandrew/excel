@@ -279,13 +279,10 @@ main section#ready img {
 main section#ready .content {
   text-align: center;
 }
-main section#ready .content .title {
-  position: relative;
-}
-main section#ready .content .title #underline {
+main section#ready .content .underline {
   content: "";
   display: block;
-  position: absolute;
+  position: relative;
   width: 100%;
   transform-origin: left;
   transform: scaleX(0);

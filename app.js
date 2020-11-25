@@ -232,7 +232,7 @@ function setupHome() {
   }});
 
   /* Ready to learn underline animation */
-  let line = document.querySelector("section#ready .content .title #underline");
+  let line = document.querySelector("section#ready .content .underline");
   let lineTl = gsap.timeline({scrollTrigger: {
     trigger: "section#ready .content .cta-group",
     start: "bottom bottom",
