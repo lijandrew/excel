@@ -5,7 +5,7 @@
 ##### Sets version in HTML files. Copies ALL delivery files to .copy
 
 
-VERSION=4
+VERSION=5
 
 ### version.sh script must exist in dir.
 if [[ ! -f "version.sh" ]]; then
