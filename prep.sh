@@ -14,7 +14,7 @@ if [[ ! -f "version.sh" ]]; then
 fi
 
 ### All delivery files must exist in dir.
-FILES=("index.html" "enroll.html" "courses.html" "calendar.html" "about.html" "master.css" "app.js")
+FILES=("index.html" "enroll.html" "courses.html" "calendar.html" "about.html" "master.css" "index.css" "enroll.css" "courses.css" "calendar.css" "about.css" "app.js")
 for FILE in ${FILES[*]}; do
   if [[ ! -f "$FILE" ]]; then
     echo "prep.sh: $FILE not found in current directory" 1>&2
