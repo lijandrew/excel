@@ -105,7 +105,7 @@ function insertFooter() {
   stretchWrapper.appendChild(footer);
 }
 
-function mobileNavAni() {
+function setupMobileNavAni() {
   "use strict";
   let body = document.querySelector("body");
   let burger = document.querySelector("#burger");
@@ -274,11 +274,15 @@ function main() {
   window.onload = () => {
     insertHeader();
     insertFooter();
-    mobileNavAni();
-    if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
-      setupHome();
-    } else if (window.location.pathname === "/courses.html") {
-      setupCourses();
+    setupMobileNavAni();
+    switch (window.location.pathname) {
+      case "/":
+      case "/index.html":
+        setupHome();
+        break;
+      case "/courses.html":
+        setupCourses();
+        break;
     }
     document.querySelector("body").style.opacity = 1;
   };
