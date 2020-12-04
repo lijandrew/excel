@@ -2,10 +2,10 @@
 
 
 ##### prep.sh
-##### Sets version in HTML files. Copies ALL delivery files to .copy
+##### Sets version in HTML files. Copies all delivery files to .copy
 
 
-VERSION=5
+VERSION=6
 
 ### version.sh script must exist in dir.
 if [[ ! -f "version.sh" ]]; then

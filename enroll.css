@@ -8,13 +8,16 @@ main section .content {
   flex-direction: column;
   align-items: center;
 }
+main section .content h2 {
+  text-align: center;
+}
 main section .content .semester-list {
-  margin-top: 100px;
+  margin-top: 50px;
   width: 100%;
   justify-content: space-between;
   display: flex;
 }
-main section .content .semester-list h3 {
+main section .content .semester-list .subtitle {
   margin-bottom: 20px;
 }
 main section .content .link {
